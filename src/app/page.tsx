@@ -1,20 +1,20 @@
+// "use client"
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
 
+// ✅ CORRECT import path — update this to wherever you place Hero.tsx
+import Hero from '@/components/Hero';
+import IntroSlider from '@/components/IntroSlider';
+import { useState, useEffect } from 'react';
+
 export const metadata: Metadata = {
   title: 'FranchiseExpo – New York 2026',
   description:
-    'Find the right franchise for you at the world\'s leading franchise event. May 29–30, 2026 at the Javits Center, New York City.',
+    "Find the right franchise for you at the world's leading franchise event. May 29–30, 2026 at the Javits Center, New York City.",
 };
 
 /* ─── Static data ─── */
-const stats = [
-  { number: '150+', label: 'Exhibitors' },
-  { number: '40+', label: 'Workshops and Sessions' },
-  { number: '2', label: 'Days' },
-];
-
 const cards = [
   {
     title: 'Register to Attend',
@@ -22,7 +22,7 @@ const cards = [
       'Register now to attend the International Franchise Expo and receive updated show information.',
     cta: 'Register to Attend',
     href: '/register',
-    image: '/images/register.webp',
+    image: 'https://www.franchiseexpo.com/images/west/Home/REGISTER-TO-ATTEND.webp',
   },
   {
     title: 'Exhibiting & Sponsoring',
@@ -30,40 +30,36 @@ const cards = [
       'Looking to sponsor or exhibit at the Franchise Expo? Click below to get more information on both opportunities.',
     cta: 'Learn More',
     href: '/exhibitors/why-exhibit',
-    image: '/images/exhibiting.webp',
+    image: 'https://www.franchiseexpo.com/images/west/Home/EXHIBITING-SPONSORING.webp',
   },
   {
     title: 'Speaking Opportunities',
     description:
-      'Looking to speak at the Franchise Expo? We\'d love to have you! Find out more below.',
+      "Looking to speak at the Franchise Expo? We'd love to have you! Find out more below.",
     cta: 'Learn More',
     href: '/speaker-application',
-    image: '/images/speaking.webp',
+    image: 'https://www.franchiseexpo.com/images/west/Home/SPEAKING-OPPORTUNITIES.webp',
   },
 ];
 
 const testimonials = [
   {
-    quote:
-      '"Thank you, I totally enjoyed myself while meeting just the right companies and franchisees."',
+    quote: '"Thank you, I totally enjoyed myself while meeting just the right companies and franchisees."',
     author: 'C. Dyer',
     role: 'Expo Attendee',
   },
   {
-    quote:
-      '"It was a great experience. I already had a general idea of what franchising businesses are, but it was great to be able to speak with owners one on one."',
+    quote: '"It was a great experience. I already had a general idea of what franchising businesses are, but it was great to be able to speak with owners one on one."',
     author: 'J. Parker',
     role: 'Expo Attendee',
   },
   {
-    quote:
-      '"Loved the show! Liked seeing the many different opportunities available! Thanks for bringing this show to my area!"',
+    quote: '"Loved the show! Liked seeing the many different opportunities available! Thanks for bringing this show to my area!"',
     author: 'J. Rodriguez',
     role: 'Expo Attendee',
   },
   {
-    quote:
-      '"Every year I\'m delighted to attend this expo to meet new brands. This year was most impressive. Thank you so much!"',
+    quote: '"Every year I\'m delighted to attend this expo to meet new brands. This year was most impressive. Thank you so much!"',
     author: 'D. Miller',
     role: 'Expo Attendee',
   },
@@ -74,174 +70,128 @@ const newsItems = [
     date: '03 March 2026',
     title: 'The Top Advantages of Franchising Your Business',
     href: '/blog/top-advantages-franchising',
+    image: 'https://www.franchiseexpo.com/images/A_businessperson_holds_a_magnifying_glass_over_a_city_finding_the_advantages_of_franchising_a_business.webp',
   },
   {
     date: '03 March 2026',
     title: 'Top Franchise Opportunities: A Complete Guide',
     href: '/blog/top-franchise-opportunities',
+    image: 'https://www.franchiseexpo.com/images/A_laptop_with_growth_charts_on_a_desk_for_researching_top_franchise_opportunities.webp',
   },
   {
     date: '20 February 2026',
-    title: 'Can I Get a Loan to Buy a Franchise? Yes, Here\'s How',
+    title: "Can I Get a Loan to Buy a Franchise? Yes, Here's How",
     href: '/blog/franchise-loan-guide',
+    image: 'https://www.franchiseexpo.com/images/can-i-get-a-loan-to-buy-a-franchise-yes-heres-how-927431.png',
   },
 ];
 
 const platinumSponsors = ['Entrepreneur'];
-const goldSponsors = [
-  'BeTheBoss',
-  'BizBuySell',
-  'Emma Inc.',
-  'F.C. Dadson',
-  'MetAiBlock',
-  'Stark & Stark',
-];
-const silverSponsors = [
-  'Guidant',
-  'Sesimi',
-  'Signation Sign Group',
-  "The Entrepreneur's Source",
-  'The Franchise Firm',
-];
+const goldSponsors = ['BeTheBoss', 'BizBuySell', 'Emma Inc.', 'F.C. Dadson', 'MetAiBlock', 'Stark & Stark'];
+const silverSponsors = ['Guidant', 'Sesimi', 'Signation Sign Group', "The Entrepreneur's Source", 'The Franchise Firm'];
 
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero Banner with Video Background ── */}
-      <section className={styles.hero}>
-        {/* Video/Image */}
-        <div className={styles.heroMedia}>
-          <video
-            className={styles.heroVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/images/highlights-poster.webp"
-          >
-            <source src="/images/highlights.mp4" type="video/mp4" />
-          </video>
-        </div>
+      {/* ── Hero ── */}
+      <Hero />
 
-        {/* Blue Overlay Content */}
-        <div className={styles.heroOverlayPanel}>
-          <div className={styles.heroContent}>
-            <p className={styles.heroDate}>
-              MAY 29TH - 30TH 2026 | NEW YORK CITY, NEW YORK
-            </p>
-
-            <h1 className={styles.heroTitle}>
-              YOUR FRANCHISE
-              <br />
-              FUTURE STARTS HERE
-            </h1>
-
-            <p className={styles.heroSub}>
-              Step into a world of franchise possibilities waiting to be explored.
-            </p>
-
-            <p className={styles.heroSub}>
-              Hear from experts who’ll equip you with the tools to make your
-              business ownership dreams a reality.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
+      {/* ── Stats Bar ── */}
       <section className={styles.statsBar}>
         <div className={styles.statsGrid}>
+
           <div className={styles.statItem}>
             <div className={styles.statIcon}>👤</div>
-            <div>
+
+            <div className={styles.statContent}>
               <h3>150+</h3>
-              <p>EXHIBITORS</p>
+              <span>EXHIBITORS</span>
             </div>
           </div>
 
           <div className={styles.statItem}>
             <div className={styles.statIcon}>🎤</div>
-            <div>
+
+            <div className={styles.statContent}>
               <h3>40+</h3>
-              <p>WORKSHOPS AND SESSIONS</p>
+              <span>
+                WORKSHOPS AND
+                <br />
+                SESSIONS
+              </span>
             </div>
           </div>
 
           <div className={styles.statItem}>
             <div className={styles.statIcon}>🕒</div>
-            <div>
+
+            <div className={styles.statContent}>
               <h3>2</h3>
-              <p>DAYS</p>
+              <span>DAYS</span>
             </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── Intro + Image Grid ── */}
+      <section className={styles.introSection}>
+        <div className={styles.introWrapper}>
+
+          {/* LEFT */}
+          <div className={styles.introLeft}>
+            <h2 className={styles.introHeading}>
+              FIND THE RIGHT FRANCHISE
+              <br />
+              FOR YOU AT THE WORLD’S
+              <br />
+              LEADING FRANCHISE EVENT
+            </h2>
+
+            <p>
+              The IFE is the premier franchise show in the U.S with a powerful
+              international impact. Entrepreneurs and prospective business owners
+              from all 43 states and 64 countries travel to the IFE to meet
+              face-to-face with over 200+ exhibiting franchise brands and industry
+              experts.
+            </p>
+
+            <p>
+              The International Franchise Expo produced in exclusive sponsorship
+              with the Department of Commerce, sets global standards in
+              franchising excellence.
+            </p>
+
+            <p>
+              Register today, and let’s find your perfect match.
+            </p>
+          </div>
+
+          {/* RIGHT */}
+          <div className={styles.sliderWrap}>
+            <IntroSlider />
           </div>
         </div>
       </section>
 
-      {/* ── Intro + Cards ── */}
-      <section className={`section ${styles.introSection}`}>
-        <div className="container">
-          <div className={styles.introGrid}>
-            <div className={styles.introText}>
-              <h2 className={styles.introHeading}>
-                Find The Right Franchise For You at the World's Leading Franchise
-                Event
-              </h2>
-              <p>
-                The Franchise Expo is the premier show in the U.S with a powerful
-                international impact. Entrepreneurs and prospective business
-                owners from all 50 states and 64 countries travel to the Expo to
-                meet face-to-face with over 200+ exhibiting franchise brands and
-                industry experts. You'll find all the resources you need to
-                succeed in franchise ownership under one roof.
-              </p>
-              <p>
-                Sets global standards in franchising excellence. We've connected
-                thousands of aspiring entrepreneurs to their perfect franchise.
-              </p>
-              <p>Register today, and let's find your perfect match.</p>
-              <Link
-                href="/register"
-                className={`btn btn-primary ${styles.introCta}`}
-              >
-                Register Now
-              </Link>
-            </div>
-            <div className={styles.introImageGrid}>
-              <div
-                className={styles.introImg}
-                style={{ backgroundImage: "url('/images/exhibiting.webp')" }}
-              />
-              <div
-                className={styles.introImg}
-                style={{ backgroundImage: "url('/images/register.webp')" }}
-              />
-              <div
-                className={styles.introImg}
-                style={{ backgroundImage: "url('/images/speaking.webp')" }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3-up Cards ── */}
-      <section className={`section section--grey`}>
+      {/* ── 3-up Feature Cards ── */}
+      <section
+        className="section section--grey"
+        style={{
+          background: '#f5f5f5',
+          paddingTop: '40px',
+          paddingBottom: '80px',
+        }}
+      >
         <div className="container">
           <div className={`grid grid-3 ${styles.cardsGrid}`}>
             {cards.map((card) => (
               <div key={card.title} className={`card ${styles.featureCard}`}>
-                <div
-                  className={styles.cardImg}
-                  style={{ backgroundImage: `url('${card.image}')` }}
-                />
+                <div className={styles.cardImg} style={{ backgroundImage: `url('${card.image}')` }} />
                 <div className="card-body">
-                  <h3 className={`card-title ${styles.cardTitle}`}>
-                    {card.title}
-                  </h3>
+                  <h3 className={`card-title ${styles.cardTitle}`}>{card.title}</h3>
                   <p className="card-text">{card.description}</p>
-                  <Link href={card.href} className="btn btn-primary">
-                    {card.cta}
-                  </Link>
+                  <Link href={card.href} className="btn btn-primary">{card.cta}</Link>
                 </div>
               </div>
             ))}
@@ -250,94 +200,192 @@ export default function HomePage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="testimonial-section">
-        <div className="container">
-          <div className={styles.testimonialsWrap}>
-            {testimonials.map((t, i) => (
-              <div key={i} className={styles.testimonialCard}>
-                <svg className={styles.quoteIcon} viewBox="0 0 40 30" fill="none">
-                  <path
-                    d="M0 30V18C0 8 6 2 18 0l2 4C12 6 9 10 9 18h9v12H0zm22 0V18C22 8 28 2 40 0l2 4C34 6 31 10 31 18h9v12H22z"
-                    fill="#1cb7cf"
-                    opacity="0.4"
-                  />
-                </svg>
-                <p className="testimonial-text">{t.quote}</p>
-                <p className="testimonial-author">{t.author}</p>
-                <p className="testimonial-role">{t.role}</p>
-              </div>
-            ))}
+      <section className={styles.testimonialSection}>
+        <div className={styles.testimonialInner}>
+
+          {/* QUOTE ICON */}
+          <div className={styles.testimonialQuote}>“</div>
+
+          {/* HEADING */}
+          <h2 className={styles.testimonialHeading}>
+            HEAR WHAT OUR ATTENDEES HAVE TO SAY
+          </h2>
+
+          {/* TEXT */}
+          <p className={styles.testimonialText}>
+            "It was a great experience. I already had a general idea of what
+            franchising business are, but it was great to be able to speak with
+            owners and representatives one on one."
+          </p>
+
+          {/* DOT */}
+          <div className={styles.testimonialMini}>...</div>
+
+          {/* AUTHOR */}
+          <p className={styles.testimonialAuthor}>J. Parker</p>
+
+          {/* ROLE */}
+          <p className={styles.testimonialRole}>
+            Franchise Expo South Attendee
+          </p>
+
+          {/* DOTS */}
+          <div className={styles.testimonialDots}>
+            <span className={`${styles.testimonialDot} ${styles.activeDot}`} />
+            <span className={styles.testimonialDot} />
+            <span className={styles.testimonialDot} />
+            <span className={styles.testimonialDot} />
           </div>
+
         </div>
       </section>
 
       {/* ── News ── */}
-      <section className="section">
-        <div className="container">
-          <div className={styles.newsHeader}>
-            <h2 className="section-title">News &amp; Blog</h2>
-            <Link href="/blog" className="btn btn-secondary">
-              All News
+      {/* ── NEWS ── */}
+      <section className={styles.newsSection}>
+        <div className={styles.newsContainer}>
+
+          <div className={styles.newsTop}>
+            <h2 className={styles.newsHeading}>NEWS & BLOG</h2>
+
+            <Link href="/blog" className={styles.newsBtn}>
+              ALL NEWS
+              <span className={styles.newsBtnArrow}>›</span>
             </Link>
           </div>
-          <div className={`grid grid-3 ${styles.newsGrid}`}>
-            {newsItems.map((item) => (
+
+          <div className={styles.newsGrid}>
+
+            {newsItems.map((item, i) => (
               <Link
                 key={item.title}
                 href={item.href}
-                className={`card ${styles.newsCard}`}
+                className={styles.newsCard}
               >
-                <div className={styles.newsImgPlaceholder} />
-                <div className="card-body">
-                  <p className="news-date">{item.date}</p>
-                  <h4 className={styles.newsTitle}>{item.title}</h4>
-                  <span className={styles.readMore}>Read More →</span>
+
+                <div
+                  className={styles.newsImage}
+                  style={{
+                    backgroundImage: `url(${item.image})`,
+                  }}
+                />
+
+                <div className={styles.newsContent}>
+                  <p className={styles.newsDate}>{item.date}</p>
+
+                  <h3 className={styles.newsCardTitle}>
+                    {item.title}
+                  </h3>
                 </div>
+
+                <div className={styles.newsReadMore}>
+                  READ MORE
+                </div>
+
               </Link>
             ))}
+
           </div>
         </div>
       </section>
+      {/* ── SPONSORS ── */}
+      <section className={styles.sponsorSection}>
+        <div className={styles.sponsorContainer}>
 
-      {/* ── Sponsors ── */}
-      <section className="section section--grey section--narrow">
-        <div className="container">
-          <h2 className={`section-title ${styles.sponsorTitle}`}>
-            Expo Sponsors
+          <h2 className={styles.sponsorMainTitle}>
+            IFE SPONSORS
           </h2>
 
-          <div className={styles.sponsorTier}>
-            <p className={styles.sponsorTierLabel}>Platinum Sponsors</p>
-            <div className="sponsor-strip">
-              {platinumSponsors.map((name) => (
-                <div key={name} className={styles.sponsorName}>
-                  {name}
-                </div>
-              ))}
+          {/* GOLD */}
+          <div className={styles.sponsorGroup}>
+            <h3 className={styles.sponsorGroupTitle}>
+              GOLD SPONSORS
+            </h3>
+
+            <div className={styles.sponsorScroller}>
+
+              <div className={styles.sponsorTrack}>
+
+                <img
+                  src="https://www.franchiseexpo.com/images/sponsors/south/Gold%20Sponsor/BeTheBoss.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+                <img
+                  src="https://www.franchiseexpo.com/images/sponsors/IFE/BizBuySell.svg"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+                <img
+                  src="https://www.franchiseexpo.com/images/slider/cache/82204dc255f327b2c082e10920a35854/Emma_Inc.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+                <img
+                  src="https://www.franchiseexpo.com/images/sponsors/south/Gold%20Sponsor/f.c.dadson.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+                <img
+                  src="https://www.franchiseexpo.com/images/slider/cache/a57bcbf263e0caf5064f6b68d994fb98/MetAiBlock-Logo-Main.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+              </div>
+
             </div>
           </div>
 
-          <div className={styles.sponsorTier}>
-            <p className={styles.sponsorTierLabel}>Gold Sponsors</p>
-            <div className="sponsor-strip">
-              {goldSponsors.map((name) => (
-                <div key={name} className={styles.sponsorName}>
-                  {name}
-                </div>
-              ))}
+          {/* SILVER */}
+          <div className={styles.sponsorGroup}>
+            <h3 className={styles.sponsorGroupTitle}>
+              SILVER SPONSORS
+            </h3>
+
+            <div className={styles.sponsorScroller}>
+
+              <div className={styles.sponsorTrack}>
+
+                <img
+                  src="https://www.franchiseexpo.com/images/slider/cache/8c3cd8564c4e8de443e15f2d8826acf4/Sesimi_Wordmark_RGB_Black_2.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+                <img
+                  src="https://www.franchiseexpo.com/images/slider/cache/8c3cd8564c4e8de443e15f2d8826acf4/Sesimi_Wordmark_RGB_Black_2.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+                <img
+                  src="https://www.franchiseexpo.com/images/slider/cache/2e3e5f1fb622da699d1070964069f259/Signation_Sign_Group.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+                <img
+                  src="https://www.franchiseexpo.com/images/slider/cache/c7eb56813b4ea3a294fa491862e51f8c/The_Entrepreneurs_Source.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+                <img
+                  src="https://www.franchiseexpo.com/images/slider/cache/cfca7d1311f584e56c79c500baf0dc5f/The_Franchise_Firm.webp"
+                  alt=""
+                  className={styles.sponsorImg}
+                />
+
+              </div>
+
             </div>
           </div>
 
-          <div className={styles.sponsorTier}>
-            <p className={styles.sponsorTierLabel}>Silver Sponsors</p>
-            <div className="sponsor-strip">
-              {silverSponsors.map((name) => (
-                <div key={name} className={styles.sponsorName}>
-                  {name}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
     </>

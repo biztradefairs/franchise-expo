@@ -615,72 +615,132 @@ ul {
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/Header.module.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Header ─── */
 .Header_header__MvnS2 {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   background: #ffffff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-}
-
-.Header_headerWrap__qHkMd {
-  width: 100%;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .Header_headerInner__HzK1Z {
-  max-width: 1280px;
+  max-width: 1880px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 22px;
+
   display: flex;
   align-items: center;
-  gap: 24px;
-  height: 72px;
+  justify-content: space-between;
+
+  gap: 14px;
+  height: 116px;
 }
 
-/* Logo */
+/* ── Logo ── */
 .Header_logo__j7oID a {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
-.Header_logoContent__MdLnz {
+.Header_logoMark__O8c_Y {
   display: flex;
   flex-direction: column;
+  line-height: 1;
+  gap: 1px;
 }
 
-.Header_logoText__gtMNE {
+.Header_logoMarkTop__YXeJ1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.5rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: #011b2e;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  line-height: 1;
+  letter-spacing: 0.18em;
+}
+
+.Header_logoMarkMid__mfhaB {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #0a4ea3;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 0.82;
+}
+
+.Header_logoMarkBot__jGU3m {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.Header_logoExpo__kRnn2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #011b2e;
+  color: #ffffff;
+  padding: 1px 5px;
+}
+
+.Header_logoSlash__nK4_L {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #011b2e;
+  padding: 0 2px;
+}
+
+.Header_logoCity__Wi38h {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1cb7cf;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.Header_logoDivider__MyaZk {
+  width: 1px;
+  height: 44px;
+  background: #e0e0e0;
+  flex-shrink: 0;
 }
 
 .Header_logoDetails__WaZR9 {
   display: flex;
   flex-direction: column;
+  gap: 4px;
+
+  min-width: 180px;
 }
 
 .Header_logoLocation__fXfsF {
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: #1cb7cf;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333333;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  line-height: 1.1;
 }
 
 .Header_logoDates__PoPak {
-  font-size: 0.65rem;
-  color: #666;
-  font-weight: 500;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222222;
+  text-transform: uppercase;
+  line-height: 1.1;
 }
 
-/* Desktop Nav */
+/* ── Desktop Nav ── */
 .Header_nav__EE71E {
   flex: 1 1;
   display: flex;
@@ -690,7 +750,7 @@ ul {
 .Header_navList__l21rr {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -704,74 +764,152 @@ ul {
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #011b2e;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: 0.2s ease;
-  white-space: nowrap;
-}
 
+  padding: 8px 10px;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(0.82rem, 0.8vw, 1rem);
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+
+  color: #111111;
+  text-decoration: none;
+
+  white-space: nowrap;
+  line-height: 1;
+}
 .Header_navLink__Q_hTB:hover {
   color: #1cb7cf;
-  background: rgba(28, 183, 207, 0.06);
 }
 
 .Header_chevron__PPQVD {
-  font-size: 0.7rem;
-  opacity: 0.6;
+  font-size: 1rem;
+  color: #1d2357;
+  margin-top: -1px;
 }
 
-/* Dropdown */
+/* ── Dropdown ── */
 .Header_dropdown__MccJA {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
   background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  min-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+  min-width: 230px;
   list-style: none;
-  padding: 8px 0;
+  padding: 6px 0;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.06);
-  animation: Header_dropdownIn__8UPB8 0.15s ease forwards;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  animation: Header_fadeDown__YKvoM 0.12s ease forwards;
   z-index: 200;
 }
 
-@keyframes Header_dropdownIn__8UPB8 {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes Header_fadeDown__YKvoM {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .Header_dropdownLink__TaEc0 {
   display: block;
-  padding: 10px 18px;
-  font-size: 0.8rem;
+  padding: 9px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #333;
   text-decoration: none;
-  transition: 0.2s ease;
+  transition: background 0.12s, color 0.12s, padding-left 0.12s;
 }
 
 .Header_dropdownLink__TaEc0:hover {
-  background: rgba(28, 183, 207, 0.08);
+  background: rgba(28, 183, 207, 0.06);
   color: #1cb7cf;
   padding-left: 24px;
 }
 
-/* CTA Buttons */
+/* ── CTA Buttons — defined as LOCAL classes, no :global needed ── */
 .Header_headerCtas__kWWpP {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
 }
 
-/* Hamburger */
+.Header_ctaBtn__t8pxu {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  min-width: 150px;
+  height: 42px;
+
+  padding: 0 44px 0 16px;
+
+  border-radius: 999px;
+  background: #005eb8;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(0.72rem, 0.7vw, 0.9rem);
+  font-weight: 500;
+
+  text-transform: uppercase;
+  line-height: 1;
+
+  border: none !important;
+
+  flex-shrink: 0;
+}
+.Header_ctaBtn__t8pxu:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.Header_ctaBtnPrimary__W5_46 {
+  background: #005eb8;
+  color: #ffffff;
+}
+
+.Header_ctaBtnSecondary__ysU7D {
+  background: #005eb8;
+  color: #ffffff;
+}
+
+.Header_ctaBtnArrow__t4uJv {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  background: #d9d9d9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #1d2357;
+  font-size: 1.3rem;
+  font-weight: 400;
+
+  border: 2px solid #1d2357;
+}
+/* ── Hamburger ── */
 .Header_hamburger___6DdG {
   display: none;
   flex-direction: column;
@@ -789,13 +927,17 @@ ul {
   height: 2px;
   background: #011b2e;
   border-radius: 2px;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
-/* Mobile Nav */
+.Header_hamburgerOpen__74VR7 {
+  background: #1cb7cf !important;
+}
+
+/* ── Mobile Nav ── */
 .Header_mobileNav__J0kLN {
   background: #ffffff;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
   max-height: 80vh;
   overflow-y: auto;
 }
@@ -807,7 +949,7 @@ ul {
 }
 
 .Header_mobileNavItem__DuKLG {
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .Header_mobileNavToggle__8hWvk {
@@ -815,21 +957,20 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
+  padding: 15px 24px;
   background: none;
   border: none;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: #011b2e;
   cursor: pointer;
-  text-align: left;
 }
 
 .Header_mobileDropdown__r9opH {
-  background: #f8f8f8;
+  background: #f6f8fa;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -837,28 +978,55 @@ ul {
 
 .Header_mobileDropdownLink__do22B {
   display: block;
-  padding: 12px 32px;
-  font-size: 0.825rem;
+  padding: 11px 32px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
   color: #444;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.2s ease;
+  transition: color 0.15s, background 0.15s;
 }
 
 .Header_mobileDropdownLink__do22B:hover {
   color: #1cb7cf;
-  background: rgba(28, 183, 207, 0.05);
+  background: rgba(28, 183, 207, 0.04);
 }
 
 .Header_mobileCtas__FlI4V {
-  padding: 20px 24px;
+  padding: 18px 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Responsive */
-@media (max-width: 1100px) {
+.Header_mobileCtaBtn__VEvo8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.Header_mobileCtaBtnPrimary__UZ0_J {
+  background: #1cb7cf;
+  color: #ffffff;
+}
+
+.Header_mobileCtaBtnSecondary__cigdH {
+  background: #011b2e;
+  color: #ffffff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
   .Header_headerCtas__kWWpP {
     display: none;
   }
@@ -868,14 +1036,25 @@ ul {
   .Header_nav__EE71E {
     display: none;
   }
+
   .Header_hamburger___6DdG {
     display: flex;
   }
+
   .Header_headerInner__HzK1Z {
-    height: 64px;
+    height: 66px;
   }
 }
 
+@media (max-width: 600px) {
+  .Header_logoDetails__WaZR9 {
+    display: none;
+  }
+
+  .Header_logoDivider__MyaZk {
+    display: none;
+  }
+}
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/SocialFixed/SocialFixed.module.css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************/

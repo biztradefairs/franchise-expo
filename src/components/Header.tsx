@@ -29,8 +29,7 @@ const navItems = [
       { label: 'IFE Unplugged', href: '/exhibitors/ife-unplugged' },
       { label: 'Promotional Opportunities', href: '/exhibitors/promotional-opportunities' },
       { label: 'Travel Information', href: '/exhibitors/travel-information' },
-      { label: 'NY Registration and Domestic Trade Show Exemption', href: '/exhibitors/ny-registration-and-domestic-trade-show-exemption' },
-      
+      { label: 'NY Registration and Domestic Trade Show Exemption', href: '/exhibitors/ny-registration' },
     ],
   },
   {
@@ -67,75 +66,107 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.headerWrap}>
-        <div className={styles.headerInner}>
-          {/* Logo */}
-          <div className={styles.logo}>
-            <Link href="/">
-              <div className={styles.logoContent}>
-                <span className={styles.logoText}>FranchiseExpo</span>
-                <div className={styles.logoDetails}>
-                  <span className={styles.logoLocation}>New York City, New York</span>
-                  <span className={styles.logoDates}>May 29th – 30th 2026</span>
-                </div>
+      <div className={styles.headerInner}>
+
+        {/* ── Logo ── */}
+        <div className={styles.logo}>
+          <Link href="/">
+            <div className={styles.logoMark}>
+              <span className={styles.logoMarkTop}>International</span>
+              <span className={styles.logoMarkMid}>Franchise</span>
+              <div className={styles.logoMarkBot}>
+                <span className={styles.logoExpo}>Expo</span>
+                <span className={styles.logoSlash}>/</span>
+                <span className={styles.logoCity}>New York</span>
               </div>
-            </Link>
-          </div>
-
-          {/* Desktop Nav */}
-          <nav className={styles.nav}>
-            <ul className={styles.navList}>
-              {navItems.map((item) => (
-                <li
-                  key={item.label}
-                  className={styles.navItem}
-                  onMouseEnter={() => setOpenDropdown(item.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <Link href={item.href} className={styles.navLink}>
-                    {item.label}
-                    {item.children && <span className={styles.chevron}>▾</span>}
-                  </Link>
-                  {item.children && openDropdown === item.label && (
-                    <ul className={styles.dropdown}>
-                      {item.children.map((child) => (
-                        <li key={child.label}>
-                          <Link href={child.href} className={styles.dropdownLink}>
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* CTA Buttons */}
-          <div className={styles.headerCtas}>
-            <Link href="/register" className="btn btn-primary">
-              Register to Attend
-            </Link>
-            <Link href="/exhibitors/why-exhibit" className="btn btn-secondary">
-              Exhibit / Sponsor
-            </Link>
-          </div>
-
-          {/* Mobile Hamburger */}
-          <button
-            className={styles.hamburger}
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={mobileOpen ? styles.hamburgerOpen : ''} />
-            <span className={mobileOpen ? styles.hamburgerOpen : ''} />
-            <span className={mobileOpen ? styles.hamburgerOpen : ''} />
-          </button>
+            </div>
+            <div className={styles.logoDivider} />
+            <div className={styles.logoDetails}>
+              <span className={styles.logoLocation}>New York City, New York</span>
+              <span className={styles.logoDates}>May 29th – 30th 2026</span>
+            </div>
+          </Link>
         </div>
+
+        {/* ── Desktop Nav ── */}
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
+            {navItems.map((item) => (
+              <li
+                key={item.label}
+                className={styles.navItem}
+                onMouseEnter={() => setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <Link href={item.href} className={styles.navLink}>
+                  {item.label}
+                  {item.children && (
+                    <span className={styles.chevron}>
+                      <svg
+                        width="10"
+                        height="10"
+                        viewBox="0 0 10 10"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 3.5L5 6.5L8 3.5"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  )}
+                </Link>
+                {item.children && openDropdown === item.label && (
+                  <ul className={styles.dropdown}>
+                    {item.children.map((child) => (
+                      <li key={child.label}>
+                        <Link href={child.href} className={styles.dropdownLink}>
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* ── CTA Buttons — local classes only, no globals ── */}
+        <div className={styles.headerCtas}>
+          <Link
+            href="/register"
+            className={`${styles.ctaBtn} ${styles.ctaBtnPrimary}`}
+          >
+            Register to Attend
+            <span className={styles.ctaBtnArrow}>›</span>
+          </Link>
+          <Link
+            href="/exhibitors/why-exhibit"
+            className={`${styles.ctaBtn} ${styles.ctaBtnSecondary}`}
+          >
+            Exhibit / Sponsor
+            <span className={styles.ctaBtnArrow}>›</span>
+          </Link>
+        </div>
+
+        {/* ── Hamburger ── */}
+        <button
+          className={styles.hamburger}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={mobileOpen ? styles.hamburgerOpen : ''} />
+          <span className={mobileOpen ? styles.hamburgerOpen : ''} />
+          <span className={mobileOpen ? styles.hamburgerOpen : ''} />
+        </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* ── Mobile Nav ── */}
       {mobileOpen && (
         <div className={styles.mobileNav}>
           <ul className={styles.mobileNavList}>
@@ -168,10 +199,17 @@ export default function Header() {
               </li>
             ))}
             <li className={styles.mobileCtas}>
-              <Link href="/register" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
+              <Link
+                href="/register"
+                className={`${styles.mobileCtaBtn} ${styles.mobileCtaBtnPrimary}`}
+              >
                 Register to Attend
               </Link>
-              <Link href="/exhibitors/why-exhibit" className="btn btn-secondary" style={{ width: '100%', textAlign: 'center', marginTop: 8 }}>
+              <Link
+                href="/exhibitors/why-exhibit"
+                className={`${styles.mobileCtaBtn} ${styles.mobileCtaBtnSecondary}`}
+                style={{ marginTop: 8 }}
+              >
                 Exhibit / Sponsor
               </Link>
             </li>
