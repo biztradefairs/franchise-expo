@@ -1,435 +1,218 @@
-/* =========================================================
-   PAGE
-========================================================= */
-
-.page {
-    width: 100%;
-    overflow: hidden;
-    background: #ffffff;
+.businessSection {
+    padding: 90px 0;
 }
 
-/* =========================================================
-   CONTAINER
-========================================================= */
+/* TOP GRID */
 
-.container {
-    width: 100%;
-    max-width: 1320px;
-    margin: auto;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-/* =========================================================
-   HERO SECTION
-========================================================= */
-
-.hero {
-    position: relative;
-    width: 100%;
-    height: 720px;
-    overflow: hidden;
-    display: flex;
-    background: #123f8c;
-}
-
-.heroMedia {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.heroVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.heroOverlayPanel {
-    position: relative;
-    z-index: 2;
-    width: 58%;
-    height: 100%;
-    background: #123f8c;
-
-    clip-path: polygon(0 0,
-            82% 0,
-            100% 50%,
-            82% 100%,
-            0 100%);
-
-    display: flex;
-    align-items: center;
-}
-
-.heroContent {
-    width: 100%;
-    max-width: 760px;
-    padding-left: 70px;
-    padding-right: 110px;
-    color: white;
-}
-
-.heroDate {
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 28px;
-    color: rgba(255, 255, 255, 0.95);
-}
-
-.heroTitle {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(70px, 8vw, 120px);
-    line-height: 0.92;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #ffffff;
-    margin-bottom: 30px;
-}
-
-.heroSub {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    line-height: 1.7;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.92);
-    max-width: 560px;
-}
-
-/* =========================================================
-   STATS
-========================================================= */
-
-.statsBar {
-    background: #f4f4f4;
-    padding: 40px 50px;
-}
-
-.statsGrid {
-    max-width: 1400px;
-    margin: auto;
-
+.topGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+
+    margin-bottom: 70px;
 }
 
-.statItem {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
+/* LEFT TEXT */
 
-.statIcon {
-    width: 72px;
-    height: 72px;
-    min-width: 72px;
-
-    border-radius: 50%;
-    background: #9ee8f2;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 30px;
-}
-
-.statItem h3 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 76px;
-    line-height: 1;
-    font-weight: 700;
-    margin: 0;
-    color: #111111;
-}
-
-.statItem p {
-    font-family: 'Oswald', sans-serif;
-    font-size: 22px;
-    line-height: 1.15;
-    text-transform: uppercase;
-    margin: 0;
-    color: #555555;
-}
-
-/* =========================================================
-   ABOUT SECTION
-========================================================= */
-
-.aboutSection {
-    padding: 110px 0;
-    background: #ffffff;
-}
-
-.aboutGrid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.aboutContent {
+.leftContent {
     display: flex;
     flex-direction: column;
+    gap: 34px;
 }
 
-.sectionTitle {
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(42px, 5vw, 70px);
-    line-height: 1;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #011b2e;
-    margin-bottom: 30px;
-}
-
-.aboutContent p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 17px;
+.leftContent p {
+    font-size: 1.05rem;
     line-height: 1.9;
-    color: #555555;
-    margin-bottom: 20px;
+    color: #111;
+    font-weight: 500;
 }
 
-.featureList {
-    margin-top: 20px;
+/* IMAGE */
+
+.rightImage {
+    height: 240px;
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 2px;
+}
+
+/* MAIN HEADING */
+
+.mainHeading {
+    font-family: 'Oswald', sans-serif;
+
+    font-size: 3.2rem;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    color: #111;
+
+    margin-bottom: 50px;
+}
+
+/* CARDS */
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.infoCard {
+    background: #27b8cf;
+
+    min-height: 215px;
+
+    padding: 36px 32px;
 
     display: flex;
     flex-direction: column;
-    gap: 28px;
+
+    transition: 0.35s ease;
 }
 
-.featureItem {
-    padding-bottom: 24px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+.infoCard:hover {
+    transform: translateY(-6px);
 }
 
-.featureItem h4 {
+.cardNumber {
     font-family: 'Oswald', sans-serif;
-    font-size: 26px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: #123f8c;
-    margin-bottom: 12px;
+
+    font-size: 3rem;
+    font-weight: 700;
+
+    color: #fff;
+
+    margin-bottom: 28px;
 }
 
-.featureItem p {
-    margin: 0;
+.infoCard p {
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: #fff;
+    font-weight: 600;
 }
 
-.aboutImageWrap {
-    position: relative;
-    width: 100%;
-    height: 100%;
+/* TABLET */
+
+@media (max-width: 1024px) {
+    .topGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mainHeading {
+        font-size: 2.5rem;
+    }
 }
 
-.aboutImage {
-    width: 100%;
-    height: 760px;
-    object-fit: cover;
-    border-radius: 12px;
-}
+/* MOBILE */
 
-/* =========================================================
+@media (max-width: 768px) {
+    .businessSection {
+        padding: 70px 0;
+    }
+
+    .cardGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .mainHeading {
+        font-size: 2rem;
+    }
+
+    .leftContent p {
+        font-size: 0.95rem;
+    }
+
+    .infoCard {
+        min-height: auto;
+        padding: 28px 24px;
+    }
+
+    .cardNumber {
+        font-size: 2.2rem;
+    }
+}/* =========================================================
    CONTACT SECTION
 ========================================================= */
 
 .contactSection {
-    padding-bottom: 120px;
+    padding: 60px 0 80px;
 }
 
 .contactCard {
-    background: linear-gradient(135deg,
-            #123f8c,
-            #0d2f68);
+    background: #ffffff;
 
-    border-radius: 20px;
+    padding: 42px 48px;
 
-    padding: 70px;
+    border-radius: 2px;
 
-    color: white;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
 }
+
+/* HEADING */
 
 .contactCard h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(40px, 4vw, 70px);
+
+    font-size: 2.4rem;
     line-height: 1;
+
     text-transform: uppercase;
-    margin-bottom: 28px;
+
+    color: #111827;
+
+    margin-bottom: 22px;
 }
+
+/* TEXT */
 
 .contactCard p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 1rem;
     line-height: 1.8;
-    max-width: 760px;
-    color: rgba(255, 255, 255, 0.92);
+
+    color: #222;
+
+    max-width: 720px;
+
+    margin-bottom: 14px;
+
+    font-weight: 500;
 }
 
-.contactInfo {
-    margin-top: 40px;
-}
+/* EMAIL */
 
-.contactInfo h3 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 34px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.contactInfo a {
-    font-size: 24px;
+.emailLink {
+    color: #144380;
     font-weight: 600;
-    color: #9ee8f2;
     text-decoration: none;
 }
 
-.contactInfo a:hover {
-    color: #ffffff;
+.emailLink:hover {
+    color: #27b8cf;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1200px) {
-
-    .heroOverlayPanel {
-        width: 65%;
-    }
-
-    .heroTitle {
-        font-size: 90px;
-    }
-
-    .aboutGrid {
-        gap: 50px;
-    }
-
-}
-
-@media (max-width: 992px) {
-
-    .hero {
-        height: auto;
-        min-height: 700px;
-    }
-
-    .heroOverlayPanel {
-        width: 100%;
-
-        clip-path: none;
-
-        background: linear-gradient(to top,
-                rgba(18, 63, 140, 0.98),
-                rgba(18, 63, 140, 0.75));
-    }
-
-    .heroContent {
-        padding: 130px 28px 90px;
-    }
-
-    .heroTitle {
-        font-size: 64px;
-    }
-
-    .heroSub {
-        font-size: 18px;
-    }
-
-    .statsGrid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .aboutGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .aboutImage {
-        height: 500px;
-    }
-
-    .contactCard {
-        padding: 50px 35px;
-    }
-
-}
+/* MOBILE */
 
 @media (max-width: 640px) {
-
-    .hero {
-        min-height: 620px;
-    }
-
-    .heroContent {
-        padding: 110px 22px 70px;
-    }
-
-    .heroDate {
-        font-size: 14px;
-    }
-
-    .heroTitle {
-        font-size: 50px;
-    }
-
-    .heroSub {
-        font-size: 16px;
-        line-height: 1.7;
-    }
-
-    .statsBar {
-        padding: 30px 20px;
-    }
-
-    .statItem {
-        gap: 18px;
-    }
-
-    .statIcon {
-        width: 58px;
-        height: 58px;
-        min-width: 58px;
-        font-size: 22px;
-    }
-
-    .statItem h3 {
-        font-size: 50px;
-    }
-
-    .statItem p {
-        font-size: 18px;
-    }
-
-    .sectionTitle {
-        font-size: 42px;
-    }
-
-    .featureItem h4 {
-        font-size: 22px;
-    }
-
-    .aboutImage {
-        height: 400px;
-    }
-
     .contactCard {
-        padding: 40px 24px;
+        padding: 30px 22px;
     }
 
-    .contactInfo h3 {
-        font-size: 28px;
+    .contactCard h2 {
+        font-size: 1.8rem;
     }
 
-    .contactInfo a {
-        font-size: 20px;
+    .contactCard p {
+        font-size: 0.95rem;
     }
-
 }

@@ -11,28 +11,28 @@ export const metadata: Metadata = {
 
 const attendeeCards = [
   {
-    image: '/images/emerging-pavilion.webp',
+    image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/Emerging_Pavilion.webp',
     title: 'Emerging Brand Pavilion',
     description:
       "Looking for the next big franchise opportunity? The Emerging Brand Pavilion is where you'll find the newest franchise concepts. Meet visionary founders, explore fresh business models, and get in on the ground floor of exciting new brands.",
     href: '/attendees/emerging-brand-pavilion',
   },
   {
-    image: '/images/conference-agenda.webp',
+    image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/Conference_Agenda.webp',
     title: 'Conference Agenda',
     description:
       'We offer a highly diverse conference agenda covering fundamental topics in franchising. Whether new to franchising or experienced, there is always something new to learn from our workshops and sessions.',
     href: '/conference-agenda',
   },
   {
-    image: '/images/exhibitors.webp',
+    image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/Exhibitors.webp',
     title: 'Exhibitors',
     description:
       'At the Franchise Expo, you have the power to meet and engage with a variety of franchise brands from every industry. Talk directly with franchisors, ask questions, and explore opportunities that match your goals.',
     href: '/exhibitors/exhibitor-list',
   },
   {
-    image: '/images/business-resource-center.webp',
+    image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/The_Business_Resource_Center.webp',
     title: 'The Business Resource Center',
     description:
       'Explore a variety of suppliers that are critical in developing your franchise, and form valuable business connections.',
@@ -64,35 +64,20 @@ export default function AttendeeInfoPage() {
           {/* 4-up cards */}
           <div className={`grid grid-4 ${styles.cardsGrid}`}>
             {attendeeCards.map((card) => (
-              <Link key={card.title} href={card.href} className={`card ${styles.infoCard}`}>
+              <Link key={card.title} href={card.href} className={styles.infoCard}>
                 <div
                   className={styles.cardImg}
                   style={{ backgroundImage: `url('${card.image}')` }}
                 />
-                <div className="card-body">
-                  <h5 className={styles.cardTitle}>{card.title}</h5>
-                  <p className="card-text">{card.description}</p>
+                <div className={styles.cardBody}>
+                  <div className={styles.cardTitleWrap}>
+                    <h5 className={styles.cardTitle}>{card.title}</h5>
+                  </div>
+                  <p className={styles.cardText}>{card.description}</p>
                   <span className={styles.cardCta}>Learn More →</span>
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Register CTA */}
-      <section className={styles.ctaBanner}>
-        <div className="container">
-          <div className={styles.ctaContent}>
-            <div>
-              <h2 className={styles.ctaTitle}>Ready to attend?</h2>
-              <p className={styles.ctaText}>
-                May 29–30, 2026 · Javits Center, New York City
-              </p>
-            </div>
-            <Link href="/register" className="btn btn-primary">
-              Register to Attend
-            </Link>
           </div>
         </div>
       </section>

@@ -423,7 +423,7 @@ ul {
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/Footer.module.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************/
 .Footer_footer__UaG1g {
-  background: #011b2e;
+  background: #144380;
   color: rgba(255, 255, 255, 0.85);
   font-family: 'Poppins', sans-serif;
 }
@@ -565,7 +565,8 @@ ul {
 
 /* Footer Bottom */
 .Footer_footerBottom__jFaYu {
-  border-top: 1px solid rgba(255,255,255,0.1);
+  background: black;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 20px 24px;
 }
 
@@ -584,7 +585,7 @@ ul {
 }
 
 .Footer_privacyLink__PEXJk:hover {
-  color: #1cb7cf;
+  color: #5ED6E8;
 }
 
 .Footer_copyright__j5CNb {

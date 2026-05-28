@@ -227,89 +227,85 @@
 .activeDot {
   background: #0077cc;
 }
-
 /* =========================================
-   STATS BAR EXACT LIKE REFERENCE
+   STATS BAR EXACT DESIGN
 ========================================= */
 
 .statsBar {
   width: 100%;
-  background: #f3f3f3;
-  padding: 34px 70px;
+  background: #efefef;
+  padding: 34px 60px;
 }
 
 .statsGrid {
-  max-width: 1650px;
-  margin: auto;
+  max-width: 1450px;
+  margin: 0 auto;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  gap: 40px;
+  gap: 80px;
 }
 
 .statItem {
   display: flex;
   align-items: center;
-  gap: 26px;
+  justify-content: center;
+  gap: 22px;
 }
 
 .statIcon {
-  width: 74px;
-  height: 74px;
-  min-width: 74px;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
   border-radius: 50%;
-  background: #a8e8f2;
+  background: #9fe7f2;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 34px;
+  color: #25b8d3;
+  font-size: 30px;
 }
 
 .statContent {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 14px;
 }
 
 .statContent h3 {
   font-family: 'Oswald', sans-serif;
-  font-size: 88px;
-  line-height: 0.85;
+  font-size: 60px;
+  line-height: 0.9;
   font-weight: 700;
-  color: #111111;
+  color: #111;
   margin: 0;
 }
 
 .statContent span {
   font-family: 'Oswald', sans-serif;
-  font-size: 28px;
-  line-height: 1;
+  font-size: 22px;
+  line-height: 1.05;
+  font-weight: 300;
   text-transform: uppercase;
-  color: #222222;
-  margin-top: 8px;
+  color: #222;
+  margin-top: 4px;
   display: block;
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 
 @media (max-width: 992px) {
 
   .statsGrid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
 
-  .statContent h3 {
-    font-size: 64px;
-  }
-
-  .statContent span {
-    font-size: 22px;
+  .statItem {
+    justify-content: flex-start;
   }
 }
 
@@ -319,26 +315,21 @@
     padding: 28px 22px;
   }
 
-  .statItem {
-    gap: 18px;
-  }
-
   .statIcon {
-    width: 58px;
-    height: 58px;
-    min-width: 58px;
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
     font-size: 24px;
   }
 
   .statContent h3 {
-    font-size: 48px;
+    font-size: 42px;
   }
 
   .statContent span {
-    font-size: 18px;
+    font-size: 16px;
   }
-}
-/* =========================================
+}/* =========================================
    MOBILE
 ========================================= */
 

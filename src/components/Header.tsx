@@ -103,18 +103,14 @@ export default function Header() {
                   {item.children && (
                     <span className={styles.chevron}>
                       <svg
-                        width="10"
-                        height="10"
-                        viewBox="0 0 10 10"
-                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16.379 9.336"
+                        width="12"
+                        height="12"
                       >
                         <path
-                          d="M2 3.5L5 6.5L8 3.5"
-                          stroke="currentColor"
-                          strokeWidth="1.6"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                          fill="#242559"
+                          d="M8.19,5.241L15.56,0l.819.819-8.189,8.517L0,.819l.819-.819,7.371,5.241Z"
                         />
                       </svg>
                     </span>

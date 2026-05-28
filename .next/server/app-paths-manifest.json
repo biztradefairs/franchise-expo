@@ -1,4 +1,7 @@
 {
-  "/page": "app/page.js",
-  "/exhibitors/why-exhibit/page": "app/exhibitors/why-exhibit/page.js"
+  "/attendees/emerging-brand-pavilion/page": "app/attendees/emerging-brand-pavilion/page.js",
+  "/attendees/business-resource-center/page": "app/attendees/business-resource-center/page.js",
+  "/attendees/testimonials/page": "app/attendees/testimonials/page.js",
+  "/attendees/attendee-info/page": "app/attendees/attendee-info/page.js",
+  "/attendees/travel-information/page": "app/attendees/travel-information/page.js"
 }

@@ -7,6 +7,7 @@ import styles from './page.module.css';
 import Hero from '@/components/Hero';
 import IntroSlider from '@/components/IntroSlider';
 import { useState, useEffect } from 'react';
+import { Users, Mic, Clock3 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: 'FranchiseExpo – New York 2026',
@@ -95,13 +96,14 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <Hero />
-
       {/* ── Stats Bar ── */}
       <section className={styles.statsBar}>
         <div className={styles.statsGrid}>
 
           <div className={styles.statItem}>
-            <div className={styles.statIcon}>👤</div>
+            <div className={styles.statIcon}>
+              <Users size={28} />
+            </div>
 
             <div className={styles.statContent}>
               <h3>150+</h3>
@@ -110,7 +112,9 @@ export default function HomePage() {
           </div>
 
           <div className={styles.statItem}>
-            <div className={styles.statIcon}>🎤</div>
+            <div className={styles.statIcon}>
+              <Mic size={28} />
+            </div>
 
             <div className={styles.statContent}>
               <h3>40+</h3>
@@ -123,7 +127,9 @@ export default function HomePage() {
           </div>
 
           <div className={styles.statItem}>
-            <div className={styles.statIcon}>🕒</div>
+            <div className={styles.statIcon}>
+              <Clock3 size={28} />
+            </div>
 
             <div className={styles.statContent}>
               <h3>2</h3>

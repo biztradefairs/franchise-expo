@@ -1,5 +1,5 @@
 .footer {
-  background: #011b2e;
+  background: #144380;
   color: rgba(255, 255, 255, 0.85);
   font-family: 'Poppins', sans-serif;
 }
@@ -140,7 +140,8 @@
 
 /* Footer Bottom */
 .footerBottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
+  background: black;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 20px 24px;
 }
 
@@ -159,7 +160,7 @@
 }
 
 .privacyLink:hover {
-  color: #1cb7cf;
+  color: #5ED6E8;
 }
 
 .copyright {

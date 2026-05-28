@@ -1,154 +1,80 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./EmergingBrandPavilion.module.css";
 
-export default function EmergingBrandPavilion() {
+export default function BusinessResourceCenter() {
     return (
         <main className={styles.page}>
 
-            {/* HERO SECTION */}
-            <section className={styles.hero}>
-                <div className={styles.heroMedia}>
-                    <video
-                        className={styles.heroVideo}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    >
-                        <source src="/videos/franchise-hero.mp4" type="video/mp4" />
-                    </video>
-                </div>
+            <PageBanner
+                title="The Business Resource Center"
+                subtitle="Explore a variety of suppliers that are critical in developing your franchise, and form valuable business connections."
+            />
 
-                <div className={styles.heroOverlayPanel}>
-                    <div className={styles.heroContent}>
-                        <p className={styles.heroDate}>
-                            MAY 29TH - 30TH 2026 | NEW YORK CITY, NEW YORK
-                        </p>
+            <section className={styles.businessSection}>
+                <div className="container">
 
-                        <h1 className={styles.heroTitle}>
-                            EMERGING
-                            <br />
-                            BRAND
-                            <br />
-                            PAVILION
-                        </h1>
+                    <div className={styles.topGrid}>
 
-                        <p className={styles.heroSub}>
-                            Discover the future of franchising by visiting the Emerging
-                            Brands Pavilion — where tomorrow’s leading brands are waiting
-                            for you today.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* STATS */}
-            <section className={styles.statsBar}>
-                <div className={styles.statsGrid}>
-
-                    <div className={styles.statItem}>
-                        <div className={styles.statIcon}>🏢</div>
-
-                        <div>
-                            <h3>150+</h3>
-                            <p>EXHIBITORS</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.statItem}>
-                        <div className={styles.statIcon}>🚀</div>
-
-                        <div>
-                            <h3>10</h3>
-                            <p>UNITS OR LESS</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.statItem}>
-                        <div className={styles.statIcon}>📈</div>
-
-                        <div>
-                            <h3>100%</h3>
-                            <p>GROWTH POTENTIAL</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            {/* ABOUT SECTION */}
-            <section className={styles.aboutSection}>
-                <div className={styles.container}>
-
-                    <div className={styles.aboutGrid}>
-
-                        {/* LEFT CONTENT */}
-                        <div className={styles.aboutContent}>
-
-                            <h2 className={styles.sectionTitle}>
-                                THE EMERGING BRANDS PAVILION
-                            </h2>
-
+                        <div className={styles.leftContent}>
                             <p>
-                                The Emerging Brands Pavilion is one of the busiest aisles of
-                                the show floor and dedicated to up-and-coming franchises.
+                                International Franchise Expo welcomes you to check out the
+                                Business Resource Center! This area is dedicated to present
+                                innovative services that will bring your business to the next level!
                             </p>
 
                             <p>
-                                Discover the future of franchising by visiting the Emerging
-                                Brands Pavilion where tomorrow’s leading brands are waiting
-                                for you today.
+                                Walk the show floor and explore a range of business suppliers who
+                                want to talk with YOU! Have strong conversations that will further
+                                develop and fine tune your business. Whether you're looking to learn
+                                more about strategy, network and form connections, or how to expand
+                                your business, the business resource center will provide you with the
+                                skills and knowledge needed to advance in the industry.
                             </p>
-
-                            <div className={styles.featureList}>
-
-                                <div className={styles.featureItem}>
-                                    <h4>DISCOVER THE NEXT BIG THING</h4>
-
-                                    <p>
-                                        Be among the first to discover fresh concepts before
-                                        they become household names.
-                                    </p>
-                                </div>
-
-                                <div className={styles.featureItem}>
-                                    <h4>DIRECT ACCESS TO FOUNDERS</h4>
-
-                                    <p>
-                                        Meet founders and executives directly and learn about
-                                        the future vision of their franchise.
-                                    </p>
-                                </div>
-
-                                <div className={styles.featureItem}>
-                                    <h4>BE A TRENDSETTER</h4>
-
-                                    <p>
-                                        Join brands early and position yourself ahead of market
-                                        trends with exciting concepts.
-                                    </p>
-                                </div>
-
-                                <div className={styles.featureItem}>
-                                    <h4>GROWTH POTENTIAL</h4>
-
-                                    <p>
-                                        Explore high-growth opportunities that can scale
-                                        rapidly and deliver strong returns.
-                                    </p>
-                                </div>
-
-                            </div>
                         </div>
 
-                        {/* RIGHT IMAGE */}
-                        <div className={styles.aboutImageWrap}>
-                            <img
-                                src="/images/emerging-brand.webp"
-                                alt="Emerging Brand Pavilion"
-                                className={styles.aboutImage}
-                            />
+                        <div
+                            className={styles.rightImage}
+                            style={{
+                                backgroundImage:
+                                    "url('https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/The_Business_Resource_Center.webp')",
+                            }}
+                        />
+                    </div>
+
+                    <h2 className={styles.mainHeading}>
+                        WHY VISIT THE BUSINESS RESOURCE CENTER?
+                    </h2>
+
+                    <div className={styles.cardGrid}>
+
+                        <div className={styles.infoCard}>
+                            <span className={styles.cardNumber}>1</span>
+                            <p>
+                                Form connections with suppliers and gather contacts
+                            </p>
+                        </div>
+
+                        <div className={styles.infoCard}>
+                            <span className={styles.cardNumber}>2</span>
+                            <p>
+                                Discover how to be successful through the secrets of business strategy
+                            </p>
+                        </div>
+
+                        <div className={styles.infoCard}>
+                            <span className={styles.cardNumber}>3</span>
+                            <p>
+                                Learn about how to successfully expand your business
+                            </p>
+                        </div>
+
+                        <div className={styles.infoCard}>
+                            <span className={styles.cardNumber}>4</span>
+                            <p>
+                                Have one on one conversations with experts about your personal needs
+                            </p>
                         </div>
 
                     </div>
@@ -157,16 +83,22 @@ export default function EmergingBrandPavilion() {
 
             {/* CONTACT SECTION */}
             <section className={styles.contactSection}>
-                <div className={styles.container}>
-
+                <div className="container">
                     <div className={styles.contactCard}>
 
                         <h2>GET IN TOUCH</h2>
+                        <p>
+                            To find out more about exhibiting at the Business Resource Center,
+                        </p>
 
                         <p>
-                            If you are an up and coming franchise brand with 10 units
-                            or less and are interested in learning more on how you can
-                            showcase your brand in the Emerging Pavilion contact:
+                            please contact{' '}
+                            <a
+                                href="mailto:Justin.Wood@Comexposium.com"
+                                className={styles.emailLink}
+                            >
+                                Justin.Wood@Comexposium.com
+                            </a>
                         </p>
 
                         <div className={styles.contactInfo}>
