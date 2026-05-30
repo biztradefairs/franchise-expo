@@ -1,8 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/connect/contact-us/page": "app/connect/contact-us/page.js",
-  "/exhibitors/ny-registration-and-domestic-trade-show-exemption/page": "app/exhibitors/ny-registration-and-domestic-trade-show-exemption/page.js",
-  "/connect/our-team/page": "app/connect/our-team/page.js",
+  "/page": "app/page.js",
   "/attendees/attendee-info/page": "app/attendees/attendee-info/page.js",
-  "/resources/blog/page": "app/resources/blog/page.js"
+  "/exhibitors/exhibitor-list/page": "app/exhibitors/exhibitor-list/page.js",
+  "/attendees/emerging-brand-pavilion/page": "app/attendees/emerging-brand-pavilion/page.js",
+  "/attendees/business-resource-center/page": "app/attendees/business-resource-center/page.js"
 }

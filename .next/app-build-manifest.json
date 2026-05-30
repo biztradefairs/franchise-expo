@@ -1,10 +1,10 @@
 {
   "pages": {
-    "/resources/show-gallery/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/resources/show-gallery/page.css",
-      "static/chunks/app/resources/show-gallery/page.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -12,46 +12,29 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/connect/about-us/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/connect/about-us/page.css",
-      "static/chunks/app/connect/about-us/page.js"
-    ],
-    "/connect/contact-us/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/connect/contact-us/page.css",
-      "static/chunks/app/connect/contact-us/page.js"
-    ],
-    "/connect/our-team/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/connect/our-team/page.css",
-      "static/chunks/app/connect/our-team/page.js"
-    ],
-    "/exhibitors/ny-registration-and-domestic-trade-show-exemption/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/exhibitors/ny-registration-and-domestic-trade-show-exemption/page.css",
-      "static/chunks/app/exhibitors/ny-registration-and-domestic-trade-show-exemption/page.js"
-    ],
     "/attendees/attendee-info/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/attendees/attendee-info/page.css",
       "static/chunks/app/attendees/attendee-info/page.js"
     ],
-    "/resources/blog/page": [
+    "/exhibitors/exhibitor-list/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/resources/blog/page.css",
-      "static/chunks/app/resources/blog/page.js"
+      "static/css/app/exhibitors/exhibitor-list/page.css",
+      "static/chunks/app/exhibitors/exhibitor-list/page.js"
     ],
-    "/_not-found/page": [
+    "/attendees/emerging-brand-pavilion/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/css/app/attendees/emerging-brand-pavilion/page.css",
+      "static/chunks/app/attendees/emerging-brand-pavilion/page.js"
+    ],
+    "/attendees/business-resource-center/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/attendees/business-resource-center/page.css",
+      "static/chunks/app/attendees/business-resource-center/page.js"
     ]
   }
 }
