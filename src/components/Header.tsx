@@ -29,7 +29,7 @@ const navItems = [
       { label: 'IFE Unplugged', href: '/exhibitors/ife-unplugged' },
       { label: 'Promotional Opportunities', href: '/exhibitors/promotional-opportunities' },
       { label: 'Travel Information', href: '/exhibitors/travel-information' },
-      { label: 'NY Registration and Domestic Trade Show Exemption', href: '/exhibitors/ny-registration' },
+      { label: 'NY Registration and Domestic Trade Show Exemption', href: '/exhibitors/ny-registration-and-domestic-trade-show-exemption' },
     ],
   },
   {
@@ -44,7 +44,7 @@ const navItems = [
     label: 'Resources',
     href: '/blog',
     children: [
-      { label: 'Blog', href: '/blog' },
+      { label: 'Blog', href: '/resources/blog' },
       { label: 'Podcasts', href: '/resources/podcasts' },
       { label: 'Show Gallery', href: '/resources/show-gallery' },
     ],

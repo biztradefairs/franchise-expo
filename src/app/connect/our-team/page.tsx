@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./OurTeam.module.css";
+import PageBanner from "@/components/PageBanner";
 
 const teamSections = [
     {
@@ -128,25 +129,7 @@ export default function OurTeam() {
         <main className={styles.page}>
 
             {/* HERO */}
-
-            <section className={styles.hero}>
-                <div className={styles.overlay}></div>
-
-                <div className={styles.container}>
-                    <div className={styles.heroContent}>
-                        <span className={styles.tag}>
-                            Franchise Expo Team
-                        </span>
-
-                        <h1>Meet Our Team</h1>
-
-                        <p>
-                            Connect with our experienced professionals behind the
-                            largest franchise expos and international business events.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <PageBanner title="Meet our team"/>
 
             {/* TEAM */}
 

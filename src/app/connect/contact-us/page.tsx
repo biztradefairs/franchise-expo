@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./ContactUs.module.css";
+import PageBanner from "@/components/PageBanner";
 
 const contactCards = [
     {
@@ -52,27 +53,7 @@ export default function ContactUs() {
 
             {/* HERO */}
 
-            <section className={styles.hero}>
-                <div className={styles.overlay}></div>
-
-                <div className={styles.container}>
-                    <div className={styles.heroContent}>
-
-                        <span className={styles.tag}>
-                            Franchise Expo International
-                        </span>
-
-                        <h1>Contact Us</h1>
-
-                        <p>
-                            Connect with our team for exhibitor info,
-                            attendee inquiries, sponsorship opportunities,
-                            and event participation.
-                        </p>
-
-                    </div>
-                </div>
-            </section>
+           <PageBanner title="Contact Us"/>
 
             {/* CONTACT CARDS */}
 

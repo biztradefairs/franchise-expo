@@ -1,5 +1,6 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./NYRegistration.module.css";
 
 const deadlines = [
@@ -19,13 +20,7 @@ export default function NYRegistration() {
         <main className={styles.page}>
 
             {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.container}>
-                    <h1 className={styles.heroTitle}>
-                        NY Registration and Domestic Trade Show Exemption
-                    </h1>
-                </div>
-            </section>
+            <PageBanner title="NY Registration and Domestic Trade Show Exemption"/>
 
             {/* CONTENT */}
             <section className={styles.contentSection}>
@@ -80,25 +75,6 @@ export default function NYRegistration() {
 
                 </div>
             </section>
-
-            {/* VENUE */}
-            <section className={styles.venueSection}>
-                <div className={styles.container}>
-
-                    <div className={styles.venueCard}>
-                        <h2>Venue / Location</h2>
-
-                        <div className={styles.venueInfo}>
-                            <p><strong>New York City, New York</strong></p>
-                            <p>Javits Center, Hall 1C</p>
-                            <p>429 11th Ave</p>
-                            <p>New York, NY 10001</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
         </main>
     );
 }

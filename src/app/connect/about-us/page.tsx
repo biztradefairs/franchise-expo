@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./AboutUs.module.css";
+import PageBanner from "@/components/PageBanner";
 
 const expoCards = [
     {
@@ -39,25 +40,7 @@ export default function AboutUs() {
         <main className={styles.page}>
 
             {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.overlay}></div>
-
-                <div className={styles.container}>
-                    <div className={styles.heroContent}>
-                        <span className={styles.tag}>
-                            Franchise Expo
-                        </span>
-
-                        <h1>About Us</h1>
-
-                        <p>
-                            Bringing the franchise world together since 1991 through
-                            global franchise expos, networking opportunities,
-                            educational conferences, and business expansion platforms.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <PageBanner title="About Us"/>
 
             {/* INTRO */}
             <section className={styles.introSection}>
