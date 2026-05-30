@@ -43,7 +43,7 @@
 }
 
 .introContent {
-    max-width: 950px;
+    max-width: 100%;
 }
 
 .introContent h2 {
@@ -57,7 +57,7 @@
 }
 
 .introContent p {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.9;
     color: #555555;
 }
@@ -82,10 +82,10 @@
 
     background: #ffffff;
 
-    border-radius: 28px;
+    /* border-radius: 28px; */
     overflow: hidden;
 
-    border: 1px solid #ebebeb;
+    /* border: 1px solid #ebebeb; */
 
     transition: 0.35s ease;
 }
@@ -118,6 +118,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: none;
 }
 
 .hotelContent h3 {
@@ -138,29 +139,65 @@
     margin-bottom: 28px;
 }
 
-.hotelContent a {
+.hotelBtn {
+    display: inline-flex;
+    align-items: center;
+
     width: fit-content;
+    /* important */
+    max-width: fit-content;
+    /* important */
 
-    padding: 16px 30px;
+    align-self: flex-start;
+    /* important */
 
-    background: #00a8c8;
-    color: #ffffff;
+    height: 38px;
+
+    padding: 0 4px 0 18px;
 
     border-radius: 999px;
 
+    background: #0067b2;
+
+    color: #fff;
+
     text-decoration: none;
 
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.5px;
 
-    transition: 0.3s ease;
+    text-transform: uppercase;
 }
 
-.hotelContent a:hover {
+.hotelBtn:hover {
+    background: #00589a;
+}
+
+.hotelBtnCircle {
+    width: 28px;
+    height: 28px;
+
+    margin-left: 10px;
+
+    border-radius: 50%;
+
+    background: #e8e8e8;
+
+    border: 1px solid #143d7a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #143d7a;
+
+    flex-shrink: 0;
+}
+
+/* .hotelContent a:hover {
     background: #008eaa;
     transform: translateY(-3px);
-}
+} */
 
 /* =========================================================
    VENUE
@@ -175,7 +212,7 @@
             #011b2e,
             #032d4a);
 
-    border-radius: 30px;
+    /* border-radius: 30px; */
     padding: 70px 40px;
 
     text-align: center;

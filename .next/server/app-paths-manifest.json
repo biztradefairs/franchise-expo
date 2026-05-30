@@ -1,6 +1,7 @@
 {
-  "/exhibitors/exhibitor-list/page": "app/exhibitors/exhibitor-list/page.js",
-  "/exhibitors/ife-unplugged/page": "app/exhibitors/ife-unplugged/page.js",
-  "/page": "app/page.js",
-  "/exhibitors/promotional-opportunities/page": "app/exhibitors/promotional-opportunities/page.js"
+  "/exhibitors/promotional-opportunities/page": "app/exhibitors/promotional-opportunities/page.js",
+  "/resources/podcasts/page": "app/resources/podcasts/page.js",
+  "/connect/about-us/page": "app/connect/about-us/page.js",
+  "/resources/show-gallery/page": "app/resources/show-gallery/page.js",
+  "/exhibitors/why-exhibit/page": "app/exhibitors/why-exhibit/page.js"
 }

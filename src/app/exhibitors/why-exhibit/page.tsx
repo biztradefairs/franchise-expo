@@ -1,5 +1,6 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./WhyExhibit.module.css";
 import {
     Search,
@@ -7,6 +8,7 @@ import {
     Users,
     Plus,
 } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const benefits = [
     {
@@ -52,27 +54,7 @@ export default function WhyExhibit() {
 
             {/* HERO */}
 
-            <section className={styles.hero}>
-                <div className={styles.overlay}></div>
-
-                <div className={styles.container}>
-
-                    <div className={styles.heroContent}>
-                        <span className={styles.tag}>
-                            Franchise Expo International
-                        </span>
-
-                        <h1>Why Exhibit</h1>
-
-                        <p>
-                            Showcase your franchise brand and connect
-                            with entrepreneurs, investors, and industry
-                            leaders from around the world.
-                        </p>
-                    </div>
-
-                </div>
-            </section>
+            <PageBanner title="Why Exhibit"/>
 
             {/* OPPORTUNITIES */}
 
@@ -128,101 +110,56 @@ export default function WhyExhibit() {
             <section className={styles.formSection}>
                 <div className={styles.container}>
 
-                    <div className={styles.formWrapper}>
+                    <h2 className={styles.formTitle}>
+                        LEARN MORE ABOUT EXHIBITOR AND SPONSORSHIP OPPORTUNITIES
+                    </h2>
 
-                        <div className={styles.formLeft}>
-                            <span>GET STARTED</span>
+                    <form className={styles.form}>
 
-                            <h2>
-                                Learn More About Exhibitor &
-                                Sponsorship Opportunities
-                            </h2>
+                        <input type="text" placeholder="First Name *" />
+                        <input type="text" placeholder="Last Name *" />
+                        <input type="email" placeholder="Email *" />
+                        <input type="text" placeholder="Company *" />
+                        <input type="text" placeholder="Phone" />
 
-                            <p>
-                                Fill out the form below and our team
-                                will contact you with exhibitor and
-                                sponsorship information.
-                            </p>
+                        <div className={styles.checkboxSection}>
+                            <label className={styles.label}>
+                                Does your company have a FDD? *
+                            </label>
+
+                            {["YES", "NO", "Not Sure"].map((item) => (
+                                <label key={item} className={styles.checkbox}>
+                                    <input type="checkbox" />
+                                    <span>{item}</span>
+                                </label>
+                            ))}
                         </div>
 
-                        <form className={styles.form}>
+                        <div className={styles.checkboxSection}>
+                            <label className={styles.label}>
+                                Which event(s) are you interested in participating in? *
+                            </label>
 
-                            <div className={styles.row}>
-                                <input
-                                    type="text"
-                                    placeholder="First Name *"
-                                />
-
-                                <input
-                                    type="text"
-                                    placeholder="Last Name *"
-                                />
-                            </div>
-
-                            <div className={styles.row}>
-                                <input
-                                    type="email"
-                                    placeholder="Email *"
-                                />
-
-                                <input
-                                    type="text"
-                                    placeholder="Company *"
-                                />
-                            </div>
-
-                            <div className={styles.row}>
-                                <input
-                                    type="text"
-                                    placeholder="Phone *"
-                                />
-                            </div>
-
-                            <div className={styles.checkboxSection}>
-                                <label className={styles.label}>
-                                    Does your company have a FDD?
+                            {events.map((event) => (
+                                <label key={event} className={styles.checkbox}>
+                                    <input type="checkbox" />
+                                    <span>{event}</span>
                                 </label>
+                            ))}
+                        </div>
 
-                                <div className={styles.checkboxGroup}>
-                                    {["YES", "NO", "Not Sure"].map(
-                                        (item, index) => (
-                                            <label
-                                                key={index}
-                                                className={styles.checkbox}
-                                            >
-                                                <input type="checkbox" />
-                                                <span>{item}</span>
-                                            </label>
-                                        )
-                                    )}
-                                </div>
-                            </div>
+                        <button
+                            type="submit"
+                            className={styles.submitBtn}
+                        >
+                            <span>SUBMIT</span>
 
-                            <div className={styles.checkboxSection}>
-                                <label className={styles.label}>
-                                    Which event(s) are you interested in?
-                                </label>
+                            <span className={styles.ctaBtnArrow}>
+                                <ChevronRight size={18} />
+                            </span>
+                        </button>
 
-                                <div className={styles.eventGrid}>
-                                    {events.map((event, index) => (
-                                        <label
-                                            key={index}
-                                            className={styles.checkbox}
-                                        >
-                                            <input type="checkbox" />
-                                            <span>{event}</span>
-                                        </label>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <button type="submit">
-                                Submit
-                            </button>
-
-                        </form>
-
-                    </div>
+                    </form>
 
                 </div>
             </section>

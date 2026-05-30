@@ -1,33 +1,35 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./TravelInformation.module.css";
+import { ChevronRight } from "lucide-react";
 
 const hotels = [
     {
         name: "HYATT PLACE New York City / Times Square",
         address: "350 W. 39th Street, New York City, NY 10018",
-        image: "/images/travel/hyatt.webp",
+        image: "https://www.franchiseexpo.com/images/ife/Hyatt-Place-New-York-City-Times-Square-P013-Exterior.4x3.webp",
         button: "MAKE YOUR RESERVATION",
         link: "#",
     },
     {
         name: "EVEN Hotel New York - Times Square South",
         address: "321 West 35th Street, New York City, NY 10001",
-        image: "/images/travel/even-hotel.jpg",
+        image: "https://www.franchiseexpo.com/images/ife/even-hotel-times-square.jpg",
         button: "MAKE RESERVATION",
         link: "#",
     },
     {
         name: "Crowne Plaza HY36 Midtown Manhattan",
         address: "320 West 36th Street, New York City, NY 10018",
-        image: "/images/travel/crowne-plaza.jpg",
+        image: "https://www.franchiseexpo.com/images/ife/crowne-plaza-new-york-5519815692-2x1.jpg",
         button: "MAKE RESERVATION",
         link: "#",
     },
     {
         name: "Four Points by Sheraton Manhattan Midtown West",
         address: "444 10th Ave, New York City, NY 10001",
-        image: "/images/travel/four-points.jpg",
+        image: "https://www.franchiseexpo.com/images/7565f357.jpg",
         button: "MAKE RESERVATION",
         link: "#",
     },
@@ -38,13 +40,7 @@ export default function TravelInformation() {
         <main className={styles.page}>
 
             {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.container}>
-                    <h1 className={styles.heroTitle}>
-                        Travel Information
-                    </h1>
-                </div>
-            </section>
+            <PageBanner title="Travel Information"/>
 
             {/* INTRO */}
             <section className={styles.introSection}>
@@ -93,8 +89,13 @@ export default function TravelInformation() {
                                         href={hotel.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        className={styles.hotelBtn}
                                     >
                                         {hotel.button}
+
+                                        <span className={styles.hotelBtnCircle}>
+                                            <ChevronRight size={16} />
+                                        </span>
                                     </a>
                                 </div>
                             </div>
@@ -103,25 +104,6 @@ export default function TravelInformation() {
 
                 </div>
             </section>
-
-            {/* VENUE */}
-            <section className={styles.venueSection}>
-                <div className={styles.container}>
-
-                    <div className={styles.venueCard}>
-                        <h2>Venue / Location</h2>
-
-                        <div className={styles.venueInfo}>
-                            <p><strong>New York City, New York</strong></p>
-                            <p>Javits Center, Hall 1C</p>
-                            <p>429 11th Ave</p>
-                            <p>New York, NY 10001</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
         </main>
     );
 }

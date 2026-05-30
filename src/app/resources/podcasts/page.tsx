@@ -1,5 +1,6 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./Podcasts.module.css";
 
 const podcasts = [
@@ -30,13 +31,7 @@ export default function Podcasts() {
         <main className={styles.page}>
 
             {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.container}>
-                    <h1 className={styles.heroTitle}>
-                        Podcasts
-                    </h1>
-                </div>
-            </section>
+         <PageBanner title="PodCasts"/>
 
             {/* PODCAST SECTION */}
             <section className={styles.podcastSection}>
@@ -50,9 +45,7 @@ export default function Podcasts() {
                             >
 
                                 <div className={styles.cardHeader}>
-                                    <span className={styles.badge}>
-                                        Podcast
-                                    </span>
+                                   
 
                                     <h2>{podcast.title}</h2>
                                 </div>

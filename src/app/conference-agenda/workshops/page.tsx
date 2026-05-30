@@ -1,6 +1,8 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./Workshops.module.css";
+import { FaCheckCircle, FaStar, FaFileAlt, FaMoneyBillWave, FaQuestionCircle, FaChartLine, FaBullhorn, FaHandshake, FaLightbulb } from "react-icons/fa";
 
 const buyingTopics = [
     {
@@ -9,18 +11,22 @@ const buyingTopics = [
             "Do you plan to work alone or with others?",
             "How do you want to spend the next 10, 20 or more years of your life?",
         ],
+        icon: <FaCheckCircle />,
     },
     {
         title: "The Disclosure Document",
         points: ["Includes 21 Items"],
+        icon: <FaFileAlt />,
     },
     {
         title: "How much money can I make?",
         points: ["Fees, bargains, is it justifiable?"],
+        icon: <FaMoneyBillWave />,
     },
     {
         title: "Where and how to ask for help?",
         points: ["Consult your advisors with caution"],
+        icon: <FaQuestionCircle />,
     },
 ];
 
@@ -33,13 +39,15 @@ const businessTopics = [
             "Quality Control",
             "Legal Aspects of Franchising",
         ],
+        icon: <FaChartLine />,
     },
     {
         title: "Marketing Your Franchise",
         points: [
             "Start locally, then regionally",
-            "Don’t expand faster than your support capability",
+            "Don't expand faster than your support capability",
         ],
+        icon: <FaBullhorn />,
     },
     {
         title: "Selling Your Franchise",
@@ -47,6 +55,7 @@ const businessTopics = [
             "Unique process unlike any other sales",
             "Predictability",
         ],
+        icon: <FaHandshake />,
     },
     {
         title: "Creating a Successful Franchise Strategy",
@@ -55,6 +64,7 @@ const businessTopics = [
             "Financial",
             "Organizational Development",
         ],
+        icon: <FaLightbulb />,
     },
 ];
 
@@ -63,13 +73,7 @@ export default function Workshops() {
         <main className={styles.page}>
 
             {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.container}>
-                    <h1 className={styles.heroTitle}>
-                        Workshops
-                    </h1>
-                </div>
-            </section>
+            <PageBanner title="Workshops" />
 
             {/* INTRO */}
             <section className={styles.introSection}>
@@ -112,7 +116,7 @@ export default function Workshops() {
 
                         <div className={styles.imageBox}>
                             <img
-                                src="/images/workshops.webp"
+                                src="https://media.istockphoto.com/id/1956818527/photo/crowd-of-business-people-having-a-seminar-in-board-room.jpg?s=612x612&w=0&k=20&c=bazpLXOSPCPSy_3Gtvq4Sq-SygVi11KqhHmLgCdSAAg="
                                 alt="Workshop"
                             />
                         </div>
@@ -138,7 +142,7 @@ export default function Workshops() {
                                 className={styles.topicCard}
                             >
                                 <div className={styles.icon}>
-                                    ✓
+                                    {item.icon}
                                 </div>
 
                                 <h3>{item.title}</h3>
@@ -169,7 +173,7 @@ export default function Workshops() {
                                 className={styles.topicCard}
                             >
                                 <div className={styles.icon}>
-                                    ★
+                                    {item.icon}
                                 </div>
 
                                 <h3>{item.title}</h3>

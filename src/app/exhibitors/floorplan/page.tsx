@@ -1,7 +1,9 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./FloorPlan.module.css";
 import {
+    ChevronRight,
     // Facebook,
     // Instagram,
     Sparkles,
@@ -11,42 +13,9 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 export default function FloorPlan() {
     return (
         <main className={styles.page}>
-
-            {/* SOCIAL FIXED */}
-
-            <div className={styles.socialFixed}>
-
-                <a href="#" className={styles.socialBtn}>
-                    <Sparkles size={28} />
-                </a>
-
-                <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    className={styles.socialBtn}
-                >
-                    <FaFacebookF size={28} />
-                </a>
-
-                <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    className={styles.socialBtn}
-                >
-                    <FaInstagram size={28} />
-                </a>
-
-            </div>
-
             {/* HERO */}
 
-            <section className={styles.hero}>
-                <div className={styles.heroOverlay}></div>
-
-                <div className={styles.container}>
-                    <h1>Floorplan</h1>
-                </div>
-            </section>
+          <PageBanner title="Floor Plane"/>
 
             {/* FORM SECTION */}
 
@@ -112,8 +81,15 @@ export default function FloorPlan() {
                                 review our Privacy Policy.
                             </p>
 
-                            <button type="submit">
-                                Submit
+                            <button
+                                type="submit"
+                                className={styles.submitBtn}
+                            >
+                                <span>SUBMIT</span>
+
+                                <span className={styles.submitCircle}>
+                                    <ChevronRight size={16} />
+                                </span>
                             </button>
 
                         </form>
@@ -125,19 +101,35 @@ export default function FloorPlan() {
                     <div className={styles.cardGrid}>
 
                         <div className={styles.card}>
-                            <a href="#">LEARN MORE</a>
 
                             <h3>
-                                Interested In Attending?
+                                INTERESTED IN ATTENDING?
                             </h3>
+
+                            <a href="#" className={styles.learnBtn}>
+                                LEARN MORE
+
+                                <span className={styles.learnBtnCircle}>
+                                    <ChevronRight size={18} />
+                                </span>
+                            </a>
+
                         </div>
 
                         <div className={styles.card}>
-                            <a href="#">LEARN MORE</a>
 
                             <h3>
-                                Interested In Exhibiting?
+                                INTERESTED IN EXHIBITING?
                             </h3>
+
+                            <a href="#" className={styles.learnBtn}>
+                                LEARN MORE
+
+                                <span className={styles.learnBtnCircle}>
+                                    <ChevronRight size={18} />
+                                </span>
+                            </a>
+
                         </div>
 
                     </div>
