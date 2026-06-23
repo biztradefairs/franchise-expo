@@ -14,8 +14,8 @@ export default function Footer() {
             <p className={styles.brandTagline}>Leading you on the path to successful franchising</p>
             <div className={styles.socialLinks}>
               <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                <svg viewBox="0 0 478 478" width="20" height="20" fill="currentColor">
-                  <path d="M478 291v177H376V303c0-41-15-70-52-70-28 0-45 19-52 37-3 7-4 16-4 25v172H165s1-279 0-308h102v44c14-21 38-51 92-51C427 152 478 196 478 291zM58 11C23 11 0 34 0 64c0 30 22 53 57 53H57c36 0 58-24 58-53C115 34 93 11 58 11zM6 468h102V159H6v309z" />
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M19 0h-14c-2.2 0-4 1.8-4 4v16c0 2.2 1.8 4 4 4h14c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zM12 12L9.5 5H6v14h3.5L12 12zM15.5 5h3v14h-3V5z" />
                 </svg>
               </a>
               <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
@@ -46,11 +46,11 @@ export default function Footer() {
           <div className={styles.footerCol}>
             <p className={styles.colLabel}>Opening Times</p>
             <div className={styles.openingTime}>
-              <strong>Friday May 29th 2026</strong>
+              <strong>Friday June 4th 2027</strong>
               <span>10AM – 5PM</span>
             </div>
             <div className={styles.openingTime}>
-              <strong>Saturday May 30th 2026</strong>
+              <strong>Saturday June 5th 2027</strong>
               <span>10AM – 4PM</span>
             </div>
           </div>
@@ -63,24 +63,24 @@ export default function Footer() {
             <div className={styles.contactGroup}>
               <p className={styles.contactGroupLabel}>Request Exhibitor Info</p>
               <p>Justin Wood (240) 398-1385</p>
-              <a href="mailto:info@yourexpo.com" className={styles.contactEmail}>
-                info@yourexpo.com
+              <a href="mailto:Justin.Wood@comexposium.com" className={styles.contactEmail}>
+                Justin.Wood@comexposium.com
               </a>
             </div>
 
             <div className={styles.contactGroup}>
               <p className={styles.contactGroupLabel}>Attendee & Conference Info</p>
               <p>Linda Thompson (201) 881-1646</p>
-              <a href="mailto:attendees@yourexpo.com" className={styles.contactEmail}>
-                attendees@yourexpo.com
+              <a href="mailto:Linda.Thompson@comexposium.com" className={styles.contactEmail}>
+                Linda.Thompson@comexposium.com
               </a>
             </div>
 
             <div className={styles.contactGroup}>
               <p className={styles.contactGroupLabel}>Exhibitor Services</p>
               <p>Murphy Connolly (631) 335-5696</p>
-              <a href="mailto:exhibitors@yourexpo.com" className={styles.contactEmail}>
-                exhibitors@yourexpo.com
+              <a href="mailto:Murphy.Connolly@comexposium.com" className={styles.contactEmail}>
+                Murphy.Connolly@comexposium.com
               </a>
             </div>
           </div>

@@ -23,6 +23,7 @@ const teamSections = [
                 phone: "240.398.1385",
                 image:
                     "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_186_307.jpg",
+                note: "Request Exhibitor Info",
             },
             {
                 name: "Simone Knaap",
@@ -42,7 +43,6 @@ const teamSections = [
             },
         ],
     },
-
     {
         title: "Marketing",
         members: [
@@ -53,6 +53,7 @@ const teamSections = [
                 phone: "201.881.1646",
                 image:
                     "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_282_311.png",
+                note: "Attendee and Conference Info",
             },
             {
                 name: "Rafael Arango",
@@ -64,7 +65,6 @@ const teamSections = [
             },
         ],
     },
-
     {
         title: "Customer Relations",
         members: [
@@ -75,10 +75,10 @@ const teamSections = [
                 phone: "631.335.5696",
                 image:
                     "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_283_314.png",
+                note: "Exhibitor Services and Operations",
             },
         ],
     },
-
     {
         title: "Finance",
         members: [
@@ -108,7 +108,6 @@ const teamSections = [
             },
         ],
     },
-
     {
         title: "Show Management",
         members: [
@@ -127,19 +126,13 @@ const teamSections = [
 export default function OurTeam() {
     return (
         <main className={styles.page}>
-
             {/* HERO */}
-            <PageBanner title="Meet our team"/>
+            <PageBanner title="Meet the Franchise Expo Team - Event Experts" />
 
-            {/* TEAM */}
-
+            {/* TEAM SECTIONS */}
             {teamSections.map((section, index) => (
-                <section
-                    key={index}
-                    className={styles.teamSection}
-                >
+                <section key={index} className={styles.teamSection}>
                     <div className={styles.container}>
-
                         <div className={styles.sectionTop}>
                             <span>OUR PEOPLE</span>
                             <h2>{section.title}</h2>
@@ -147,37 +140,33 @@ export default function OurTeam() {
 
                         <div className={styles.grid}>
                             {section.members.map((member, idx) => (
-                                <div
-                                    key={idx}
-                                    className={styles.card}
-                                >
-
+                                <div key={idx} className={styles.card}>
                                     <div className={styles.imageWrap}>
                                         <Image
                                             src={member.image}
                                             alt={member.name}
                                             fill
                                             className={styles.image}
+                                            sizes="(max-width: 768px) 100vw, (max-width: 992px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                         />
                                     </div>
 
                                     <div className={styles.content}>
                                         <h3>{member.name}</h3>
-
-                                        <p className={styles.role}>
-                                            {member.role}
-                                        </p>
-
+                                        <p className={styles.role}>{member.role}</p>
+                                        {member.note && (
+                                            <p className={styles.note}>{member.note}</p>
+                                        )}
                                         <div className={styles.info}>
                                             <span>
-                                                E: {member.email}
+                                                <span className={styles.label}>E: </span>
+                                                {member.email}
                                             </span>
-
                                             <span>
-                                                T: {member.phone}
+                                                <span className={styles.label}>T: </span>
+                                                {member.phone}
                                             </span>
                                         </div>
-
                                         <a
                                             href={`mailto:${member.email}`}
                                             className={styles.button}
@@ -185,15 +174,12 @@ export default function OurTeam() {
                                             Email Me
                                         </a>
                                     </div>
-
                                 </div>
                             ))}
                         </div>
-
                     </div>
                 </section>
             ))}
-
         </main>
     );
 }

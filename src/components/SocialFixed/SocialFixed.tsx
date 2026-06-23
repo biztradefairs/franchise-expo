@@ -3,11 +3,10 @@
 import Link from "next/link";
 import styles from "./SocialFixed.module.css";
 
-import { Sparkles } from "lucide-react";
-
 import {
     FaFacebookF,
     FaInstagram,
+    FaLinkedinIn,
 } from "react-icons/fa";
 
 export default function SocialFixed() {
@@ -15,26 +14,30 @@ export default function SocialFixed() {
         <div className={styles.socialFixed}>
 
             <Link
-                href="#"
+                href="https://www.linkedin.com/company/mfvexpo/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.socialBtn}
             >
-                <Sparkles size={28} />
+                <FaLinkedinIn size={18} />
             </Link>
 
             <Link
                 href="https://facebook.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={styles.socialBtn}
             >
-                <FaFacebookF size={24} />
+                <FaFacebookF size={18} />
             </Link>
 
             <Link
                 href="https://instagram.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={styles.socialBtn}
             >
-                <FaInstagram size={24} />
+                <FaInstagram size={18} />
             </Link>
 
         </div>

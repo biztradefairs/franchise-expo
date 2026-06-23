@@ -1,173 +1,242 @@
-"use client";
+import Image from 'next/image';
+import styles from './page.module.css';
 
-import Image from "next/image";
-import styles from "./AboutUs.module.css";
-import PageBanner from "@/components/PageBanner";
+export const metadata = {
+  title: 'About Us | Franchise Expo',
+  description: 'Bringing The Franchise World Together Since 1991',
+};
 
-const expoCards = [
-    {
-        title: "The International Franchise Expo (IFE)",
-        image: "https://www.franchiseexpo.com/images/ife/ife-thumbnail.jpg",
-        description:
-            "The largest franchise exhibition in the USA bringing together hundreds of franchise concepts and thousands of qualified prospects from across the world.",
-        link: "/ife",
-    },
-    {
-        title: "Franchise Expo Dallas",
-        image: "https://www.franchiseexpo.com/images/dallas/dallas-thumbnail.jpg",
-        description:
-            "Explore franchise opportunities, meet leading brands, and attend educational workshops designed for entrepreneurs and investors.",
-        link: "/dallas",
-    },
-    {
-        title: "Franchise Expo South",
-        image: "https://www.franchiseexpo.com/images/south/south-thumbnail.jpg",
-        description:
-            "Learn about the franchise process, connect with brands, and attend educational sessions focused on franchise ownership.",
-        link: "/south",
-    },
-    {
-        title: "Franchise Expo West",
-        image: "https://www.franchiseexpo.com/images/west/west-thumbnail.jpg",
-        description:
-            "The premier franchise event in the growing West Coast market connecting investors with top franchise concepts.",
-        link: "/west",
-    },
-];
+export default function AboutUsPage() {
+  return (
+    <>
+      {/* Banner */}
+      <section className={styles.banner}>
+        <div className={styles.bannerOverlay}>
+          <div className="container mx-auto px-4">
+            <h1 className={styles.bannerTitle}>About Us</h1>
+          </div>
+        </div>
+      </section>
 
-export default function AboutUs() {
-    return (
-        <main className={styles.page}>
+      {/* Main Content */}
+      <main className={styles.mainContent}>
+        <div className="container mx-auto px-4 max-w-5xl">
+          <article className={styles.article}>
+            {/* Logos - Updated paths */}
+            <div className={styles.logosContainer}>
+              <Image
+                src="/images/franchise-expo.svg"
+                alt="MFV Expo"
+                width={250}
+                height={99}
+                className={styles.logoMain}
+                priority
+              />
+              <Image
+                src="/images/comoexposium.webp"
+                alt="Comexposium"
+                width={250}
+                height={42}
+                className={styles.logoSecondary}
+              />
+            </div>
 
-            {/* HERO */}
-            <PageBanner title="About Us"/>
+            <h2 className={styles.mainHeading}>
+              Bringing The Franchise World Together Since 1991
+            </h2>
 
-            {/* INTRO */}
-            <section className={styles.introSection}>
-                <div className={styles.container}>
-                    <div className={styles.introGrid}>
+            {/* Section 1: About MFV */}
+            <div className={styles.twoColumnSection}>
+              <div className={styles.contentColumn}>
+                <p className={styles.boldText}>
+                  <strong>MFV Expositions</strong> global brands have been generating 
+                  qualified leads for franchisors, face-to-face at our premier franchise 
+                  events, virtually with our online component and through our comprehensive 
+                  franchise directories.
+                </p>
+                <p>
+                  The Franchise Expo Series is the premier connection point for aspiring 
+                  entrepreneurs and established brands looking to expand their footprint. 
+                  With locations spanning major metropolitan markets across North America, 
+                  we bring together a diverse ecosystem of franchisors, industry experts, 
+                  and motivated investors under one roof.
+                </p>
+                <p>
+                  Our mission is to foster economic growth by providing a centralized 
+                  platform for discovering innovative business concepts, learning from 
+                  experienced industry leaders, and navigating the complexities of 
+                  franchise ownership. Whether you are looking for low-cost opportunities 
+                  or high-growth investments, the Franchise Expo Series delivers the 
+                  education, resources, and networking necessary to build a successful 
+                  business future.
+                </p>
+                <p>
+                  Join us at any of our expo locations to explore the latest trends, 
+                  meet brand representatives face-to-face, and take the next step in 
+                  your entrepreneurial journey.
+                </p>
+              </div>
+              <div 
+                className={styles.imageColumn}
+                style={{ backgroundImage: "url('/images/austin/E-zone-page/crowd-2.webp')" }}
+              />
+            </div>
 
-                        <div className={styles.introContent}>
-                            <h2>
-                                Bringing The Franchise World Together
-                            </h2>
+            {/* Section 2: BeTheBoss */}
+            <div className={`${styles.twoColumnSection} ${styles.reverseRow}`}>
+              <div 
+                className={styles.imageColumn}
+                style={{ backgroundImage: "url('/images/be-the-boss.webp')" }}
+              />
+              <div className={styles.contentColumn}>
+                <p className={styles.boldText}>
+                  <strong>MFV's global online franchise directory</strong>{' '}
+                  <a 
+                    href="http://www.betheboss.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    <strong>BeTheBoss.com</strong>
+                  </a>{' '}
+                  <strong>uses the latest technology and search metrics to provide a 
+                  cost-effective way to market your franchise.</strong>
+                </p>
+                <p>
+                  BeTheBoss.com acts as a lead generating vehicle for your franchise, 
+                  gaining tremendous online exposure for your brand. Betheboss.com 
+                  covers major franchise markets including the United States, Canada, 
+                  Mexico and the United Kingdom.
+                </p>
+                <p>
+                  We know franchise development can be hard. That's why we constantly 
+                  are looking for new ways to help you find qualified franchise prospects. 
+                  We use data, technology, and automation to improve our lead products 
+                  both in the US &amp; Internationally.
+                </p>
+                <a 
+                  href="http://www.betheboss.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.button}
+                >
+                  LEARN MORE AT BETHEBOSS.COM
+                </a>
+              </div>
+            </div>
 
-                            <p>
-                                MFV Expositions global brands have been generating qualified
-                                leads for franchisors through premier franchise events,
-                                online platforms, and business networking opportunities.
-                            </p>
+            {/* Proud Member Section */}
+            <h2 className={styles.sectionHeading}>PROUD MEMBER</h2>
+            <div className={styles.memberLogos}>
+              <div className={styles.memberLogo}>
+                <Image
+                  src="/images/IFA_member.webp"
+                  alt="IFA member"
+                  width={200}
+                  height={201}
+                />
+              </div>
+              <div className={styles.memberLogo}>
+                <Image
+                  src="/images/IFA_Supplier_Forum.webp"
+                  alt="IFA Supplier Forum"
+                  width={200}
+                  height={200}
+                />
+              </div>
+              <div className={styles.memberLogo}>
+                <Image
+                  src="/images/canadian-francise-association-member.webp"
+                  alt="Canadian Franchise Association"
+                  width={200}
+                  height={120}
+                />
+              </div>
+            </div>
 
-                            <p>
-                                The Franchise Expo Series connects entrepreneurs,
-                                franchisors, investors, and industry experts under one roof
-                                across major metropolitan markets in North America.
-                            </p>
+            {/* Expo Cards */}
+            <div className={styles.cardsGrid}>
+              <ExpoCard
+                title="The International Franchise Expo (Ife)"
+                image="/images/ife/ife-thumbnail.jpg"
+                description="The largest franchise exhibition in the USA. IFE runs every May in New York bringing together hundreds of the franchise industry's hottest concepts and thousands of the most qualified prospects from across the United States and countries all around the world. For domestic or international expansion, selling single units, area developments or master franchises and covering franchising basics for those less familiar with the industry – this is the industry's one stop franchise event."
+                link="http://www.franchiseexpo.com/ife"
+                linkText="www.franchiseexpo.com/ife"
+              />
+              <ExpoCard
+                title="The Franchise Expo DALLAS"
+                image="/images/dallas/dallas-thumbnail.jpg"
+                description="Franchise Expo Dallas brings together entrepreneurs, investors, and franchise brands for two days of learning, discovery, and connection. Explore more than 125 franchise opportunities across a variety of industries and meet the teams behind the concepts. Attend educational sessions and expert-led workshops designed to answer your questions and help you learn about franchise ownership. Gain practical insight into what it takes to start and operate a successful business, connect with advisors and experienced franchisors, and leave with the knowledge to move forward on your path to franchise ownership."
+                link="/dallas"
+                linkText="www.franchiseexpo.com/dallas"
+              />
+            </div>
 
-                            <p>
-                                Our mission is to foster economic growth and create
-                                opportunities through innovative business concepts,
-                                franchise education, and strategic networking.
-                            </p>
-                        </div>
+            <div className={styles.cardsGrid}>
+              <ExpoCard
+                title="Franchise Expo South"
+                image="/images/south/south-thumbnail.jpg"
+                description="Franchise Expo South enables attendees to learn about the Franchise process and meet with brands interested in developing in the Southeast Region. Attend our conference program which is filled with 25+ educational sessions to learn everything from the latest trends to the basics on franchising. Network with the industry's leading brands, and be prepared to engage with the most qualified audience from the region and beyond!"
+                link="/south"
+                linkText="www.franchiseexpo.com/south"
+              />
+              <ExpoCard
+                title="Franchise Expo West"
+                image="/images/west/west-thumbnail.jpg"
+                description="Franchise Expo West is the premier franchise event in the growing West Coast market. It provides the perfect opportunity for hundreds of franchise concepts, representing every industry and virtually every investment level, to meet face-to-face with the region's most qualified prospects."
+                link="/west"
+                linkText="www.franchiseexpo.com/west"
+              />
+            </div>
 
-                        <div className={styles.introImage}>
-                            <Image
-                                src="https://www.franchiseexpo.com/images/austin/E-zone-page/crowd-2.webp"
-                                alt="Franchise Expo"
-                                fill
-                                className={styles.image}
-                            />
-                        </div>
+            <div className={styles.cardsGrid}>
+              <ExpoCard
+                title="Franchise Expo Cincinnati"
+                image="/images/cincinnati/cincinnati-thumbnail.jpg"
+                description="Franchise Expo Cincinnati brings together entrepreneurs and prospective business owners with over 125 exhibitors. Learn all you need to know about how you can be a successful franchise owner and find out about the many types of franchises available. Meet face-to-face with franchise brands and industry experts and attend our franchise seminars providing you all the resources you need for franchise ownership – all under one roof."
+                link="/cincinnati"
+                linkText="www.franchiseexpo.com/cincinnati"
+              />
+              <div className={styles.emptyCard}></div>
+            </div>
+          </article>
+        </div>
+      </main>
+    </>
+  );
+}
 
-                    </div>
-                </div>
-            </section>
-
-            {/* MEMBERS */}
-            <section className={styles.memberSection}>
-                <div className={styles.container}>
-
-                    <div className={styles.sectionTop}>
-                        <span>PROUD MEMBER</span>
-                        <h2>Industry Associations</h2>
-                    </div>
-
-                    <div className={styles.memberGrid}>
-
-                        <div className={styles.memberCard}>
-                            <Image
-                                src="https://www.franchiseexpo.com/images/IFA_member.webp"
-                                alt="IFA"
-                                width={180}
-                                height={180}
-                            />
-                        </div>
-
-                        <div className={styles.memberCard}>
-                            <Image
-                                src="https://www.franchiseexpo.com/images/IFA_Supplier_Forum.webp"
-                                alt="IFA Supplier"
-                                width={180}
-                                height={180}
-                            />
-                        </div>
-
-                        <div className={styles.memberCard}>
-                            <Image
-                                src="https://www.franchiseexpo.com/images/canadian-francise-association-member.webp"
-                                alt="Canadian Franchise"
-                                width={200}
-                                height={120}
-                            />
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* EXPO CARDS */}
-            <section className={styles.expoSection}>
-                <div className={styles.container}>
-
-                    <div className={styles.sectionTop}>
-                        <span>OUR EVENTS</span>
-                        <h2>Franchise Expo Series</h2>
-                    </div>
-
-                    <div className={styles.cardGrid}>
-                        {expoCards.map((expo, index) => (
-                            <div
-                                key={index}
-                                className={styles.card}
-                            >
-
-                                <div className={styles.cardImage}>
-                                    <Image
-                                        src={expo.image}
-                                        alt={expo.title}
-                                        fill
-                                        className={styles.image}
-                                    />
-                                </div>
-
-                                <div className={styles.cardContent}>
-                                    <h3>{expo.title}</h3>
-
-                                    <p>{expo.description}</p>
-
-                                    <a href={expo.link}>
-                                        Explore Event
-                                    </a>
-                                </div>
-
-                            </div>
-                        ))}
-                    </div>
-
-                </div>
-            </section>
-
-        </main>
-    );
+// Expo Card Component
+function ExpoCard({ 
+  title, 
+  image, 
+  description, 
+  link, 
+  linkText 
+}: { 
+  title: string; 
+  image: string; 
+  description: string; 
+  link: string; 
+  linkText: string; 
+}) {
+  return (
+    <div className={styles.expoCard}>
+      <div className={styles.expoImage}>
+        <Image src={image} alt={title} width={1200} height={630} />
+      </div>
+      <div className={styles.expoContent}>
+        <h6 className={styles.expoTitle}>{title}</h6>
+        <p className={styles.expoDescription}>{description}</p>
+        <a 
+          href={link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.expoLink}
+        >
+          {linkText}
+        </a>
+      </div>
+    </div>
+  );
 }

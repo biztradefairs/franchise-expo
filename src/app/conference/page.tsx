@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import styles from "./agenda.module.css";
+import PageBanner from "@/components/PageBanner";
 
 /* ── Types ──────────────────────────────────────────────── */
 type Day = "friday" | "saturday";
@@ -264,7 +265,10 @@ export default function ConferenceAgenda() {
     }, [filtered]);
 
     return (
-        <div className={styles.agendaRoot}>
+        <>
+        <PageBanner title={"Conference"}/>
+                <div className={styles.agendaRoot}>
+                     <PageBanner title={"Conference"}/>
             {/* ── Day tabs ────────────────────────────────────────── */}
             <div className={styles.dayTabs} role="tablist" aria-label="Select day">
                 <button
@@ -430,5 +434,7 @@ export default function ConferenceAgenda() {
                 </div>
             </div>
         </div>
+        </>
+
     );
 }

@@ -61,18 +61,7 @@ export default function ShowGallery() {
                 <div className={styles.container}>
 
                     <div className={styles.topContent}>
-                        <span className={styles.smallTitle}>
-                            Event Memories
-                        </span>
-
-                        <h2>
-                            Gallery Collection
-                        </h2>
-
-                        <p>
-                            Discover premium snapshots from the exhibition floor,
-                            conferences, exhibitors, and business networking sessions.
-                        </p>
+                       
                     </div>
 
                     <div className={styles.grid}>

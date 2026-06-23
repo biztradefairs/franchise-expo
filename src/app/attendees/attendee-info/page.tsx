@@ -1,12 +1,10 @@
-import type { Metadata } from 'next';
+"use client";
+
+import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
 import styles from './page.module.css';
 
-export const metadata: Metadata = {
-  title: 'Attendee Info',
-  description:
-    "Whether you're an aspiring entrepreneur or a current business owner exploring expansion through franchising, the Franchise Expo is your gateway to success.",
-};
+// Metadata removed - it cannot be used with "use client"
 
 const attendeeCards = [
   {
@@ -19,28 +17,36 @@ const attendeeCards = [
     image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/Conference_Agenda.webp',
     title: 'Conference Agenda',
     description:
-      'We offer a highly diverse conference agenda covering fundamental topics in franchising. Whether new to franchising or experienced, there is always something new to learn from our workshops and sessions.',
+      'We offer a highly diverse conference agenda that covers a variety of fundamental topics around franchising.',
   },
   {
     image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/Exhibitors.webp',
     title: 'Exhibitors',
     description:
-      'At the Franchise Expo, you have the power to meet and engage with a variety of franchise brands from every industry. Talk directly with franchisors, ask questions, and explore opportunities that match your goals.',
+      'At the International Franchise Expo, you have the power to meet and engage with a variety of franchise brands from every industry.',
   },
   {
     image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/The_Business_Resource_Center.webp',
-    title: 'The Business Resource Center',
+    title: 'Business Resource Center',
     description:
       'Explore a variety of suppliers that are critical in developing your franchise, and form valuable business connections.',
   },
 ];
 
 export default function AttendeeInfoPage() {
+  const [flipped, setFlipped] = useState<boolean[]>(Array(attendeeCards.length).fill(false));
+
+  const toggleFlip = (index: number) => {
+    setFlipped((current) =>
+      current.map((value, idx) => (idx === index ? !value : value))
+    );
+  };
+
   return (
     <>
       <PageBanner
         title="Attendee Info"
-        // subtitle="Everything you need to make the most of your Franchise Expo experience."
+        ctaText="Register to Attend"
       />
 
       <section className="section">
@@ -56,19 +62,37 @@ export default function AttendeeInfoPage() {
             </p>
           </div>
 
-          {/* 4-up cards */}
+          {/* 4-up flip cards */}
           <div className={`grid grid-4 ${styles.cardsGrid}`}>
             {attendeeCards.map((card, index) => (
-              <div key={index} className={styles.infoCard}>
-                <div
-                  className={styles.cardImg}
-                  style={{ backgroundImage: `url('${card.image}')` }}
-                />
-                <div className={styles.cardBody}>
-                  <div className={styles.cardTitleWrap}>
-                    <h5 className={styles.cardTitle}>{card.title}</h5>
+              <div
+                key={index}
+                className={`${styles.infoCard} ${flipped[index] ? styles.flipped : ''}`}
+                onClick={() => toggleFlip(index)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleFlip(index);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-pressed={flipped[index]}
+              >
+                <div className={styles.cardInner}>
+                  <div className={`${styles.cardFace} ${styles.cardFront}`}>
+                    <div 
+                      className={styles.cardImg}
+                      style={{ backgroundImage: `url(${card.image})` }}
+                    />
                   </div>
-                  <p className={styles.cardText}>{card.description}</p>
+
+                  <div className={`${styles.cardFace} ${styles.cardBack}`}>
+                    <div className={styles.cardBody}>
+                      <h5 className={styles.cardTitle}>{card.title}</h5>
+                      <p className={styles.cardText}>{card.description}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

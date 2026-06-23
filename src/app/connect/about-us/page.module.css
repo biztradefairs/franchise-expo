@@ -1,0 +1,287 @@
+
+/* Banner */
+.banner {
+  background: linear-gradient(135deg, #003366 0%, #00509e 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.bannerOverlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.bannerTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+/* Main Content */
+.mainContent {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.article {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logos */
+.logosContainer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logoMain {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.logoSecondary {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Headings */
+.mainHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0 50px;
+  color: #003366;
+}
+
+.sectionHeading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 60px 0 40px;
+  color: #003366;
+}
+
+/* Two Column Sections */
+.twoColumnSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 40px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.reverseRow {
+  direction: rtl;
+}
+
+.reverseRow .contentColumn {
+  direction: ltr;
+}
+
+.contentColumn {
+  padding: 40px;
+  background: #f5f5f5;
+}
+
+.contentColumn p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.boldText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.imageColumn {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Links & Buttons */
+.link {
+  color: #003366;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #00509e;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #003366;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background: #002244;
+}
+
+/* Member Logos */
+.memberLogos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 40px 0 60px;
+  align-items: center;
+  justify-items: center;
+}
+
+.memberLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Expo Cards */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.expoCard {
+  background: #003366;
+  border-radius: 8px;
+  overflow: hidden;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.expoCard:hover {
+  transform: translateY(-4px);
+}
+
+.expoImage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.expoImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expoContent {
+  padding: 30px;
+}
+
+.expoTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.expoDescription {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+}
+
+.expoLink {
+  color: white;
+  text-decoration: underline;
+}
+
+.expoLink:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.emptyCard {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .twoColumnSection {
+    grid-template-columns: 1fr;
+  }
+
+  .reverseRow {
+    direction: ltr;
+  }
+
+  .imageColumn {
+    min-height: 300px;
+    order: -1;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .memberLogos {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerTitle {
+    font-size: 2.5rem;
+  }
+
+  .mainHeading {
+    font-size: 1.8rem;
+  }
+
+  .sectionHeading {
+    font-size: 1.5rem;
+  }
+
+  .contentColumn {
+    padding: 25px;
+  }
+
+  .expoContent {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 40px 0;
+  }
+
+  .bannerTitle {
+    font-size: 2rem;
+  }
+
+  .mainHeading {
+    font-size: 1.5rem;
+  }
+
+  .contentColumn {
+    padding: 20px;
+  }
+
+  .button {
+    padding: 12px 24px;
+    width: 100%;
+    text-align: center;
+  }
+}

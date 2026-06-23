@@ -1,7 +1,12 @@
 .footer {
-  background: #144380;
+  background: linear-gradient(
+    90deg,
+    #0f4d8c 0%,
+    #1c4f91 35%,
+    #23448b 70%,
+    #2b2d73 100%
+  );
   color: rgba(255, 255, 255, 0.85);
-  font-family: 'Poppins', sans-serif;
 }
 
 .footerTop {
@@ -24,7 +29,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #1cb7cf;
+  color: var(--color-primary);
   margin-bottom: 16px;
 }
 
@@ -56,8 +61,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(255,255,255,0.1);
   color: rgba(255,255,255,0.7);
@@ -65,7 +70,7 @@
 }
 
 .socialLink:hover {
-  background: #1cb7cf;
+  background: var(--color-primary);
   color: #ffffff;
   transform: translateY(-2px);
 }

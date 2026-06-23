@@ -14,7 +14,7 @@ const navItems = [
       { label: 'Exhibitor List', href: '/exhibitors/exhibitor-list' },
       { label: 'Emerging Brand Pavilion', href: '/attendees/emerging-brand-pavilion' },
       { label: 'Business Resource Center', href: '/attendees/business-resource-center' },
-      { label: 'Attendee Testimonials', href: '/attendees/testimonials' },
+      { label: 'Attendees Testimonials', href: '/attendees/testimonials' },
       { label: 'Travel Information', href: '/attendees/travel-information' },
     ],
   },
@@ -158,24 +158,20 @@ export default function Header() {
         {/* ── Logo ── */}
         <div className={styles.logo}>
           <Link href="/">
-            <div className={styles.logo}>
-              <Link href="/">
-                <Image
-                  src="/images/franchise-expo-international-new-york.svg" // put your logo inside public folder
-                  alt="Logo"
-                  width={260}
-                  height={80}
-                  priority
-                  className={styles.logoImage}
-                />
-              </Link>
-            </div>
-            <div className={styles.logoDivider} />
-            <div className={styles.logoDetails}>
-              <span className={styles.logoLocation}>New York City, New York</span>
-              <span className={styles.logoDates}>May 29th – 30th 2026</span>
-            </div>
+            <Image
+              src="/images/franchise-expo-international-new-york.svg"
+              alt="Logo"
+              width={260}
+              height={80}
+              priority
+              className={styles.logoImage}
+            />
           </Link>
+          <div className={styles.logoDivider} />
+          <div className={styles.logoDetails}>
+            <span className={styles.logoLocation}>New York City, New York</span>
+            <span className={styles.logoDates}>June 4th – 5th 2027</span>
+          </div>
         </div>
 
         {/* ── Desktop Nav ── */}

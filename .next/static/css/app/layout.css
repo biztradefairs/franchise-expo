@@ -423,9 +423,14 @@ ul {
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/Footer.module.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************/
 .Footer_footer__UaG1g {
-  background: #144380;
+  background: linear-gradient(
+    90deg,
+    #0f4d8c 0%,
+    #1c4f91 35%,
+    #23448b 70%,
+    #2b2d73 100%
+  );
   color: rgba(255, 255, 255, 0.85);
-  font-family: 'Poppins', sans-serif;
 }
 
 .Footer_footerTop__VmTxR {
@@ -449,7 +454,7 @@ ul {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #1cb7cf;
+  color: var(--color-primary);
   margin-bottom: 16px;
 }
 
@@ -481,8 +486,8 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(255,255,255,0.1);
   color: rgba(255,255,255,0.7);
@@ -490,7 +495,7 @@ ul {
 }
 
 .Footer_socialLink__VOPU_:hover {
-  background: #1cb7cf;
+  background: var(--color-primary);
   color: #ffffff;
   transform: translateY(-2px);
 }
@@ -642,13 +647,13 @@ ul {
   justify-content: space-between;
 
   gap: 14px;
-  height: 100px;
+  height: 85px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Scrolled state - REDUCE HEIGHT */
 .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_headerInner__HzK1Z {
-  height: 70px;
+  height: 65px;
   gap: 10px;
 }
 
@@ -668,14 +673,14 @@ ul {
 
 /* Logo Image - This is the key fix */
 .Header_logoImage__hE07D {
-  width: 130px;
+  width: 240px;
   height: auto;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* SQUEEZE logo image when scrolled - MAKE IT SMALLER */
 .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoImage__hE07D {
-  width: 180px;
+  width: 200px;
 }
 
 /* Make sure the first logo div doesn't have double spacing */
@@ -834,6 +839,8 @@ ul {
   font-family: 'Oswald', sans-serif;
   font-size: 1rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: #333;
   text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease, padding-left 0.2s ease;
@@ -1077,6 +1084,7 @@ ul {
   color: #444;
   text-decoration: none;
   font-weight: 500;
+  text-transform: uppercase;
   transition: color 0.15s, background 0.15s;
 }
 
@@ -1224,8 +1232,8 @@ ul {
 }
 
 .SocialFixed_socialBtn__RJE33 {
-    width: 74px;
-    height: 74px;
+    width: 56px;
+    height: 56px;
 
     border-radius: 50%;
 
@@ -1261,8 +1269,8 @@ ul {
     }
 
     .SocialFixed_socialBtn__RJE33 {
-        width: 58px;
-        height: 58px;
+        width: 46px;
+        height: 46px;
     }
 
 }

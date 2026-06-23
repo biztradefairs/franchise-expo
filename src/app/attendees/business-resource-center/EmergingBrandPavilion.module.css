@@ -18,20 +18,20 @@
 .leftContent {
     display: flex;
     flex-direction: column;
-    gap: 34px;
+    gap: 20px; /* Reduced from 34px */
 }
 
 .leftContent p {
-    font-size: 1.05rem;
-    line-height: 1.9;
+    font-size: 0.88rem; /* Reduced from 1.00rem */
+    line-height: 1.6; /* Reduced from 1.9 */
     color: #111;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 /* IMAGE */
 
 .rightImage {
-    height: 240px;
+    height: 180px; /* Reduced from 240px */
 
     background-size: cover;
     background-position: center;
@@ -44,58 +44,64 @@
 .mainHeading {
     font-family: 'Oswald', sans-serif;
 
-    font-size: 3.2rem;
+    font-size: 2rem;
     line-height: 1;
 
     text-transform: uppercase;
 
     color: #111;
 
-    margin-bottom: 50px;
+    margin-bottom: 40px; /* Reduced from 50px */
 }
 
-/* CARDS */
+/* CARDS - RECTANGLE SHAPE */
 
 .cardGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 20px; /* Reduced from 30px */
 }
 
 .infoCard {
     background: #27b8cf;
 
-    min-height: 215px;
+    /* RECTANGLE SHAPE - fixed height */
+    height: 160px; /* Fixed height for rectangle */
+    min-height: 0;
 
-    padding: 36px 32px;
+    padding: 24px 20px; /* Reduced padding */
 
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Center content vertically */
 
     transition: 0.35s ease;
+    
+    border-radius: 4px; /* Added slight rounding */
 }
 
 .infoCard:hover {
     transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(39, 184, 207, 0.3);
 }
 
 .cardNumber {
     font-family: 'Oswald', sans-serif;
 
-    font-size: 3rem;
+    font-size: 2.2rem; /* Reduced from 3rem */
     font-weight: 700;
 
     color: #fff;
 
-    margin-bottom: 28px;
+    margin-bottom: 10px; /* Reduced from 28px */
 }
 
 .infoCard p {
-    font-size: 1rem;
-    line-height: 1.7;
-
+    font-size: 0.82rem; /* Reduced from 1rem */
+    line-height: 1.4; /* Reduced from 1.7 */
     color: #fff;
-    font-weight: 600;
+    font-weight: 500; /* Reduced from 600 */
+    margin: 0;
 }
 
 /* TABLET */
@@ -103,14 +109,33 @@
 @media (max-width: 1024px) {
     .topGrid {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .cardGrid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 
     .mainHeading {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+    
+    .rightImage {
+        height: 160px;
+    }
+    
+    .infoCard {
+        height: 140px;
+        padding: 20px 16px;
+    }
+    
+    .cardNumber {
+        font-size: 2rem;
+    }
+    
+    .infoCard p {
+        font-size: 0.8rem;
     }
 }
 
@@ -118,30 +143,82 @@
 
 @media (max-width: 768px) {
     .businessSection {
-        padding: 70px 0;
+        padding: 60px 0;
     }
 
     .cardGrid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
     .mainHeading {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
     }
 
     .leftContent p {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 
     .infoCard {
-        min-height: auto;
-        padding: 28px 24px;
+        height: 120px;
+        padding: 16px 14px;
+        min-height: 0;
     }
 
     .cardNumber {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
+        margin-bottom: 6px;
     }
-}/* =========================================================
+    
+    .infoCard p {
+        font-size: 0.72rem;
+        line-height: 1.3;
+    }
+    
+    .rightImage {
+        height: 140px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+    .businessSection {
+        padding: 40px 0;
+    }
+    
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .infoCard {
+        height: 100px;
+        padding: 12px 10px;
+    }
+    
+    .cardNumber {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+    }
+    
+    .infoCard p {
+        font-size: 0.65rem;
+        line-height: 1.2;
+    }
+    
+    .leftContent p {
+        font-size: 0.8rem;
+    }
+    
+    .rightImage {
+        height: 100px;
+    }
+}
+
+/* =========================================================
    CONTACT SECTION
 ========================================================= */
 

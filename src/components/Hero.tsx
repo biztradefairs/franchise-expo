@@ -29,7 +29,7 @@ export default function Hero() {
             {/* ── LEFT: text content ── */}
             <div className={styles.heroLeft}>
                 <p className={styles.heroMeta}>
-                    May 29th – 30th 2026 &nbsp;|&nbsp; New York City, New York
+                    June 4th – 5th 2027 &nbsp;|&nbsp; New York City, New York
                 </p>
 
                 {/*

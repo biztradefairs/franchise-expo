@@ -12,34 +12,34 @@
 }
 
 /* =========================================================
-   INTRO
+   INTRO - REDUCED SIZE
 ========================================================= */
 
 .introSection {
-    padding: 90px 0;
+    padding: 60px 0; /* Reduced from 90px */
 }
 
 .introGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 40px; /* Reduced from 60px */
     align-items: center;
 }
 
 .introContent h2 {
     font-family: "Oswald", sans-serif;
-    font-size: 48px;
+    font-size: 36px; /* Reduced from 48px */
     line-height: 1.1;
     text-transform: uppercase;
     color: #011b2e;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Reduced from 30px */
 }
 
 .introContent p {
-    font-size: 18px;
-    line-height: 1.8;
+    font-size: 15px; /* Reduced from 18px */
+    line-height: 1.7; /* Reduced from 1.8 */
     color: #444444;
-    margin-bottom: 20px;
+    margin-bottom: 14px; /* Reduced from 20px */
 }
 
 .videoWrapper {
@@ -51,57 +51,61 @@
 
 .videoWrapper iframe {
     width: 100%;
-    height: 420px;
+    height: 340px; /* Reduced from 420px */
     border: none;
 }
 
 /* =========================================================
-   EXHIBITOR SECTION - FULL CENTERING
+   EXHIBITOR SECTION - REDUCED SIZE
 ========================================================= */
 .exhibitorSection {
     background: #0067b2;
-    padding: 100px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.exhibitorSection .container {
-    width: 100%;
-    text-align: center;
-    /* This centers everything inside */
+    padding: 40px 0; /* Reduced from 50px */
 }
 
 .exhibitorHeader {
-    text-align: center;
-    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centers the icon and title horizontally */
-    justify-content: center;
 }
 
 .exhibitorHeader img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 22px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /* Centers the icon */
+    width: 45px; /* Reduced from 60px */
+    height: 45px;
+    margin-bottom: 14px; /* Reduced from 20px */
 }
 
 .exhibitorHeader h2 {
     font-family: "Oswald", sans-serif;
-    font-size: 58px;
+    font-size: 26px; /* Reduced from 32px */
     line-height: 1.1;
-    text-transform: uppercase;
-    color: #ffffff;
+    color: #fff;
+    max-width: 650px;
     margin: 0 auto;
-    max-width: 900px;
-    text-align: center;
+}
+
+.exhibitorQuote {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.exhibitorAuthor {
+    margin-top: 15px;
+}
+
+.exhibitorAuthor h4 {
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.exhibitorAuthor span {
+    font-size: 14px;
+    color: #fff;
 }
 
 /* Single testimonial - PERFECTLY CENTERED */
@@ -117,12 +121,13 @@
 
 .exhibitorQuote {
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 17px; /* Reduced from 20px */
+    line-height: 1.5; /* Reduced from 1.6 */
     color: #ffffff;
-    margin-bottom: 35px;
+    margin-bottom: 25px; /* Reduced from 35px */
     font-weight: 400;
     text-align: center;
+    max-width: 780px; /* Added max-width */
 }
 
 .exhibitorAuthor {
@@ -131,28 +136,29 @@
 
 .exhibitorAuthor h4 {
     font-family: "Oswald", sans-serif;
-    font-size: 24px;
+    font-size: 20px; /* Reduced from 24px */
     line-height: 1.2;
     text-transform: uppercase;
     color: #ffffff;
-    margin-bottom: 6px;
+    margin-bottom: 4px; /* Reduced from 6px */
     letter-spacing: 0.5px;
 }
 
 .exhibitorAuthor span {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 14px; /* Reduced from 16px */
     color: rgba(255, 255, 255, 0.85);
     font-weight: 500;
 }
 
 /* =========================================================
-   CTA SECTION
+   CTA SECTION - WITH GAP BEFORE FOOTER
 ========================================================= */
 .ctaSection {
-    padding: 80px 0;
+    padding: 60px 80px; /* Reduced from 80px 0 100px */
     background: #f8f9fc;
     border-top: 1px solid #e9ecef;
+    margin-bottom: 40px; /* Reduced gap */
 }
 
 .ctaContent {
@@ -163,16 +169,16 @@
 
 .ctaContent h2 {
     font-family: "Oswald", sans-serif;
-    font-size: 52px;
+    font-size: 42px; /* Reduced from 52px */
     line-height: 1.2;
     text-transform: uppercase;
     color: #011b2e;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Reduced from 20px */
 }
 
 .ctaContent p {
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
+    font-size: 17px; /* Reduced from 20px */
     line-height: 1.6;
     color: #4a5568;
 }
@@ -182,93 +188,26 @@
 ========================================================= */
 @media (max-width: 1200px) {
     .exhibitorHeader h2 {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .exhibitorQuote {
-        font-size: 19px;
+        font-size: 17px;
     }
 }
 
 @media (max-width: 992px) {
     .introGrid {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 35px;
     }
 
-    .content h2 {
-        font-size: 42px;
-    }
-
-    .exhibitorHeader h2 {
-        font-size: 42px;
-    }
-
-    .exhibitorQuote {
-        font-size: 18px;
-    }
-
-    .exhibitorAuthor h4 {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 768px) {
-    .introSection {
-        padding: 60px 0;
-    }
-
-    .content h2 {
-        font-size: 36px;
-    }
-
-    .content h3 {
-        font-size: 26px;
-    }
-
-    .exhibitorSection {
-        padding: 70px 0;
-        min-height: auto;
+    .introContent h2 {
+        font-size: 32px;
     }
 
     .exhibitorHeader h2 {
         font-size: 34px;
-    }
-
-    .exhibitorQuote {
-        font-size: 17px;
-        line-height: 1.5;
-    }
-
-    .exhibitorAuthor h4 {
-        font-size: 20px;
-    }
-
-    .exhibitorAuthor span {
-        font-size: 15px;
-    }
-
-    .ctaContent h2 {
-        font-size: 32px;
-    }
-}
-
-@media (max-width: 640px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    .content h2 {
-        font-size: 32px;
-    }
-
-    .exhibitorHeader h2 {
-        font-size: 28px;
-    }
-
-    .exhibitorHeader img {
-        width: 55px;
-        height: 55px;
     }
 
     .exhibitorQuote {
@@ -278,12 +217,114 @@
     .exhibitorAuthor h4 {
         font-size: 18px;
     }
+    
+    .videoWrapper iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .introSection {
+        padding: 40px 0;
+    }
+
+    .introContent h2 {
+        font-size: 28px;
+    }
+
+    .introContent p {
+        font-size: 14px;
+    }
+
+    .exhibitorSection {
+        padding: 50px 0;
+        min-height: auto;
+    }
+
+    .exhibitorHeader h2 {
+        font-size: 28px;
+    }
+
+    .exhibitorHeader img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .exhibitorQuote {
+        font-size: 15px;
+        line-height: 1.5;
+        padding: 0 16px;
+    }
+
+    .exhibitorAuthor h4 {
+        font-size: 18px;
+    }
 
     .exhibitorAuthor span {
-        font-size: 14px;
+        font-size: 13px;
+    }
+
+    .ctaSection {
+        padding: 40px 0 60px;
+        margin-bottom: 30px;
     }
 
     .ctaContent h2 {
         font-size: 28px;
+    }
+    
+    .videoWrapper iframe {
+        height: 240px;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .introContent h2 {
+        font-size: 24px;
+    }
+
+    .introContent p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .exhibitorHeader h2 {
+        font-size: 22px;
+    }
+
+    .exhibitorHeader img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .exhibitorQuote {
+        font-size: 14px;
+        padding: 0 12px;
+        margin-bottom: 18px;
+    }
+
+    .exhibitorAuthor h4 {
+        font-size: 16px;
+    }
+
+    .exhibitorAuthor span {
+        font-size: 12px;
+    }
+
+    .ctaSection {
+        padding: 30px 0 40px;
+        margin-bottom: 20px;
+    }
+
+    .ctaContent h2 {
+        font-size: 24px;
+    }
+    
+    .videoWrapper iframe {
+        height: 200px;
     }
 }

@@ -8,8 +8,7 @@ export default function BusinessResourceCenter() {
         <main className={styles.page}>
 
             <PageBanner
-                title="The Business Resource Center"
-                subtitle="Explore a variety of suppliers that are critical in developing your franchise, and form valuable business connections."
+                title="Business Resource"
             />
 
             <section className={styles.businessSection}>

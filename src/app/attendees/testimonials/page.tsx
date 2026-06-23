@@ -9,7 +9,7 @@ export default function AttendeesTestimonials() {
             {/* HERO BANNER */}
             <PageBanner
                 title="Attendee Testimonials"
-                subtitle="Our attendees leave inspired, informed, and ready to take the next step toward franchise ownership. Here's what they had to say about their experience:"
+                
             />
 
             {/* INTRO SECTION with attendee testimonials - EXACTLY LIKE IMAGE */}
@@ -76,18 +76,7 @@ export default function AttendeesTestimonials() {
                 </div>
             </section>
 
-            {/* CTA SECTION - Your Success Story Starts Here */}
-            <section className={styles.ctaSection}>
-                <div className={styles.container}>
-                    <div className={styles.ctaContent}>
-                        <h2>Your Success Story Starts Here</h2>
-                        <p>
-                            Get ready to explore, learn, and take the first step toward
-                            achieving your dreams of business ownership.
-                        </p>
-                    </div>
-                </div>
-            </section>
+       
         </main>
     );
 }

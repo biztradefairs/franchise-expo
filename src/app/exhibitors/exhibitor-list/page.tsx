@@ -13,9 +13,11 @@ import {
     ShoppingCart,
     Video,
     MapPin,
+    Building2,
 } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const alphabet = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
@@ -25,6 +27,28 @@ function toSlug(name: string) {
         .replace(/[^a-z0-9\s-]/g, "")
         .trim()
         .replace(/\s+/g, "-");
+}
+
+// Dummy image function - generates consistent colors based on name
+function getDummyImage(name: string) {
+    const colors = [
+        '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7',
+        '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9',
+        '#F8C471', '#82E0AA', '#F1948A', '#85929E', '#73C6B6',
+        '#E59866', '#AF7AC5', '#5DADE2', '#58D68D', '#F4D03F'
+    ];
+    const index = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return colors[index % colors.length];
+}
+
+// Get initials for logo placeholder
+function getInitials(name: string) {
+    return name
+        .split(' ')
+        .slice(0, 2)
+        .map(word => word[0])
+        .join('')
+        .toUpperCase();
 }
 
 const exhibitors = [
@@ -92,6 +116,30 @@ export default function ExhibitorList() {
     };
 
     const hasActiveFilters = activeLetter || searchQuery || selectedType !== "Please select" || selectedCategory !== "Please select";
+
+    // Dummy logo component
+    const DummyLogo = ({ name, size = 80 }: { name: string; size?: number }) => {
+        const bgColor = getDummyImage(name);
+        const initials = getInitials(name);
+        return (
+            <div
+                className={styles.dummyLogo}
+                style={{
+                    backgroundColor: bgColor,
+                    width: size,
+                    height: size,
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                <span className={styles.dummyLogoText} style={{ fontSize: size * 0.4 }}>
+                    {initials}
+                </span>
+            </div>
+        );
+    };
 
     return (
         <main className={styles.page}>
@@ -230,12 +278,12 @@ export default function ExhibitorList() {
                                                 </span>
                                             </div>
 
-                                            {/* DROPDOWN CARD */}
+                                            {/* DROPDOWN CARD - WITH DUMMY LOGO */}
                                             {isExpanded && (
                                                 <div className={styles.dropdownPanel}>
                                                     <div className={styles.dropdownCard}>
                                                         <div className={styles.dropdownLogoBox}>
-                                                            <span className={styles.dropdownLogoLetter}>{item.name.charAt(0)}</span>
+                                                            <DummyLogo name={item.name} size={80} />
                                                         </div>
                                                         <div className={styles.dropdownInfo}>
                                                             <span className={styles.dropdownCategory}>{item.category}</span>
@@ -264,7 +312,7 @@ export default function ExhibitorList() {
                             </div>
                         )}
 
-                        {/* GRID VIEW */}
+                        {/* GRID VIEW - WITH DUMMY LOGO */}
                         {viewMode === "grid" && (
                             <div className={styles.gridView}>
                                 {filteredExhibitors.map((item, index) => (
@@ -275,7 +323,7 @@ export default function ExhibitorList() {
                                     >
                                         <div className={styles.cardCategory}>{item.category}</div>
                                         <div className={styles.cardLogo}>
-                                            <span className={styles.logoPlaceholder}>{item.name.charAt(0)}</span>
+                                            <DummyLogo name={item.name} size={70} />
                                         </div>
                                         <div className={styles.cardBody}>
                                             <h3 className={styles.cardName}>{item.name}</h3>

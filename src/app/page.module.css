@@ -169,6 +169,7 @@
   margin-bottom: 28px;
   letter-spacing: -1px;
   max-width: 720px;
+  text-align: left;
 }
 
 .introLeft p {
@@ -394,6 +395,9 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
   transition: 0.25s ease;
   border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .featureCard:hover {
@@ -409,6 +413,9 @@
 
 .featureCard :global(.card-body) {
   padding: 24px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .cardTitle {
@@ -429,6 +436,7 @@
   margin-bottom: 24px;
   max-width: 94%;
   font-weight: 500;
+  flex: 1;
 }
 
 /* =========================================
@@ -442,8 +450,8 @@
   align-items: center;
   justify-content: flex-start;
 
-  height: 30px;
-  padding: 0 42px 0 16px;
+  height: 36px;
+  padding: 0 42px 0 18px;
 
   border-radius: 999px;
   background: #005eb8;
@@ -452,10 +460,10 @@
   text-decoration: none;
 
   font-family: 'Oswald', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
 
   transition: 0.2s ease;
   border: none !important;
@@ -519,8 +527,8 @@
 ========================================================= */
 
 .testimonialSection {
-  background: #20296f;
-  padding: 50px 20px 40px;
+  background: #005ea2;
+  padding: 25px 20px;
   text-align: center;
   overflow: hidden;
 }
@@ -531,11 +539,11 @@
 }
 
 .testimonialQuote {
-  font-family: Georgia, serif;
-  font-size: 100px;
+  font-family: 'Georgia', serif;
+  font-size: 120px;
   line-height: 0.7;
   color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .testimonialHeading {
@@ -550,13 +558,14 @@
 }
 
 .testimonialText {
-  max-width: 1200px;
-  margin: 0 auto 16px;
+  max-width: 1100px;
+  margin: 0 auto 20px;
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(18px, 1.8vw, 28px);
+  font-size: clamp(20px, 2vw, 32px);
   line-height: 1.4;
   font-weight: 500;
   color: #ffffff;
+  font-style: italic;
 }
 
 .testimonialMini {
@@ -690,11 +699,12 @@
 /* =========================================================
    NEWS EXACT REFERENCE - PRESERVING ORIGINAL BUTTON DESIGN
 ========================================================= */
-
-.newsSection {
+.card {
   background: #f5f5f5;
-  padding: 50px 0 60px;
-  /* Reduced from 70px 0 90px */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .newsContainer {
@@ -708,7 +718,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 58px;
   /* Reduced from 58px */
 }
 

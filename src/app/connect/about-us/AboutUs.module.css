@@ -1,328 +1,379 @@
-.page {
-    width: 100%;
-    overflow: hidden;
-    background: #f5f7fb;
+/* Banner */
+.banner {
+  background: linear-gradient(135deg, #003366 0%, #00509e 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
 }
 
-.container {
-    width: 100%;
-    max-width: 1440px;
-    margin: auto;
-    padding: 0 24px;
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/banner-pattern.png') repeat;
+  opacity: 0.1;
 }
 
-/* HERO */
-
-.hero {
-    position: relative;
-    min-height: 420px;
-
-    display: flex;
-    align-items: center;
-
-    background:
-        linear-gradient(rgba(1, 27, 46, 0.82),
-            rgba(1, 27, 46, 0.88)),
-        url("https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
+.bannerOverlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
-.overlay {
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(circle at top right,
-            rgba(0, 168, 200, 0.22),
-            transparent 40%);
+.bannerTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.heroContent {
-    position: relative;
-    z-index: 2;
-
-    max-width: 760px;
+/* Main Content */
+.mainContent {
+  padding: 60px 0;
+  background: #ffffff;
 }
 
-.tag {
-    display: inline-flex;
-
-    padding: 10px 18px;
-
-    border-radius: 999px;
-
-    background: rgba(255, 255, 255, 0.12);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    color: white;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    margin-bottom: 24px;
+.article {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.heroContent h1 {
-    font-size: 82px;
-    line-height: 1;
-
-    color: white;
-
-    margin-bottom: 24px;
-
-    font-family: "Oswald", sans-serif;
+/* Logos */
+.logosContainer {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.heroContent p {
-    font-size: 18px;
-    line-height: 1.8;
-
-    color: rgba(255, 255, 255, 0.82);
-
-    max-width: 620px;
+.logoMain {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 100%;
+  height: auto;
 }
 
-/* INTRO */
-
-.introSection {
-    padding: 110px 0;
+.logoSecondary {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
-.introGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-
-    align-items: center;
+/* Headings */
+.mainHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0 50px;
+  color: #003366;
+  line-height: 1.2;
 }
 
-.introContent h2 {
-    font-size: 54px;
-    line-height: 1.1;
-
-    color: #011b2e;
-
-    margin-bottom: 28px;
-
-    font-family: "Oswald", sans-serif;
+.sectionHeading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 60px 0 40px;
+  color: #003366;
 }
 
-.introContent p {
-    font-size: 14px;
-    line-height: 1.9;
-    font-weight: 500;
-
-    color: #5f6b76;
-
-    margin-bottom: 20px;
+/* Two Column Sections */
+.twoColumnSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 40px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.introImage {
-    position: relative;
-
-    width: 100%;
-    height: 400px;
-
-    overflow: hidden;
-
-    /* border-radius: 32px; */
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+.reverseRow {
+  direction: rtl;
 }
 
-.image {
-    object-fit: cover;
+.reverseRow .contentColumn {
+  direction: ltr;
 }
 
-/* MEMBER */
-
-.memberSection {
-    padding: 40px 0 100px;
+.contentColumn {
+  padding: 40px;
+  background: #f5f5f5;
 }
 
-.sectionTop {
-    text-align: center;
-
-    margin-bottom: 60px;
+.contentColumn p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #333;
+  font-size: 1rem;
 }
 
-.sectionTop span {
-    color: #00a8c8;
-
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
+.contentColumn p:last-child {
+  margin-bottom: 0;
 }
 
-.sectionTop h2 {
-    font-size: 54px;
-
-    color: #011b2e;
-
-    margin-top: 16px;
-
-    font-family: "Oswald", sans-serif;
+.boldText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 500;
 }
 
-.memberGrid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 30px;
+.imageColumn {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.memberCard {
-    background: white;
-
-    /* border-radius: 28px; */
-
-    padding: 50px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 260px;
-
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+/* Links & Buttons */
+.link {
+  color: #003366;
+  text-decoration: underline;
+  transition: color 0.3s;
 }
 
-/* EXPO */
-
-.expoSection {
-    padding: 0 0 120px;
+.link:hover {
+  color: #00509e;
 }
 
-.cardGrid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 32px;
+.button {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #003366;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-.card {
-    overflow: hidden;
-
-    /* border-radius: 32px; */
-
-    background: white;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-
-    transition: 0.4s ease;
+.button:hover {
+  background: #002244;
+  transform: translateY(-2px);
 }
 
-.card:hover {
-    transform: translateY(-10px);
+/* Member Logos */
+.memberLogos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 40px 0 60px;
+  align-items: center;
+  justify-items: center;
 }
 
-.cardImage {
-    position: relative;
-
-    width: 100%;
-    height: 300px;
+.memberLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.cardContent {
-    padding: 36px;
+.memberLogo img {
+  max-width: 100%;
+  height: auto;
 }
 
-.cardContent h3 {
-    font-size: 34px;
-    line-height: 1.2;
-
-    color: #011b2e;
-
-    margin-bottom: 20px;
-
-    font-family: "Oswald", sans-serif;
+/* Expo Cards */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 
-.cardContent p {
-    font-size: 16px;
-    line-height: 1.8;
-
-    color: #5f6b76;
-
-    margin-bottom: 24px;
+.expoCard {
+  background: #003366;
+  border-radius: 8px;
+  overflow: hidden;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
-.cardContent a {
-    display: inline-flex;
-
-    padding: 14px 24px;
-
-    border-radius: 999px;
-
-    background: #011b2e;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    transition: 0.3s ease;
+.expoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 51, 102, 0.3);
 }
 
-.cardContent a:hover {
-    background: #00a8c8;
+.expoImage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #002244;
 }
 
-/* RESPONSIVE */
+.expoImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.expoCard:hover .expoImage img {
+  transform: scale(1.05);
+}
+
+.expoContent {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.expoTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.expoDescription {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.expoLink {
+  color: white;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  display: inline-block;
+}
+
+.expoLink:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.emptyCard {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cardsGrid {
+    gap: 20px;
+  }
+}
 
 @media (max-width: 992px) {
+  .twoColumnSection {
+    grid-template-columns: 1fr;
+  }
 
-    .heroContent h1 {
-        font-size: 58px;
-    }
+  .reverseRow {
+    direction: ltr;
+  }
 
-    .introGrid,
-    .cardGrid,
-    .memberGrid {
-        grid-template-columns: 1fr;
-    }
+  .imageColumn {
+    min-height: 300px;
+    order: -1;
+  }
 
-    .sectionTop h2,
-    .introContent h2 {
-        font-size: 42px;
-    }
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
 
+  .memberLogos {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
+  .banner {
+    padding: 50px 0;
+    min-height: 200px;
+  }
 
-    .hero {
-        min-height: 340px;
-    }
+  .bannerTitle {
+    font-size: 2.5rem;
+  }
 
-    .heroContent h1 {
-        font-size: 42px;
-    }
+  .mainHeading {
+    font-size: 1.8rem;
+    margin: 30px 0;
+  }
 
-    .heroContent p {
-        font-size: 16px;
-    }
+  .sectionHeading {
+    font-size: 1.5rem;
+    margin: 40px 0 30px;
+  }
 
-    .introSection {
-        padding: 80px 0;
-    }
+  .contentColumn {
+    padding: 25px;
+  }
 
-    .introImage {
-        height: 340px;
-    }
+  .expoContent {
+    padding: 20px;
+  }
 
-    .cardContent {
-        padding: 28px;
-    }
+  .expoTitle {
+    font-size: 1.1rem;
+  }
 
-    .cardContent h3 {
-        font-size: 28px;
-    }
+  .expoImage {
+    height: 180px;
+  }
 
+  .memberLogos {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 40px 0;
+    min-height: 150px;
+  }
+
+  .bannerTitle {
+    font-size: 2rem;
+  }
+
+  .mainHeading {
+    font-size: 1.5rem;
+  }
+
+  .contentColumn {
+    padding: 20px;
+  }
+
+  .boldText {
+    font-size: 1rem;
+  }
+
+  .expoImage {
+    height: 150px;
+  }
+
+  .expoContent {
+    padding: 15px;
+  }
+
+  .expoDescription {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+  }
 }
