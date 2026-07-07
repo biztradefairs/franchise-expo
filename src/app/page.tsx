@@ -6,6 +6,7 @@ import IntroSlider from '@/components/IntroSlider';
 import { Users, Mic, Clock3 } from 'lucide-react';
 import SponsorsSection from '@/components/sponsor';
 import TestimonialSlider from '@/components/TestimonialSlider';
+import SupportedBy from '@/components/SupportedBy';
 
 export const metadata: Metadata = {
   title: 'FranchiseExpo – New York 2026',
@@ -69,41 +70,65 @@ export default function HomePage() {
       <Hero />
 
       {/* ── Stats Bar ── */}
-      <section className="w-full bg-[#efefef] py-[34px] px-[60px] max-lg:py-7 max-lg:px-9 max-sm:py-6 max-sm:px-5">
-        <div className="max-w-[1450px] mx-auto grid grid-cols-3 max-lg:grid-cols-1 items-center gap-10 max-lg:gap-7">
+      {/* ── Stats Bar ── */}
+<section className="w-full bg-[#efefef] py-[34px] px-[60px] max-lg:py-7 max-lg:px-9 max-sm:px-5 max-[375px]:px-4">
+  <div className="max-w-[1450px] mx-auto grid grid-cols-3 max-lg:grid-cols-1 items-center gap-10 max-sm:gap-6">
 
-          <div className="flex items-center justify-center max-lg:justify-start gap-[22px]">
-            <div className="w-16 h-16 min-w-[64px] rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] text-[30px] shrink-0 max-sm:w-[52px] max-sm:h-[52px] max-sm:min-w-[52px] max-sm:text-2xl">
-              <Users size={28} />
-            </div>
-            <div className="flex flex-col gap-0.5">
-              <h3 className="font-display text-[60px] max-sm:text-[44px] leading-[0.9] font-bold text-[#111] m-0">150+</h3>
-              <span className="font-display text-[22px] max-sm:text-base leading-[1.2] font-light uppercase text-[#222] block">EXHIBITORS</span>
-            </div>
-          </div>
+    {/* Exhibitors */}
+    <div className="flex items-center justify-center max-lg:justify-start gap-6">
+      <div className="w-16 h-16 rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] shrink-0">
+        <Users size={30} />
+      </div>
 
-          <div className="flex items-center justify-center max-lg:justify-start gap-[22px]">
-            <div className="w-16 h-16 min-w-[64px] rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] text-[30px] shrink-0 max-sm:w-[52px] max-sm:h-[52px] max-sm:min-w-[52px] max-sm:text-2xl">
-              <Mic size={28} />
-            </div>
-            <div className="flex flex-col gap-0.5">
-              <h3 className="font-display text-[60px] max-sm:text-[44px] leading-[0.9] font-bold text-[#111] m-0">40+</h3>
-              <span className="font-display text-[22px] max-sm:text-base leading-[1.2] font-light uppercase text-[#222] block">WORKSHOPS AND<br />SESSIONS</span>
-            </div>
-          </div>
+      <div className="flex items-center gap-4">
+        <h3 className="font-display text-[72px] max-sm:text-[52px] max-[375px]:text-[44px] leading-none font-bold text-[#111] whitespace-nowrap">
+          150+
+        </h3>
 
-          <div className="flex items-center justify-center max-lg:justify-start gap-[22px]">
-            <div className="w-16 h-16 min-w-[64px] rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] text-[30px] shrink-0 max-sm:w-[52px] max-sm:h-[52px] max-sm:min-w-[52px] max-sm:text-2xl">
-              <Clock3 size={28} />
-            </div>
-            <div className="flex flex-col gap-0.5">
-              <h3 className="font-display text-[60px] max-sm:text-[44px] leading-[0.9] font-bold text-[#111] m-0">2</h3>
-              <span className="font-display text-[22px] max-sm:text-base leading-[1.2] font-light uppercase text-[#222] block">DAYS</span>
-            </div>
-          </div>
+        <span className="font-display text-[30px] max-sm:text-[22px] max-[375px]:text-[18px] leading-[0.9] font-light uppercase text-[#222]">
+          EXHIBITORS
+        </span>
+      </div>
+    </div>
 
-        </div>
-      </section>
+    {/* Workshops */}
+    <div className="flex items-center justify-center max-lg:justify-start gap-6">
+      <div className="w-16 h-16 rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] shrink-0">
+        <Mic size={30} />
+      </div>
+
+      <div className="flex items-center gap-4">
+        <h3 className="font-display text-[72px] max-sm:text-[52px] max-[375px]:text-[44px] leading-none font-bold text-[#111] whitespace-nowrap">
+          40+
+        </h3>
+
+        <span className="font-display text-[30px] max-sm:text-[22px] max-[375px]:text-[18px] leading-[0.9] font-light uppercase text-[#222]">
+          WORKSHOPS AND
+          <br />
+          SESSIONS
+        </span>
+      </div>
+    </div>
+
+    {/* Days */}
+    <div className="flex items-center justify-center max-lg:justify-start gap-6">
+      <div className="w-16 h-16 rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] shrink-0">
+        <Clock3 size={30} />
+      </div>
+
+      <div className="flex items-center gap-4">
+        <h3 className="font-display text-[72px] max-sm:text-[52px] max-[375px]:text-[44px] leading-none font-bold text-[#111] whitespace-nowrap">
+          2
+        </h3>
+
+        <span className="font-display text-[30px] max-sm:text-[22px] max-[375px]:text-[18px] leading-[0.9] font-light uppercase text-[#222]">
+          DAYS
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* ── Intro + Slider ── */}
       <section className="bg-[#f5f5f5] py-[70px] px-[60px] max-xl:py-[60px] max-xl:px-10 max-lg:py-[50px] max-lg:px-6 max-sm:py-10 max-sm:px-5">
@@ -143,30 +168,37 @@ export default function HomePage() {
       </section>
 
       {/* ── 3-up Feature Cards ── */}
-      <section className="bg-[#f5f5f5] pt-10 pb-20">
-        <div className="max-w-[1450px] mx-auto px-[60px] max-xl:px-10 max-lg:px-6 max-sm:px-5">
-          <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-7 max-lg:gap-5">
-            {cards.map((card) => (
-              <div key={card.title} className="bg-white overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-transform duration-250 ease-out flex flex-col h-full hover:-translate-y-1 group">
-                <div
-                  className="w-full h-[200px] max-lg:h-[220px] bg-cover bg-center shrink-0"
-                  style={{ backgroundImage: `url('${card.image}')` }}
-                />
-                <div className="p-[24px_22px_22px] flex flex-col flex-1">
-                  <h3 className="font-display text-[22px] leading-none uppercase text-[#111111] mb-3.5 -tracking-[0.4px]">{card.title}</h3>
-                  <p className="font-body text-[12px] leading-snug text-[#111111] mb-5 font-medium flex-1">{card.description}</p>
-                  <Link
-                    href={card.href}
-                    className="relative inline-flex items-center justify-start h-9 pl-[18px] pr-[42px] rounded-full bg-[#005eb8] text-white no-underline font-display text-[12px] font-medium uppercase tracking-wider transition-colors duration-200 border-none outline-none shadow-none align-self-start after:content-['›'] after:absolute after:right-[3px] after:top-1/2 after:-translate-y-1/2 after:w-6 after:h-6 after:rounded-full after:bg-white after:flex after:items-center after:justify-center after:text-[#005eb8] after:text-base after:font-bold after:leading-none hover:bg-[#004f99]"
-                  >
-                    {card.cta}
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-[#ffffff] pt-16 pb-32"> 
+  <div className="max-w-[1850px] mx-auto px-[60px] max-xl:px-10 max-lg:px-6 max-sm:px-5"> 
+    <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-12 max-lg:gap-5"> 
+      {cards.map((card) => ( 
+        <div key={card.title} className="bg-white overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-transform duration-250 ease-out flex flex-col h-full hover:-translate-y-2 group"> 
+          <div className="w-full h-[280px] max-lg:h-[220px] bg-cover bg-center shrink-0" style={{ backgroundImage: `url('${card.image}')` }} /> 
+          
+          <div className="p-9 max-lg:p-[24px_22px_22px] flex flex-col flex-1"> 
+            <h3 className="font-display text-[28px] max-lg:text-[22px] leading-tight uppercase text-[#111111] mb-5 -tracking-[0.5px]">{card.title}</h3> 
+            
+            <p className="font-body text-[15px] max-lg:text-[12px] leading-relaxed text-[#111111] mb-8 font-medium flex-1">{card.description}</p> 
+            
+            <Link href={card.href} className="inline-flex items-center justify-between h-[56px] pl-6 pr-1.5 rounded-full bg-[#005eb8] text-white no-underline font-display text-[20px] uppercase tracking-wider self-start gap-6 transition-all duration-300 ease-in-out min-w-[240px]" > 
+              <span className="whitespace-nowrap"> {card.cta} </span> 
+              <div className="w-[44px] h-[44px] rounded-full bg-[#ebebeb] flex items-center justify-center transition-colors duration-300 group-hover:bg-white shrink-0"> 
+                <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[3.5] fill-none" viewBox="0 0 24 24"> 
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /> 
+                </svg> 
+              </div> 
+            </Link> 
+          </div> 
+        </div> 
+      ))} 
+    </div> 
+  </div> 
+</section>
+
+
+
+      {/* ── Supported By ── */}
+      <SupportedBy />
 
       {/* ── Testimonials ── */}
       <TestimonialSlider />

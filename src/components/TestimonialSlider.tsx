@@ -60,12 +60,8 @@ export default function TestimonialSlider() {
         </h2>
 
         <div className="min-h-[220px] max-lg:min-h-[200px] max-sm:min-h-[180px] flex flex-col items-center justify-center">
-          <p
-            className={`max-w-[960px] mx-auto mb-4 font-body text-[clamp(18px,2vw,28px)] max-lg:text-[19px] max-sm:text-sm leading-[1.45] font-semibold text-white italic max-sm:mb-2.5 transition-all duration-400 ease-in-out ${
-              isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-            }`}
-            key={active}
-          >
+          <p className={`max-w-[960px] text-[14px] mx-auto mb-4 font-body text-[clamp(14px,1.5vw,22px)] max-lg:text-[16px] max-sm:text-xs leading-[1.45] text-white italic max-sm:mb-2.5 transition-all duration-400 ease-in-out ${ isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0" }`} key={active} >
+
             &ldquo;{current.text}&rdquo;
           </p>
 

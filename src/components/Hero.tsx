@@ -21,18 +21,26 @@ export default function Hero() {
                 <div className="absolute inset-0 z-20 pointer-events-none bg-[linear-gradient(to_right,#15407d_0%,#15407d_2%,rgba(21,64,125,0.45)_14%,rgba(21,64,125,0.08)_26%,transparent_38%)] max-[900px]:bg-[linear-gradient(to_bottom,#003b95_0%,#003b95_28%,rgba(0,59,149,0.6)_52%,transparent_78%)]" />
             </div>
 
-            <div className="relative z-40 w-[52%] max-[1100px]:w-[58%] max-[900px]:w-full h-full flex flex-col justify-center pl-16 pr-10 max-[1100px]:pl-12 max-[1100px]:pr-8 max-[900px]:pl-6 max-[900px]:pr-6 max-[900px]:pt-12 max-[900px]:pb-[280px] max-[900px]:justify-start max-[600px]:pl-5 max-[600px]:pr-5 max-[600px]:pt-10 max-[600px]:pb-[260px]">
-                <p className="font-display text-[1.125rem] max-[600px]:text-[0.85rem] font-normal text-white uppercase tracking-[0.16em] max-[600px]:tracking-[0.1em] m-0 mb-4">
-                    June 4th – 5th 2027 &nbsp;|&nbsp; New York City, New York
-                </p>
-                
-                <h1 className="font-display text-[clamp(2.8rem,5vw,5.2rem)] font-bold text-white uppercase leading-none -tracking-[0.01em] m-0 mb-6 max-[900px]:text-[2.6rem] max-[600px]:text-[2.2rem]">
-                    Your Franchise<br />Future Starts Here
-                </h1>
-                
-                <div className="flex flex-col gap-0.5 mb-4 max-w-full">
-                    <p className="font-body text-[1.125rem] max-[900px]:text-[1rem] max-[600px]:text-[0.95rem] font-semibold text-white leading-[1.6] m-0">Step into a world of franchise possibilities waiting to be explored.</p>
-                    <p className="font-body text-[1.125rem] max-[900px]:text-[1rem] max-[600px]:text-[0.95rem] font-semibold text-white leading-[1.6] m-0">Hear from experts who&apos;ll equip you with the tools to make your business ownership dreams a reality.</p>
+            {/*
+              Outer div fills the left half of the hero.
+              Inner centering wrapper mirrors the max-w / px-[60px] pattern used
+              throughout the page so the text left edge lines up on all viewports.
+            */}
+            <div className="relative z-40 w-[52%] max-[1100px]:w-[58%] max-[900px]:w-full h-full flex items-center max-[900px]:items-start max-[900px]:pt-12 max-[900px]:pb-[280px] max-[600px]:pt-10 max-[600px]:pb-[260px]">
+                {/* Inner wrapper: aligns with the max-w-[1450px] sections below */}
+                <div className="w-full max-w-[1450px] mx-auto px-[60px] max-xl:px-10 max-lg:px-6 max-[600px]:px-5 max-[375px]:px-4 flex flex-col justify-center">
+                    <p className="font-display text-[1.125rem] max-[600px]:text-[0.85rem] font-normal text-white uppercase tracking-[0.16em] max-[600px]:tracking-[0.1em] m-0 mb-4">
+                        June 4th – 5th 2027 &nbsp;|&nbsp; New York City, New York
+                    </p>
+
+                    <h1 className="font-display text-[clamp(2.8rem,5vw,5.2rem)] font-bold text-white uppercase leading-none -tracking-[0.01em] m-0 mb-6 max-[900px]:text-[2.6rem] max-[600px]:text-[2.2rem] max-[375px]:text-[1.9rem]">
+                        Your Franchise<br />Future Starts Here
+                    </h1>
+
+                    <div className="flex flex-col gap-0.5 mb-4 max-w-full">
+                        <p className="font-body text-[1.125rem] max-[900px]:text-[1rem] max-[600px]:text-[0.95rem] font-semibold text-white leading-[1.6] m-0">Step into a world of franchise possibilities waiting to be explored.</p>
+                        <p className="font-body text-[1.125rem] max-[900px]:text-[1rem] max-[600px]:text-[0.95rem] font-semibold text-white leading-[1.6] m-0">Hear from experts who&apos;ll equip you with the tools to make your business ownership dreams a reality.</p>
+                    </div>
                 </div>
             </div>
 

@@ -191,12 +191,16 @@
   }
 }
 
+html,
+body {
+  overflow-x: clip; /* clip ≠ hidden: doesn't create a scroll container, so position:sticky still works */
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-text-main);
   background-color: white;
   line-height: 1.625;
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -204,7 +208,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.25;
-  color: var(--color-navy);
 }
 
 a {

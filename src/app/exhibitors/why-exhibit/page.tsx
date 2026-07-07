@@ -145,7 +145,7 @@ export default function WhyExhibit() {
                                 ))}
                             </div>
                         </div>
-
+                        <br />
                         <button
                             type="submit"
                             className="group relative inline-flex items-center pl-[18px] pr-[52px] h-[48px] border-none rounded-full bg-[#0067b2] text-white font-display text-sm font-medium uppercase cursor-pointer hover:bg-[#00528c] transition-colors duration-200"

@@ -1,6 +1,56 @@
+"use client";
+
 import PageBanner from "@/components/PageBanner";
+import { useState, useEffect, useCallback } from "react";
+
+const testimonials = [
+    {
+        text: "The event was great, and very professionally ran.",
+        source: "FES Exhibitor Survey"
+    },
+    {
+        text: "First time exhibiting and it was fabulous. Everyone was so helpful and it ran so smoothly.",
+        source: "FES Exhibitor Survey"
+    },
+    {
+        text: "MFV Expositions Franchise Expos are a great networking platform for franchisor, suppliers and people in the franchise segment to connect in a variety of regions across the U.S.",
+        source: "IFE Exhibitor Survey"
+    },
+    {
+        text: "Coming to these expos is huge because it makes a giant impact for us and other exhibitors who are looking for franchisees so they can grow.",
+        source: "Franchise Expo West Exhibitor Survey"
+    },
+    {
+        text: "We know that there’s a lot of great investors, people looking for franchises coming through the show. MFV Expositions and their expos are very reputable, and out of all the shows we go to this is one of them where we get the best results.",
+        source: "IFE Exhibitor Survey"
+    }
+];
 
 export default function ExhibitorTestimonials() {
+    const [active, setActive] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const goTo = useCallback(
+        (index: number) => {
+            if (index === active || isAnimating) return;
+            setIsAnimating(true);
+            setTimeout(() => {
+                setActive(index);
+                setIsAnimating(false);
+            }, 400);
+        },
+        [active, isAnimating]
+    );
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            goTo((active + 1) % testimonials.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, [active, goTo]);
+
+    const current = testimonials[active];
+
     return (
         <main className="w-full overflow-x-hidden bg-white">
             {/* HERO */}
@@ -48,26 +98,67 @@ export default function ExhibitorTestimonials() {
                 </div>
             </section>
 
-            {/* TESTIMONIALS */}
-            <section className="bg-[#0067b2] py-10 max-md:py-[50px]">
-                <div className="w-full max-w-[1440px] mx-auto px-6 max-sm:px-4">
-                    <div className="flex flex-col items-center mb-6">
+            {/* TESTIMONIALS SLIDER WITH CONSTANT SIZE CONTAINER & BLUR/FADE TRANSITIONS */}
+            <section className="bg-[#1ab7d0] py-[50px] px-5 pb-[56px] text-center overflow-hidden max-lg:py-9 max-lg:px-6 max-lg:pb-7 max-sm:py-7 max-sm:px-[18px] max-sm:pb-6">
+                <div className="max-w-[1100px] mx-auto">
+                    <div className="flex flex-col items-center mb-5">
                         <img
                             src="https://www.franchiseexpo.com/images/template/quote-icon.svg"
                             alt="Quote icon"
-                            className="w-[45px] h-[45px] max-md:w-10 max-md:h-10 max-sm:w-[35px] max-sm:h-[35px] mb-3.5"
+                            className="w-[45px] h-[45px] max-md:w-10 max-md:h-10 max-sm:w-[35px] max-sm:h-[35px] mb-3.5 opacity-90"
                         />
-                        <h2 className="font-display text-[26px] max-lg:text-[34px] max-md:text-[28px] max-sm:text-[22px] leading-[1.1] text-white text-center max-w-[650px] mx-auto">HEAR WHAT OUR EXHIBITORS HAVE TO SAY</h2>
+                        <h2 className="font-display text-[26px] max-lg:text-[34px] max-md:text-[28px] max-sm:text-[22px] leading-[1.1] text-white text-center uppercase tracking-wide">
+                            HEAR WHAT OUR EXHIBITORS HAVE TO SAY
+                        </h2>
                     </div>
 
-                    <div className="max-w-[900px] mx-auto text-center flex flex-col justify-center items-center">
-                        <p className="font-body text-[17px] max-lg:text-[17px] max-md:text-[15px] max-sm:text-[14px] leading-[1.5] text-white mb-6.5 max-sm:mb-[18px] font-normal text-center max-w-[780px] px-0 max-md:px-4 max-sm:px-3">
-                            "We know that there's a lot of great investors, people looking for franchises coming through the show. MFV Expositions and their expos are very reputable, and out of all the shows we go to this is one of them where we get the best results."
+                    {/* Constant size container to avoid vertical layout shift / bouncing during slides */}
+                    <div className="min-h-[220px] max-lg:min-h-[200px] max-sm:min-h-[180px] flex flex-col items-center justify-center">
+                        <p 
+                          key={`text-${active}`}
+                          className={`
+                            mx-auto mb-4 max-w-[960px] 
+                            font-body bold text-[clamp(14px,1.5vw,22px)] font-semibold leading-[1.45] text-white 
+                            transition-all duration-400 ease-in-out
+                            max-lg:text-[16px] 
+                            max-sm:mb-2.5 max-sm:text-xs
+                            ${isAnimating ? "scale-95 opacity-0 blur-[4px] translate-y-2" : "scale-100 opacity-100 blur-0 translate-y-0"}
+                          `}
+                        >
+                          &ldquo;{current.text}&rdquo;
                         </p>
-                        <div className="text-center">
-                            <h4 className="font-display text-2xl max-md:text-lg max-sm:text-base leading-normal text-white uppercase mb-1 tracking-[0.5px]">Dan Doulen</h4>
-                            <span className="font-body text-sm max-md:text-[13px] max-sm:text-[12px] text-white/85 font-medium">Wings and Rings</span>
+
+                        <div
+                            className={`text-white text-[22px] max-sm:text-base leading-none mb-2 transition-all duration-400 ease-in-out ${
+                                isAnimating ? "opacity-0 blur-[4px] translate-y-2" : "opacity-100 blur-0 translate-y-0"
+                            }`}
+                            key={`dots-${active}`}
+                        >
+                            ...
                         </div>
+
+                        <p
+                            className={`font-body text-[17px] max-sm:text-sm font-bold text-white mb-6 max-sm:mb-4 transition-all duration-400 ease-in-out ${
+                                isAnimating ? "opacity-0 blur-[4px] translate-y-2" : "opacity-100 blur-0 translate-y-0"
+                            }`}
+                            key={`source-${active}`}
+                        >
+                            {current.source}
+                        </p>
+                    </div>
+
+                    {/* Dot Navigation */}
+                    <div className="flex justify-center gap-3">
+                        {testimonials.map((_, i) => (
+                            <button
+                                key={i}
+                                className={`w-[13px] h-[13px] max-sm:w-2.5 max-sm:h-2.5 rounded-full border-none bg-white/55 cursor-pointer p-0 transition-all duration-200 hover:bg-white/85 ${
+                                    i === active ? "!bg-[#00a6ff] border-2 border-white scale-[1.15]" : ""
+                                }`}
+                                aria-label={`Slide ${i + 1}`}
+                                onClick={() => goTo(i)}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>

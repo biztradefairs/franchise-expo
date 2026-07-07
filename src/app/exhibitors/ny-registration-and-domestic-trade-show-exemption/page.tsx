@@ -1,4 +1,5 @@
 import PageBanner from "@/components/PageBanner";
+import { ChevronRight } from "lucide-react";
 
 const deadlines = [
     {
@@ -20,12 +21,12 @@ export default function NYRegistration() {
             <PageBanner title="NY Registration and Domestic Trade Show Exemption"/>
 
             {/* CONTENT */}
-            <section className="py-[100px] max-md:py-[70px]">
-                <div className="w-full max-w-[1440px] mx-auto px-6">
+            <section className="py-[70px] max-md:py-10">
+                <div className="w-full max-w-[1240px] mx-auto px-6 max-sm:px-4">
 
-                    <div className="bg-white p-[70px] max-lg:p-[50px_40px] max-md:p-[35px_22px]">
+                    <div className="bg-white">
 
-                        <p className="text-[15px] max-md:text-[17px] leading-[2] max-md:leading-[1.9] text-center text-[#333333] font-bold max-w-[1100px] mx-auto mb-[70px] max-md:mb-[50px]">
+                        <p className="font-body text-[16px] leading-[1.8] text-center text-[#222] font-semibold max-w-[1000px] mx-auto mb-[50px]">
                             The State of New York Office of the Attorney General -
                             Department of Law requires that in order to exhibit at
                             IFE, you must have a valid Franchise Disclosure Document
@@ -36,23 +37,23 @@ export default function NYRegistration() {
                             company.
                         </p>
 
-                        <h2 className="font-display text-[48px] max-md:text-[34px] uppercase text-center text-[#011b2e] mb-[50px]">
+                        <h2 className="font-display text-[32px] max-sm:text-[26px] font-bold uppercase text-center text-[#222] mb-[30px] m-0">
                             Important Deadlines
                         </h2>
 
-                        <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-[28px] mb-[70px]">
+                        <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-6 mb-12">
                             {deadlines.map((item, index) => (
                                 <div
-                                    className="bg-[#005EB8] p-[35px_28px] max-md:p-[28px_20px] min-h-[220px] max-lg:min-h-0 flex items-center justify-center text-left transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_rgba(0,0,0,0.12)]"
+                                    className="bg-[#0067b2] p-8 min-h-[160px] flex items-center justify-center text-center rounded-none"
                                     key={index}
                                 >
-                                    <p className="text-white text-[15px] max-md:text-base leading-[1.8] font-semibold">{item.text}</p>
+                                    <p className="text-white text-[15px] max-sm:text-[14px] leading-relaxed font-semibold m-0">{item.text}</p>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="text-center">
-                            <p className="text-[22px] max-md:text-[18px] leading-[1.8] text-[#444444] mb-[35px]">
+                        <div className="text-center flex flex-col items-center">
+                            <p className="font-body text-[16px] leading-relaxed text-[#222] mb-5">
                                 All applications must be filed on the
                                 Franchise Electronic Filing Depository
                                 &quot;FRED&quot;
@@ -62,9 +63,12 @@ export default function NYRegistration() {
                                 href="https://www.nasaaefd.org"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center px-[38px] py-[18px] max-md:w-full rounded-full bg-[#011b2e] text-white text-[15px] font-bold tracking-wider no-underline transition-all duration-300 hover:bg-[#00a8c8] hover:-translate-y-0.5"
+                                className="inline-flex items-center gap-5 h-[48px] pl-6 pr-1.5 bg-[#0067b2] rounded-full text-white no-underline font-display text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#004a8f]"
                             >
-                                ACCESS FRED HERE
+                                <span>ACCESS FRED HERE</span>
+                                <span className="w-9 h-9 bg-white rounded-full flex items-center justify-center shrink-0">
+                                    <ChevronRight size={16} className="text-[#0067b2] stroke-[3]" />
+                                </span>
                             </a>
                         </div>
 

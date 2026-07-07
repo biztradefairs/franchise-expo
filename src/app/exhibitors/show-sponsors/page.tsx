@@ -1,4 +1,5 @@
 import PageBanner from "@/components/PageBanner";
+import Link from "next/link";
 
 const platinumSponsors = [
     {
@@ -69,6 +70,36 @@ const silverSponsors = [
     },
 ];
 
+function SponsorCard({ sponsor }: { sponsor: { name: string; image: string; link: string } }) {
+    return (
+        <div className="bg-white border border-[#dee2e6] flex flex-col overflow-hidden transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]">
+            {/* Logo area */}
+            <div className="h-[220px] max-sm:h-[180px] flex items-center justify-center bg-[#f8f9fa] p-8">
+                <img
+                    src={sponsor.image}
+                    alt={sponsor.name}
+                    className="max-w-full max-h-full object-contain"
+                />
+            </div>
+
+            {/* Name area */}
+            <div className="px-6 py-5 max-sm:px-5 max-sm:py-4 bg-[#e9ecef] flex-1 flex items-center">
+                <h3 className="font-display text-[18px] max-sm:text-[16px] font-bold leading-[1.25] uppercase text-[#222] m-0">
+                    {sponsor.name}
+                </h3>
+            </div>
+
+            {/* View Profile button */}
+            <Link
+                href={sponsor.link}
+                className="w-full h-[52px] max-sm:h-[46px] flex items-center justify-center bg-[#0067b2] text-white font-display text-[14px] max-sm:text-[13px] font-medium tracking-[0.12em] uppercase no-underline transition-colors duration-300 hover:bg-[#004a8f]"
+            >
+                View Profile
+            </Link>
+        </div>
+    );
+}
+
 export default function ShowSponsors() {
     return (
         <main className="w-full overflow-hidden bg-white">
@@ -77,89 +108,44 @@ export default function ShowSponsors() {
             <PageBanner title="Show Sponsors"/>
 
             {/* SPONSORS */}
-            <section className="py-20">
-                <div className="w-full max-w-[1440px] mx-auto px-6">
+            <section className="py-16 max-sm:py-10">
+                <div className="w-full max-w-[1440px] mx-auto px-10 max-lg:px-6 max-sm:px-5">
 
                     {/* PLATINUM */}
-                    <div className="mb-20">
-                        <h2 className="font-display text-[42px] max-lg:text-4xl max-sm:text-3xl leading-tight uppercase text-[#011b2e] mb-[35px]">
+                    <div className="mb-16 max-sm:mb-10">
+                        <h2 className="font-display text-[28px] max-sm:text-[22px] leading-tight font-bold uppercase text-[#004a8f] mb-8 max-sm:mb-5 m-0">
                             Platinum Sponsors
                         </h2>
 
-                        <div className="grid grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6">
+                        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6 max-sm:gap-5">
                             {platinumSponsors.map((sponsor, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-white border border-[#e6e6e6] flex flex-col min-h-[320px] max-sm:min-h-[280px] overflow-hidden transition-all duration-300 hover:-translate-y-1.2 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
-                                >
-                                    <img
-                                        src={sponsor.image}
-                                        alt={sponsor.name}
-                                        className="w-full h-[180px] max-sm:h-[140px] object-contain object-center p-6 bg-white"
-                                    />
-
-                                    <h3 className="flex-1 flex items-center p-[20px_30px] max-sm:p-[18px_22px] bg-[#f1f3f5] font-display text-[20px] max-sm:text-[18px] font-bold leading-[1.2] uppercase text-[#011b2e] m-0">{sponsor.name}</h3>
-
-                                    <a href={sponsor.link} className="w-full h-[50px] flex items-center justify-center bg-[#0067b2] text-white font-display text-[15px] font-medium tracking-wider uppercase no-underline transition-colors duration-300 hover:bg-[#004f8a]">
-                                        View Profile
-                                    </a>
-                                </div>
+                                <SponsorCard key={index} sponsor={sponsor} />
                             ))}
                         </div>
                     </div>
 
                     {/* GOLD */}
-                    <div className="mb-20">
-                        <h2 className="font-display text-[42px] max-lg:text-4xl max-sm:text-3xl leading-tight uppercase text-[#011b2e] mb-[35px]">
+                    <div className="mb-16 max-sm:mb-10">
+                        <h2 className="font-display text-[28px] max-sm:text-[22px] leading-tight font-bold uppercase text-[#004a8f] mb-8 max-sm:mb-5 m-0">
                             Gold Sponsors
                         </h2>
 
-                        <div className="grid grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6">
+                        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6 max-sm:gap-5">
                             {goldSponsors.map((sponsor, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-white border border-[#e6e6e6] flex flex-col min-h-[320px] max-sm:min-h-[280px] overflow-hidden transition-all duration-300 hover:-translate-y-1.2 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
-                                >
-                                    <img
-                                        src={sponsor.image}
-                                        alt={sponsor.name}
-                                        className="w-full h-[180px] max-sm:h-[140px] object-contain object-center p-6 bg-white"
-                                    />
-
-                                    <h3 className="flex-1 flex items-center p-[20px_30px] max-sm:p-[18px_22px] bg-[#f1f3f5] font-display text-[20px] max-sm:text-[18px] font-bold leading-[1.2] uppercase text-[#011b2e] m-0">{sponsor.name}</h3>
-
-                                    <a href={sponsor.link} className="w-full h-[50px] flex items-center justify-center bg-[#0067b2] text-white font-display text-[15px] font-medium tracking-wider uppercase no-underline transition-colors duration-300 hover:bg-[#004f8a]">
-                                        View Profile
-                                    </a>
-                                </div>
+                                <SponsorCard key={index} sponsor={sponsor} />
                             ))}
                         </div>
                     </div>
 
                     {/* SILVER */}
-                    <div className="mb-20">
-                        <h2 className="font-display text-[42px] max-lg:text-4xl max-sm:text-3xl leading-tight uppercase text-[#011b2e] mb-[35px]">
+                    <div className="mb-16 max-sm:mb-10">
+                        <h2 className="font-display text-[28px] max-sm:text-[22px] leading-tight font-bold uppercase text-[#004a8f] mb-8 max-sm:mb-5 m-0">
                             Silver Sponsors
                         </h2>
 
-                        <div className="grid grid-cols-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6">
+                        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6 max-sm:gap-5">
                             {silverSponsors.map((sponsor, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-white border border-[#e6e6e6] flex flex-col min-h-[320px] max-sm:min-h-[280px] overflow-hidden transition-all duration-300 hover:-translate-y-1.2 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
-                                >
-                                    <img
-                                        src={sponsor.image}
-                                        alt={sponsor.name}
-                                        className="w-full h-[180px] max-sm:h-[140px] object-contain object-center p-6 bg-white"
-                                    />
-
-                                    <h3 className="flex-1 flex items-center p-[20px_30px] max-sm:p-[18px_22px] bg-[#f1f3f5] font-display text-[20px] max-sm:text-[18px] font-bold leading-[1.2] uppercase text-[#011b2e] m-0">{sponsor.name}</h3>
-
-                                    <a href={sponsor.link} className="w-full h-[50px] flex items-center justify-center bg-[#0067b2] text-white font-display text-[15px] font-medium tracking-wider uppercase no-underline transition-colors duration-300 hover:bg-[#004f8a]">
-                                        View Profile
-                                    </a>
-                                </div>
+                                <SponsorCard key={index} sponsor={sponsor} />
                             ))}
                         </div>
                     </div>

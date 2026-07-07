@@ -123,17 +123,20 @@ export default function PromotionalOpportunities() {
             </section>
 
             {/* CONTACT */}
-            <section className="pb-[100px]">
-                <div className="w-full max-w-[1440px] mx-auto px-6">
-                    <div className="bg-[#f3f3f3] p-[55px_70px] max-sm:p-[50px_24px]">
+            <section className="pb-[100px] max-md:pb-12">
+                <div className="w-full max-w-[1440px] shadow-[0_10px_30px_rgba(0,0,0,0.08)] mx-auto px-6 max-sm:px-4">
+                    <div className="bg-[#ffffff] p-10 max-sm:p-6 rounded-none">
 
-                        <h3 className="font-display text-[58px] max-sm:text-[34px] leading-none uppercase text-[#011b2e] mb-7">GET IN TOUCH</h3>
+                        <h3 className="font-display text-[32px] max-sm:text-[26px] font-bold leading-tight uppercase text-[#011b2e] mb-4 m-0">
+                            GET IN TOUCH
+                        </h3>
 
-                        <p className="text-[22px] max-sm:text-base leading-[1.5] text-[#011b2e] font-medium m-0">
-                            If you're interested in participating,
-                            <br />
-                            please reach out to{" "}
-                            <a href="mailto:Linda.Thompson@comexposium.com" className="text-[#00539f] no-underline font-medium hover:underline">
+                        <p className="font-body text-[16px] max-sm:text-sm leading-relaxed text-[#222] font-normal m-0">
+                            If you're interested in participating, please reach out to{" "}
+                            <a 
+                                href="mailto:Linda.Thompson@comexposium.com" 
+                                className="text-[#0067b2] no-underline font-semibold hover:underline"
+                            >
                                 Linda.Thompson@comexposium.com
                             </a>
                         </p>
@@ -141,6 +144,7 @@ export default function PromotionalOpportunities() {
                     </div>
                 </div>
             </section>
+
 
         </main>
     );

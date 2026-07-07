@@ -32,13 +32,12 @@ const SponsorsSection = () => {
     const [isSilverHovered, setIsSilverHovered] = useState(false);
     const [goldActiveDot, setGoldActiveDot] = useState(0);
     const [silverActiveDot, setSilverActiveDot] = useState(0);
+    const [showGoldDots, setShowGoldDots] = useState(false);
+    const [showSilverDots, setShowSilverDots] = useState(false);
 
-    // Number of logos visible per slide at 1440px
-    const LOGOS_PER_SLIDE = 5;
-    
-    // Calculate total dots needed
-    const goldTotalDots = Math.ceil(goldSponsors.length / LOGOS_PER_SLIDE);
-    const silverTotalDots = Math.ceil(silverSponsors.length / LOGOS_PER_SLIDE);
+    // Fixed dot counts: 6 for gold, 5 for silver
+    const GOLD_TOTAL_DOTS = 6;
+    const SILVER_TOTAL_DOTS = 5;
 
     // ── Go to specific slide (Gold) ──
     const goToGoldSlide = useCallback((index: number) => {
@@ -60,43 +59,43 @@ const SponsorsSection = () => {
         }
     }, []);
 
-    // ── Auto-slide Gold every 5 seconds ──
+    // ── Auto-slide Gold every 4 seconds (left to right) ──
     useEffect(() => {
         if (isGoldHovered) return;
 
         const interval = setInterval(() => {
             setGoldActiveDot((prev) => {
-                const next = (prev + 1) % goldTotalDots;
+                const next = (prev + 1) % GOLD_TOTAL_DOTS;
                 goToGoldSlide(next);
                 return next;
             });
-        }, 5000);
+        }, 4000);
 
         return () => clearInterval(interval);
-    }, [isGoldHovered, goToGoldSlide, goldTotalDots]);
+    }, [isGoldHovered, goToGoldSlide]);
 
-    // ── Auto-slide Silver every 5 seconds ──
+    // ── Auto-slide Silver every 4 seconds (left to right) ──
     useEffect(() => {
         if (isSilverHovered) return;
 
         const interval = setInterval(() => {
             setSilverActiveDot((prev) => {
-                const next = (prev + 1) % silverTotalDots;
+                const next = (prev + 1) % SILVER_TOTAL_DOTS;
                 goToSilverSlide(next);
                 return next;
             });
-        }, 5000);
+        }, 4000);
 
         return () => clearInterval(interval);
-    }, [isSilverHovered, goToSilverSlide, silverTotalDots]);
+    }, [isSilverHovered, goToSilverSlide]);
 
-    const scrollLeft = (scrollerRef: React.RefObject<HTMLDivElement>, activeDot: number, setActiveDot: (n: number) => void, totalDots: number, goToSlide: (n: number) => void) => {
+    const scrollLeft = (_scrollerRef: React.RefObject<HTMLDivElement>, activeDot: number, setActiveDot: (n: number) => void, totalDots: number, goToSlide: (n: number) => void) => {
         const prev = (activeDot - 1 + totalDots) % totalDots;
         goToSlide(prev);
         setActiveDot(prev);
     };
 
-    const scrollRight = (scrollerRef: React.RefObject<HTMLDivElement>, activeDot: number, setActiveDot: (n: number) => void, totalDots: number, goToSlide: (n: number) => void) => {
+    const scrollRight = (_scrollerRef: React.RefObject<HTMLDivElement>, activeDot: number, setActiveDot: (n: number) => void, totalDots: number, goToSlide: (n: number) => void) => {
         const next = (activeDot + 1) % totalDots;
         goToSlide(next);
         setActiveDot(next);
@@ -131,24 +130,26 @@ const SponsorsSection = () => {
                 </div>
 
                 {/* Gold Sponsors */}
-                <div className="mb-[60px]">
+                <div
+                    className="mb-[60px]"
+                    onMouseEnter={() => {
+                        setShowGoldArrows(true);
+                        setIsGoldHovered(true);
+                        setShowGoldDots(true);
+                    }}
+                    onMouseLeave={() => {
+                        setShowGoldArrows(false);
+                        setIsGoldHovered(false);
+                        setShowGoldDots(false);
+                    }}
+                >
                     <h3 className="font-display text-[1.4rem] font-semibold uppercase text-left text-[#111111] mb-[30px] max-md:text-[1.2rem] max-md:mb-5 max-sm:text-[1rem] max-sm:mb-[15px]">Gold Sponsors</h3>
-                    <div
-                        className="relative flex items-center gap-2.5"
-                        onMouseEnter={() => {
-                            setShowGoldArrows(true);
-                            setIsGoldHovered(true);
-                        }}
-                        onMouseLeave={() => {
-                            setShowGoldArrows(false);
-                            setIsGoldHovered(false);
-                        }}
-                    >
+                    <div className="relative flex items-center gap-2.5">
                         <button
                             className={`w-11 h-11 bg-white border-2 border-[#005eb8] text-[#005eb8] text-[28px] font-bold cursor-pointer flex items-center justify-center shrink-0 rounded-none relative z-[2] outline-none transition-all duration-[350ms] ease-out hover:bg-[#005eb8] hover:text-white max-md:w-[38px] max-md:h-[38px] max-md:text-[24px] max-sm:w-8 max-sm:h-8 max-sm:text-[20px] order-[-1] ${
                                 showGoldArrows ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-[0.8]"
                             }`}
-                            onClick={() => scrollLeft(goldScrollerRef, goldActiveDot, setGoldActiveDot, goldTotalDots, goToGoldSlide)}
+                            onClick={() => scrollLeft(goldScrollerRef, goldActiveDot, setGoldActiveDot, GOLD_TOTAL_DOTS, goToGoldSlide)}
                             aria-label="Previous slide"
                         >
                             ‹
@@ -168,16 +169,16 @@ const SponsorsSection = () => {
                             className={`w-11 h-11 bg-white border-2 border-[#005eb8] text-[#005eb8] text-[28px] font-bold cursor-pointer flex items-center justify-center shrink-0 rounded-none relative z-[2] outline-none transition-all duration-[350ms] ease-out hover:bg-[#005eb8] hover:text-white max-md:w-[38px] max-md:h-[38px] max-md:text-[24px] max-sm:w-8 max-sm:h-8 max-sm:text-[20px] order-[1] ${
                                 showGoldArrows ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-[0.8]"
                             }`}
-                            onClick={() => scrollRight(goldScrollerRef, goldActiveDot, setGoldActiveDot, goldTotalDots, goToGoldSlide)}
+                            onClick={() => scrollRight(goldScrollerRef, goldActiveDot, setGoldActiveDot, GOLD_TOTAL_DOTS, goToGoldSlide)}
                             aria-label="Next slide"
                         >
                             ›
                         </button>
                     </div>
 
-                    {/* Gold Dots */}
-                    <div className="flex justify-center gap-3.5 mt-6 max-md:gap-3 max-md:mt-5 max-sm:gap-2.5 max-sm:mt-4">
-                        {Array.from({ length: goldTotalDots }).map((_, dot) => (
+                    {/* Gold Dots — 6 dots, hidden by default, visible on hover */}
+                    <div className={`flex justify-center gap-3.5 mt-6 max-md:gap-3 max-md:mt-5 max-sm:gap-2.5 max-sm:mt-4 transition-opacity duration-300 ${showGoldDots ? 'opacity-100' : 'opacity-0'}`}>
+                        {Array.from({ length: GOLD_TOTAL_DOTS }).map((_, dot) => (
                             <button
                                 key={dot}
                                 className={`w-3.5 h-3.5 max-md:w-3 max-md:h-3 max-sm:w-2.5 max-sm:h-2.5 rounded-full bg-[rgba(0,94,184,0.3)] cursor-pointer border-none p-0 outline-none transition-all duration-250 hover:bg-[rgba(0,94,184,0.7)] hover:scale-[1.3] ${
@@ -191,24 +192,26 @@ const SponsorsSection = () => {
                 </div>
 
                 {/* Silver Sponsors */}
-                <div className="mb-[60px]">
+                <div
+                    className="mb-[60px]"
+                    onMouseEnter={() => {
+                        setShowSilverArrows(true);
+                        setIsSilverHovered(true);
+                        setShowSilverDots(true);
+                    }}
+                    onMouseLeave={() => {
+                        setShowSilverArrows(false);
+                        setIsSilverHovered(false);
+                        setShowSilverDots(false);
+                    }}
+                >
                     <h3 className="font-display text-[1.4rem] font-semibold uppercase text-left text-[#111111] mb-[30px] max-md:text-[1.2rem] max-md:mb-5 max-sm:text-[1rem] max-sm:mb-[15px]">Silver Sponsors</h3>
-                    <div
-                        className="relative flex items-center gap-2.5"
-                        onMouseEnter={() => {
-                            setShowSilverArrows(true);
-                            setIsSilverHovered(true);
-                        }}
-                        onMouseLeave={() => {
-                            setShowSilverArrows(false);
-                            setIsSilverHovered(false);
-                        }}
-                    >
+                    <div className="relative flex items-center gap-2.5">
                         <button
                             className={`w-11 h-11 bg-white border-2 border-[#005eb8] text-[#005eb8] text-[28px] font-bold cursor-pointer flex items-center justify-center shrink-0 rounded-none relative z-[2] outline-none transition-all duration-[350ms] ease-out hover:bg-[#005eb8] hover:text-white max-md:w-[38px] max-md:h-[38px] max-md:text-[24px] max-sm:w-8 max-sm:h-8 max-sm:text-[20px] order-[-1] ${
                                 showSilverArrows ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-[0.8]"
                             }`}
-                            onClick={() => scrollLeft(silverScrollerRef, silverActiveDot, setSilverActiveDot, silverTotalDots, goToSilverSlide)}
+                            onClick={() => scrollLeft(silverScrollerRef, silverActiveDot, setSilverActiveDot, SILVER_TOTAL_DOTS, goToSilverSlide)}
                             aria-label="Previous slide"
                         >
                             ‹
@@ -228,16 +231,16 @@ const SponsorsSection = () => {
                             className={`w-11 h-11 bg-white border-2 border-[#005eb8] text-[#005eb8] text-[28px] font-bold cursor-pointer flex items-center justify-center shrink-0 rounded-none relative z-[2] outline-none transition-all duration-[350ms] ease-out hover:bg-[#005eb8] hover:text-white max-md:w-[38px] max-md:h-[38px] max-md:text-[24px] max-sm:w-8 max-sm:h-8 max-sm:text-[20px] order-[1] ${
                                 showSilverArrows ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-[0.8]"
                             }`}
-                            onClick={() => scrollRight(silverScrollerRef, silverActiveDot, setSilverActiveDot, silverTotalDots, goToSilverSlide)}
+                            onClick={() => scrollRight(silverScrollerRef, silverActiveDot, setSilverActiveDot, SILVER_TOTAL_DOTS, goToSilverSlide)}
                             aria-label="Next slide"
                         >
                             ›
                         </button>
                     </div>
 
-                    {/* Silver Dots */}
-                    <div className="flex justify-center gap-3.5 mt-6 max-md:gap-3 max-md:mt-5 max-sm:gap-2.5 max-sm:mt-4">
-                        {Array.from({ length: silverTotalDots }).map((_, dot) => (
+                    {/* Silver Dots — 5 dots, hidden by default, visible on hover */}
+                    <div className={`flex justify-center gap-3.5 mt-6 max-md:gap-3 max-md:mt-5 max-sm:gap-2.5 max-sm:mt-4 transition-opacity duration-300 ${showSilverDots ? 'opacity-100' : 'opacity-0'}`}>
+                        {Array.from({ length: SILVER_TOTAL_DOTS }).map((_, dot) => (
                             <button
                                 key={dot}
                                 className={`w-3.5 h-3.5 max-md:w-3 max-md:h-3 max-sm:w-2.5 max-sm:h-2.5 rounded-full bg-[rgba(0,94,184,0.3)] cursor-pointer border-none p-0 outline-none transition-all duration-250 hover:bg-[rgba(0,94,184,0.7)] hover:scale-[1.3] ${

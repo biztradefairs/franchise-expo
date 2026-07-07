@@ -152,7 +152,7 @@ export default function Header() {
 
   return (
     <header className={`sticky top-0 z-50 bg-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'shadow-[0_4px_20px_rgba(0,0,0,0.1)]' : 'shadow-[0_1px_0_rgba(0,0,0,0.08),0_2px_12px_rgba(0,0,0,0.06)]'}`}>
-      <div className={`max-w-[1880px] mx-auto px-[22px] flex items-center justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'h-[75px] gap-2.5' : 'h-[95px] gap-3.5'}`}>
+      <div className={`max-w-[1880px] mx-auto px-[22px] max-[375px]:px-[14px] flex items-center justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'h-[110px] max-[375px]:h-[80px] gap-2.5' : 'h-[135px] max-[375px]:h-[90px] gap-3.5'}`}>
 
         {/* ── Logo ── */}
         <div className="flex items-center gap-4 shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
@@ -163,29 +163,29 @@ export default function Header() {
               width={280}
               height={90}
               priority
-              className={`transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] h-auto ${isScrolled ? 'w-[170px] max-[900px]:w-[140px] max-[600px]:w-[130px]' : 'w-[200px] max-[900px]:w-[180px] max-[600px]:w-[160px]'}`}
+              className={`transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] h-auto ${isScrolled ? 'w-[170px] max-[900px]:w-[140px] max-[600px]:w-[120px] max-[375px]:w-[105px]' : 'w-[205px] max-[900px]:w-[180px] max-[600px]:w-[160px] max-[375px]:w-[135px]'}`}
             />
           </Link>
-          <div className={`w-[1px] bg-[#e0e0e0] shrink-0 transition-[height] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] max-[900px]:hidden ${isScrolled ? 'h-10' : 'h-14'}`} />
+          <div className="w-[1px] bg-[#e0e0e0] shrink-0 h-20 max-[900px]:hidden" />
           <div className="flex flex-col justify-center shrink-0">
-            <div className={`flex items-center gap-1.5 max-[900px]:hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'mb-0.5' : 'mb-1.5'}`}>
-              <span className={`font-display font-bold uppercase tracking-wider text-[#666666] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'text-[8px]' : 'text-[10px]'}`}>Supported By</span>
+            <div className="flex items-center gap-2.5 max-[900px]:hidden mb-1.5">
+              <span className="font-display font-bold uppercase tracking-wider text-[#020202] text-[13px]">Supported By</span>
               <img
                 src="https://www.franchiseexpo.com/images/us-commercial-service.svg"
                 alt="U.S. Commercial Service"
-                className={`w-auto object-contain transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'h-[16px]' : 'h-[24px]'}`}
+                className="w-auto object-contain h-[34px]"
               />
             </div>
-            <div className={`flex flex-col shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] min-w-[180px] max-[900px]:min-w-[auto] max-[600px]:hidden ${isScrolled ? 'gap-0.5' : 'gap-1'}`}>
-              <span className={`font-display font-normal text-[#333333] uppercase leading-[1.1] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'text-[0.82rem] max-[900px]:text-[0.65rem]' : 'text-[0.9rem] max-[900px]:text-[0.7rem]'}`}>New York City, New York</span>
-              <span className={`font-display font-semibold text-[#222222] uppercase leading-[1.1] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'text-[0.88rem] max-[900px]:text-[0.7rem]' : 'text-[0.95rem] max-[900px]:text-[0.75rem]'}`}>June 4th – 5th 2027</span>
+            <div className="flex flex-col shrink-0 gap-0.5 min-w-[200px] max-[900px]:min-w-[auto] max-[600px]:hidden">
+              <span className="font-display font-normal text-[#000000] uppercase leading-[1.1] text-[1.12rem] max-[900px]:text-[0.85rem]">New York City, New York</span>
+              <span className="font-display font-semibold text-[#000000] uppercase leading-[1.1] text-[1.20rem] max-[900px]:text-[0.9rem]">June 4th – 5th 2027</span>
             </div>
           </div>
         </div>
 
         {/* ── Desktop Nav ── */}
         <nav className="flex-1 flex justify-center max-[900px]:hidden">
-          <ul className="flex items-center gap-0 list-none m-0 p-0">
+          <ul className="flex items-center gap-0 bold list-none m-0 p-0">
             {navItems.map((item) => (
               <li
                 key={item.label}
@@ -193,7 +193,7 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter(item.label)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link href={item.href} className={`flex items-center gap-1 font-display text-[15px] font-medium uppercase tracking-wider text-[#111111] no-underline whitespace-nowrap leading-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-primary ${isScrolled ? 'py-1.5 px-2' : 'py-2 px-2.5'}`}>
+                <Link href={item.href} className={`flex bold items-center gap-1 font-display text-[15px] font-medium uppercase tracking-wider text-[#111111] no-underline whitespace-nowrap leading-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-[#063970] ${isScrolled ? 'py-1.5 px-2' : 'py-2 px-2.5'}`}>
                   {item.label}
                   {item.children && (
                     <span className="inline-flex items-center text-base text-[#1d2357] mt-[-1px] transition-transform duration-200">
@@ -219,7 +219,7 @@ export default function Header() {
                   >
                     {item.children.map((child) => (
                       <li key={child.label}>
-                        <Link href={child.href} className="block py-[9px] px-[18px] font-display text-[15px] font-medium uppercase tracking-wider text-[#333] no-underline transition-all duration-200 hover:text-primary hover:pl-[24px]">
+                        <Link href={child.href} className="block py-[9px] px-[18px] font-display text-[15px] font-medium uppercase tracking-wider text-[#000] no-underline transition-all duration-200 hover:text-[#063970] hover:pl-[24px]">
                           {child.label}
                         </Link>
                       </li>
@@ -232,22 +232,56 @@ export default function Header() {
         </nav>
 
         {/* ── CTA Buttons ── */}
-        <div className="flex gap-1.5 shrink-0 max-[1200px]:hidden">
-          <Link
-            href="/register"
-            className={`group relative inline-flex items-center justify-start rounded-full bg-[#005eb8] text-white no-underline font-display font-medium uppercase leading-none shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:opacity-88 hover:-translate-y-[1px] ${isScrolled ? 'h-[36px] min-w-[130px] text-[clamp(0.65rem,0.6vw,0.8rem)] pl-3.5 pr-[38px]' : 'h-[42px] min-w-[150px] text-[clamp(0.72rem,0.7vw,0.9rem)] pl-4 pr-11'}`}
-          >
-            Register to Attend
-            <span className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-[#d9d9d9] flex items-center justify-center text-[#1d2357] font-normal border-[#1d2357] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white group-hover:scale-[1.02] ${isScrolled ? 'w-[28px] h-[28px] text-[1rem] border-[1.5px]' : 'w-[34px] h-[34px] text-[1.3rem] border-2'}`}>›</span>
-          </Link>
+        <div className="flex gap-4 shrink-0 max-[1200px]:hidden">
+          <Link 
+  href="/register" 
+  className={`group inline-flex items-center justify-between rounded-full bg-[#005eb8] text-white no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] gap-6 pl-8 pr-2 ${ 
+    isScrolled 
+      ? 'h-[47px] min-w-[220px] text-[15px] leading-[1.3]' 
+      : 'h-[57px] min-w-[240px] text-[15px] leading-[1.4]' 
+  }`} 
+> 
+  <span className="block text-left whitespace-pre-line font-bold"> 
+    {`REQUEST ATTENDEE\nINFORMATION`} 
+  </span> 
+
+  <span className={`rounded-full bg-[#ebebeb] flex items-center justify-center text-[#121c4e] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white shrink-0 ${ 
+    isScrolled 
+      ? 'w-[34px] h-[34px]' 
+      : 'w-[44px] h-[44px]' 
+  }`} > 
+    <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[2.5] fill-none" viewBox="0 0 24 24"> 
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /> 
+    </svg> 
+  </span> 
+</Link>
+
+            
           <Link
             href="/exhibitors/why-exhibit"
-            className={`group relative inline-flex items-center justify-start rounded-full bg-[#005eb8] text-white no-underline font-display font-medium uppercase leading-none shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:opacity-88 hover:-translate-y-[1px] ${isScrolled ? 'h-[36px] min-w-[130px] text-[clamp(0.65rem,0.6vw,0.8rem)] pl-3.5 pr-[38px]' : 'h-[42px] min-w-[150px] text-[clamp(0.72rem,0.7vw,0.9rem)] pl-4 pr-11'}`}
+            className={`group relative inline-flex items-center justify-start rounded-full bg-[#034694] text-white no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] ${
+              isScrolled 
+                ? 'h-[47px] min-w-[145px] text-[15px] leading-[1.2] pl-7 pr-[60px]' 
+                : 'h-[57px] min-w-[170px] text-[15px] leading-[1.2] pl-8 pr-[60px]'
+            }`}
           >
-            Exhibit / Sponsor
-            <span className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-[#d9d9d9] flex items-center justify-center text-[#1d2357] font-normal border-[#1d2357] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white group-hover:scale-[1.02] ${isScrolled ? 'w-[28px] h-[28px] text-[1rem] border-[1.5px]' : 'w-[34px] h-[34px] text-[1.3rem] border-2'}`}>›</span>
+            <span className="block text-left whitespace-pre-line">
+              {`EXHIBIT /\nSPONSOR`}
+            </span>
+            <span 
+              className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-[#ebebeb] flex items-center justify-center text-[#121c4e] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white ${
+                isScrolled 
+                  ? 'w-[34px] h-[34px] text-[18px]' 
+                  : 'w-[44px] h-[44px] text-[22px]'
+              }`}
+            >
+              <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[2.5] fill-none" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
           </Link>
         </div>
+
 
         {/* ── Hamburger ── */}
         <button
@@ -264,7 +298,7 @@ export default function Header() {
 
       {/* ── Mobile Nav ── */}
       {mobileOpen && (
-        <div className={`fixed left-0 right-0 bottom-0 bg-white border-t border-black/7 overflow-y-auto z-50 animate-[slideIn_0.3s_ease] transition-[top] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'top-[60px]' : 'top-[70px]'}`}>
+        <div className={`fixed left-0 right-0 bottom-0 bg-white border-t border-black/7 overflow-y-auto z-50 animate-[slideIn_0.3s_ease] transition-[top] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'top-[110px] max-[375px]:top-[80px]' : 'top-[135px] max-[375px]:top-[90px]'}`}>
           <ul className="list-none p-0 m-0">
             {navItems.map((item) => (
               <li key={item.label} className="border-b border-black/6">
