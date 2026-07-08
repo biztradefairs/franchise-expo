@@ -3,9 +3,12 @@ import Container from "@/components/ui/Container";
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#003b73] text-white pt-20 pb-0 font-sans border-t border-white/10">
+        <footer
+            className="w-full text-white pt-20 pb-0 font-sans border-t border-white/10"
+            style={{ background: 'linear-gradient(135deg, #144280 0%, #193973 33%, #1d3068 66%, #232559 100%)' }}
+        >
             <Container>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-[1.3fr_1fr_1fr_1.4fr] gap-12 sm:gap-10 xl:gap-x-[70px] pb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-[1fr_1fr_1fr_1.4fr] gap-12 sm:gap-10 xl:gap-x-[70px] pb-16">
 
                     {/* Column 1: Organized by (Centered) */}
                     <div className="flex flex-col items-center text-center gap-8">
@@ -31,22 +34,24 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    {/* Column 2: Venue (Left aligned) */}
-                    <div className="flex flex-col items-start gap-4">
-                        <p className="font-display text-[24px] font-bold uppercase tracking-[0.06em] text-white m-0">
-                            VENUE / LOCATION
-                        </p>
-                        <ul className="list-none m-0 p-0 text-[16px] leading-[1.8] text-white/80 font-body flex flex-col gap-1">
-                            <li className="font-bold text-white text-[16px]">New York City, New York</li>
-                            <li>Javits Center, Hall 1C</li>
-                            <li>429 11th Ave</li>
-                            <li>New York</li>
-                            <li>NY 10001</li>
-                        </ul>
+                    {/* Column 2: Venue (Left aligned) */} 
+                    <div className="flex flex-col items-start gap-5 py-1"> 
+                      <h2 className="font-display text-[24px] font-bold uppercase tracking-[0.06em] text-white m-0"> 
+                        VENUE / LOCATION 
+                      </h2> 
+                      
+                      <address className="not-italic text-[#ffffff] m-0 p-0 text-[16px]  gap-0.5 leading-[1.8] font-body flex flex-col "> 
+                        <span className="font-bold block">New York City, New York</span> 
+                        <span className="block">Javits Center, Hall 1C</span> 
+                        <span className="block">429 11th Ave</span> 
+                        <span className="block">New York,</span> 
+                        <span className="block">NY 10001</span> 
+                      </address> 
                     </div>
 
+
                     {/* Column 3: Opening Times (Left aligned) */}
-                    <div className="flex flex-col items-start gap-4">
+                    <div className="flex flex-col items-start gap-3">
                         <p className="font-display text-[24px] font-bold uppercase tracking-[0.06em] text-white m-0">
                             OPENING TIMES
                         </p>

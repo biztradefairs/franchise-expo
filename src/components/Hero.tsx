@@ -34,7 +34,7 @@ export default function Hero() {
                         June 4th – 5th 2027 &nbsp;|&nbsp; New York City, New York
                     </p>
 
-                    <h1 className="font-display text-[clamp(2.8rem,5vw,5.2rem)] font-bold text-white uppercase leading-none -tracking-[0.01em] m-0 mb-6 max-[900px]:text-[2.6rem] max-[600px]:text-[2.2rem] max-[375px]:text-[1.9rem]">
+                    <h1 className="font-display text-[clamp(2.8rem,5vw,5.2rem)] font-bold text-[#ffffff] uppercase leading-none -tracking-[0.01em] m-0 mb-6 max-[900px]:text-[2.6rem] max-[600px]:text-[2.2rem] max-[375px]:text-[1.9rem]">
                         Your Franchise<br />Future Starts Here
                     </h1>
 

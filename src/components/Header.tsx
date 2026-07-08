@@ -134,24 +134,19 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-        isScrolled
+      className={`sticky top-0 z-50 bg-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled
           ? 'shadow-[0_4px_20px_rgba(0,0,0,0.1)]'
           : 'shadow-[0_1px_0_rgba(0,0,0,0.08),0_2px_12px_rgba(0,0,0,0.06)]'
-      }`}
+        }`}
     >
-      {/* ─────────────────────────────────────────────────────────────
-          HEADER BAR  (logo + desktop-nav + hamburger)
-      ───────────────────────────────────────────────────────────── */}
+    
       <div
-        className={`max-w-[1880px] mx-auto px-[22px] max-[375px]:px-[14px] flex items-center justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-          isScrolled
+        className={`max-w-[1880px] mx-auto px-[22px] max-[375px]:px-[14px] flex items-center justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled
             ? 'h-[110px] max-[375px]:h-[80px] gap-2.5'
             : 'h-[135px] max-[375px]:h-[90px] gap-3.5'
-        }`}
+          }`}
       >
-
-        {/* ── Logo ── */}
+      
         <div className="flex items-center gap-4 shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
           <Link
             href="/"
@@ -163,20 +158,19 @@ export default function Header() {
               width={280}
               height={90}
               priority
-              className={`transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] h-auto ${
-                isScrolled
-                  ? 'w-[170px] max-[1439px]:w-[140px] max-[600px]:w-[120px] max-[375px]:w-[105px]'
-                  : 'w-[205px] max-[1439px]:w-[180px] max-[600px]:w-[160px] max-[375px]:w-[135px]'
-              }`}
+              className={`transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] h-auto ${isScrolled
+                  ? 'w-[170px] max-[1525px]:w-[145px] max-[1439px]:w-[140px] max-[600px]:w-[120px] max-[375px]:w-[105px]'
+                  : 'w-[205px] max-[1525px]:w-[165px] max-[1439px]:w-[180px] max-[600px]:w-[160px] max-[375px]:w-[135px]'
+                }`}
             />
           </Link>
 
-          {/* Divider — desktop only (≥ 1440px) */}
-          <div className="w-[1px] bg-[#e0e0e0] shrink-0 h-20 max-[1439px]:hidden" />
+          {/* Divider — desktop only (≥ 1526px) */}
+          <div className="w-[1px] bg-[#e0e0e0] shrink-0 h-20 max-[1525px]:hidden" />
 
-          {/* Supported By + date — desktop only (≥ 1440px) */}
-          <div className="flex flex-col justify-center shrink-0 max-[1439px]:hidden">
-            <div className="flex items-center gap-2.5 mb-1.5">
+          {/* Supported By + date — desktop only (≥ 1526px) */}
+          <div className="flex flex-col justify-center shrink-0 max-[1440px]:hidden">
+            <div className="flex items-center gap-2.5 mb-1.5 font-bold">
               <span className="font-display font-bold uppercase tracking-wider text-[#020202] text-[13px]">Supported By</span>
               <img
                 src="https://www.franchiseexpo.com/images/us-commercial-service.svg"
@@ -191,96 +185,104 @@ export default function Header() {
           </div>
         </div>
 
-        {/* ── Desktop Nav — ≥ 1440px only ── */}
-        <nav className="flex-1 flex justify-center max-[1439px]:hidden">
-          <ul className="flex items-center gap-0 list-none m-0 p-0">
-            {navItems.map((item) => (
-              <li
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => handleMouseEnter(item.label)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <Link
-                  href={item.href}
-                  className={`flex items-center gap-1 font-display text-[15px] font-medium uppercase tracking-wider text-[#111111] no-underline whitespace-nowrap leading-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-[#063970] ${
-                    isScrolled ? 'py-1.5 px-2' : 'py-2 px-2.5'
-                  }`}
+        {/* ── Desktop Nav + CTA Buttons — ≥ 1440px — grouped RIGHT ── */}
+        <div className="ml-auto flex items-center max-[1439px]:hidden">
+          <nav>
+            <ul className="flex items-center gap-0 list-none m-0 p-0">
+              {navItems.map((item) => (
+                <li
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter(item.label)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  {item.label}
-                  {item.children && (
-                    <span className="inline-flex items-center text-base text-[#1d2357] mt-[-1px] transition-transform duration-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.379 9.336" width="12" height="12">
-                        <path fill="currentColor" d="M8.19,5.241L15.56,0l.819.819-8.189,8.517L0,.819l.819-.819,7.371,5.241Z" />
-                      </svg>
-                    </span>
-                  )}
-                </Link>
-
-                {item.children && openDropdown === item.label && (
-                  <ul
-                    className="absolute top-[calc(100%+4px)] left-0 bg-white rounded-md shadow-[0_8px_28px_rgba(0,0,0,0.13)] min-w-[230px] list-none p-1.5 m-0 border border-black/7 z-50"
-                    onMouseEnter={handleDropdownMouseEnter}
-                    onMouseLeave={handleDropdownMouseLeave}
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-1 text-[16px] font-display font-medium uppercase tracking-wider text-[#111111] no-underline whitespace-nowrap leading-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-[#063970] ${
+                      isScrolled
+                        ? 'py-1.5 px-1.5 text-[13px]'
+                        : 'py-2 px-2 text-[13px] max-[1525px]:px-1.5 max-[1525px]:text-[12.5px]'
+                    }`}
                   >
-                    {item.children.map((child) => (
-                      <li key={child.label}>
-                        <Link
-                          href={child.href}
-                          className="block py-[9px] px-[18px] font-display text-[15px] font-medium uppercase tracking-wider text-[#000] no-underline transition-all duration-200 hover:text-[#063970] hover:pl-[24px]"
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
+                    {item.label}
+                    {item.children && (
+                      <span className="inline-flex items-center text-base text-[#1d2357] mt-[-1px] transition-transform duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.379 9.336" width="12" height="12">
+                          <path fill="currentColor" d="M8.19,5.241L15.56,0l.819.819-8.189,8.517L0,.819l.819-.819,7.371,5.241Z" />
+                        </svg>
+                      </span>
+                    )}
+                  </Link>
 
-        {/* ── Desktop CTA Buttons — ≥ 1440px only ── */}
-        <div className="flex gap-4 shrink-0 max-[1439px]:hidden">
-          <Link
-            href="/register"
-            className={`group inline-flex items-center justify-between rounded-full bg-[#005eb8] text-white no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] gap-6 pl-8 pr-2 ${
-              isScrolled
-                ? 'h-[47px] min-w-[220px] text-[15px] leading-[1.3]'
-                : 'h-[57px] min-w-[240px] text-[15px] leading-[1.4]'
-            }`}
-          >
-            <span className="block text-left whitespace-pre-line">{`REQUEST ATTENDEE\nINFORMATION`}</span>
-            <span
-              className={`rounded-full bg-[#ebebeb] flex items-center justify-center text-[#121c4e] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white shrink-0 ${
-                isScrolled ? 'w-[34px] h-[34px]' : 'w-[44px] h-[44px]'
+                  {item.children && openDropdown === item.label && (
+                    <ul
+                      className="absolute top-[calc(100%+4px)] text-[16px] left-0 bg-white rounded-md shadow-[0_8px_28px_rgba(0,0,0,0.13)] min-w-[230px] list-none p-1.5 m-0 border border-black/7 z-50"
+                      onMouseEnter={handleDropdownMouseEnter}
+                      onMouseLeave={handleDropdownMouseLeave}
+                    >
+                      {item.children.map((child) => (
+                        <li key={child.label}>
+                          <Link
+                            href={child.href}
+                            className="block py-[9px] px-[18px] font-display text-[15px] font-medium uppercase tracking-wider text-[#000] no-underline transition-all duration-200 hover:text-[#063970] hover:pl-[24px]"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* ── CTA Buttons ── */}
+          <div className="flex gap-4 shrink-0 ml-6 max-[1525px]:ml-3">
+            <Link
+              href="/register"
+              className={`group inline-flex items-center justify-between rounded-full bg-[#005eb8] text-[#ffffff] no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] gap-4 max-[1525px]:gap-2 ${
+                isScrolled
+                  ? 'h-[47px] min-w-[200px] min-[1825px]:min-w-[280px] max-[1525px]:min-w-[170px] text-[15px] max-[1525px]:text-[13px] leading-[1.3] pl-6 max-[1525px]:pl-4 pr-2'
+                  : 'h-[57px] min-w-[220px] min-[1825px]:min-w-[300px] max-[1525px]:min-w-[175px] text-[15px] max-[1525px]:text-[13px] leading-[1.4] pl-6 max-[1525px]:pl-4 pr-2'
+              }`} 
+            >
+              {/* Two-line: ≤ 1824px */}
+              <span className="block text-left whitespace-pre-line min-[1825px]:hidden">{`REQUEST ATTENDEE\n INFORMATION`}</span>
+              {/* Single-line: ≥ 1825px */}
+              <span className="hidden min-[1825px]:block text-left whitespace-nowrap">REQUEST ATTENDEE INFORMATION</span>
+              <span
+                className={`rounded-full bg-[#ebebeb] flex items-center justify-center text-[#121c4e] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white shrink-0 ${isScrolled ? 'w-[34px] h-[34px]' : 'w-[44px] h-[44px]'
+                  }`}
+              >
+                <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[2.5] fill-none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+
+            <Link
+              href="/exhibitors/why-exhibit"
+              className={`group relative inline-flex items-center justify-start rounded-full bg-[#034694] text-white no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] ${
+                isScrolled
+                  ? 'h-[47px] min-w-[130px] min-[1825px]:min-w-[190px] max-[1525px]:min-w-[110px] text-[15px] max-[1525px]:text-[13px] leading-[1.2] pl-6 max-[1525px]:pl-4 pr-[54px] max-[1525px]:pr-[46px]'
+                  : 'h-[57px] min-w-[150px] min-[1825px]:min-w-[210px] max-[1525px]:min-w-[120px] text-[15px] max-[1525px]:text-[13px] leading-[1.2] pl-7 max-[1525px]:pl-4 pr-[54px] max-[1525px]:pr-[46px]'
               }`}
             >
-              <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[2.5] fill-none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </Link>
-
-          <Link
-            href="/exhibitors/why-exhibit"
-            className={`group relative inline-flex items-center justify-start rounded-full bg-[#034694] text-white no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] ${
-              isScrolled
-                ? 'h-[47px] min-w-[145px] text-[15px] leading-[1.2] pl-7 pr-[60px]'
-                : 'h-[57px] min-w-[170px] text-[15px] leading-[1.2] pl-8 pr-[60px]'
-            }`}
-          >
-            <span className="block text-left whitespace-pre-line">{`EXHIBIT /\nSPONSOR`}</span>
-            <span
-              className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-[#ebebeb] flex items-center justify-center text-[#121c4e] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white ${
-                isScrolled ? 'w-[34px] h-[34px] text-[18px]' : 'w-[44px] h-[44px] text-[22px]'
-              }`}
-            >
-              <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[2.5] fill-none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </Link>
+              {/* Two-line: ≤ 1824px */}
+              <span className="block text-left whitespace-pre-line min-[1825px]:hidden">{`EXHIBIT /\nSPONSOR`}</span>
+              {/* Single-line: ≥ 1825px */}
+              <span className="hidden min-[1825px]:block text-left whitespace-nowrap">EXHIBIT / SPONSOR</span>
+              <span
+                className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-[#ebebeb] flex items-center justify-center text-[#121c4e] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white ${isScrolled ? 'w-[34px] h-[34px] text-[18px]' : 'w-[44px] h-[44px] text-[22px]'
+                  }`}
+              >
+                <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[2.5] fill-none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          </div>
         </div>
 
         {/* ── Hamburger + MAIN MENU label — ≤ 1439px only ── */}
@@ -346,9 +348,8 @@ export default function Header() {
                       width="13"
                       height="13"
                       aria-hidden="true"
-                      className={`opacity-60 transition-transform duration-300 shrink-0 ${
-                        openDropdown === item.label ? 'rotate-180' : ''
-                      }`}
+                      className={`opacity-60 transition-transform duration-300 shrink-0 ${openDropdown === item.label ? 'rotate-180' : ''
+                        }`}
                     >
                       <path fill="currentColor" d="M8.19,5.241L15.56,0l.819.819-8.189,8.517L0,.819l.819-.819,7.371,5.241Z" />
                     </svg>
