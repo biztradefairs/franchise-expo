@@ -60,7 +60,13 @@ module.exports = {
       animation: {
         slideIn: 'slideIn 0.3s ease',
         fadeIn: 'fadeIn 0.2s ease',
-      }
+      },
+      maxWidth: {
+        // Container design tokens — mirrors src/components/ui/Container.tsx
+        'container':        '1450px', // default — primary content sections
+        'container-wide':   '1850px', // wide    — feature card grids
+        'container-narrow': '1200px', // narrow  — banners, legal bars
+      },
     },
   },
   plugins: [],
