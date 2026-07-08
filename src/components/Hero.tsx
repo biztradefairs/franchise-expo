@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Container from '@/components/ui/Container';
 
 export default function Hero() {
     return (
@@ -27,8 +28,8 @@ export default function Hero() {
               throughout the page so the text left edge lines up on all viewports.
             */}
             <div className="relative z-40 w-[52%] max-[1100px]:w-[58%] max-[900px]:w-full h-full flex items-center max-[900px]:items-start max-[900px]:pt-12 max-[900px]:pb-[280px] max-[600px]:pt-10 max-[600px]:pb-[260px]">
-                {/* Inner wrapper: aligns with the max-w-[1450px] sections below */}
-                <div className="w-full max-w-[1450px] mx-auto px-[60px] max-xl:px-10 max-lg:px-6 max-[600px]:px-5 max-[375px]:px-4 flex flex-col justify-center">
+                {/* Inner wrapper: aligns with the Container default (1450px) used throughout the project */}
+                <Container className="flex flex-col justify-center">
                     <p className="font-display text-[1.125rem] max-[600px]:text-[0.85rem] font-normal text-white uppercase tracking-[0.16em] max-[600px]:tracking-[0.1em] m-0 mb-4">
                         June 4th – 5th 2027 &nbsp;|&nbsp; New York City, New York
                     </p>
@@ -41,7 +42,7 @@ export default function Hero() {
                         <p className="font-body text-[1.125rem] max-[900px]:text-[1rem] max-[600px]:text-[0.95rem] font-semibold text-white leading-[1.6] m-0">Step into a world of franchise possibilities waiting to be explored.</p>
                         <p className="font-body text-[1.125rem] max-[900px]:text-[1rem] max-[600px]:text-[0.95rem] font-semibold text-white leading-[1.6] m-0">Hear from experts who&apos;ll equip you with the tools to make your business ownership dreams a reality.</p>
                     </div>
-                </div>
+                </Container>
             </div>
 
 

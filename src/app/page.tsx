@@ -7,6 +7,7 @@ import { Users, Mic, Clock3 } from 'lucide-react';
 import SponsorsSection from '@/components/sponsor';
 import TestimonialSlider from '@/components/TestimonialSlider';
 import SupportedBy from '@/components/SupportedBy';
+import Container from '@/components/ui/Container';
 
 export const metadata: Metadata = {
   title: 'FranchiseExpo – New York 2026',
@@ -70,9 +71,8 @@ export default function HomePage() {
       <Hero />
 
       {/* ── Stats Bar ── */}
-      {/* ── Stats Bar ── */}
-<section className="w-full bg-[#efefef] py-[34px] px-[60px] max-lg:py-7 max-lg:px-9 max-sm:px-5 max-[375px]:px-4">
-  <div className="max-w-[1450px] mx-auto grid grid-cols-3 max-lg:grid-cols-1 items-center gap-10 max-sm:gap-6">
+<section className="w-full bg-[#efefef] py-[34px] max-lg:py-7">
+  <Container className="grid grid-cols-3 max-lg:grid-cols-1 items-center gap-10 max-sm:gap-6">
 
     {/* Exhibitors */}
     <div className="flex items-center justify-center max-lg:justify-start gap-6">
@@ -127,12 +127,12 @@ export default function HomePage() {
       </div>
     </div>
 
-  </div>
+  </Container>
 </section>
 
       {/* ── Intro + Slider ── */}
-      <section className="bg-[#f5f5f5] py-[70px] px-[60px] max-xl:py-[60px] max-xl:px-10 max-lg:py-[50px] max-lg:px-6 max-sm:py-10 max-sm:px-5">
-        <div className="max-w-[1450px] mx-auto grid grid-cols-[52%_48%] max-lg:grid-cols-1 gap-12 max-lg:gap-9 items-center">
+      <section className="bg-[#f5f5f5] py-[70px] max-xl:py-[60px] max-lg:py-[50px] max-sm:py-10">
+        <Container className="grid grid-cols-[52%_48%] max-lg:grid-cols-1 gap-12 max-lg:gap-9 items-center">
 
           {/* LEFT */}
           <div className="w-full">
@@ -164,13 +164,12 @@ export default function HomePage() {
           {/* RIGHT — slider */}
           <IntroSlider />
 
-        </div>
+        </Container>
       </section>
 
       {/* ── 3-up Feature Cards ── */}
-      <section className="bg-[#ffffff] pt-16 pb-32"> 
-  <div className="max-w-[1850px] mx-auto px-[60px] max-xl:px-10 max-lg:px-6 max-sm:px-5"> 
-    <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-12 max-lg:gap-5"> 
+      <section className="bg-[#ffffff] pt-16 pb-32">
+  <Container className="grid grid-cols-3 max-lg:grid-cols-1 gap-12 max-lg:gap-5"> 
       {cards.map((card) => ( 
         <div key={card.title} className="bg-white overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-transform duration-250 ease-out flex flex-col h-full hover:-translate-y-2 group"> 
           <div className="w-full h-[280px] max-lg:h-[220px] bg-cover bg-center shrink-0" style={{ backgroundImage: `url('${card.image}')` }} /> 
@@ -191,8 +190,7 @@ export default function HomePage() {
           </div> 
         </div> 
       ))} 
-    </div> 
-  </div> 
+  </Container>
 </section>
 
 
@@ -205,7 +203,7 @@ export default function HomePage() {
         
       {/* ── News ── */}
       <section className="bg-white py-[60px] pb-[80px] max-lg:py-10 max-lg:pb-[50px] max-sm:py-[30px] max-sm:pb-10">
-        <div className="w-full max-w-[1450px] mx-auto px-[60px] max-xl:px-10 max-lg:px-6 max-sm:px-[18px]">
+        <Container>
 
           <div className="flex items-center justify-between mb-10 max-lg:flex-col max-lg:items-start max-lg:gap-[18px] max-lg:mb-[28px]">
             <h2 className="font-display text-[clamp(2rem,3vw,3rem)] max-lg:text-[2.2rem] max-sm:text-[1.8rem] leading-none font-bold uppercase text-[#111111] m-0">NEWS &amp; BLOG</h2>
@@ -235,7 +233,7 @@ export default function HomePage() {
             ))}
           </div>
 
-        </div>
+        </Container>
       </section>
 
       {/* ── Sponsors ── */}

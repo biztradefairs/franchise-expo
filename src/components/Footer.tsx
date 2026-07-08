@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Container from "@/components/ui/Container";
 
 export default function Footer() {
     return (
         <footer className="w-full bg-[#003b73] text-white pt-20 pb-0 font-sans border-t border-white/10">
-            <div className="w-full max-w-[1600px] mx-auto px-[45px] max-sm:px-4">
+            <Container>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-[1.3fr_1fr_1fr_1.4fr] gap-12 sm:gap-10 xl:gap-x-[70px] pb-16">
 
                     {/* Column 1: Organized by (Centered) */}
@@ -125,7 +126,7 @@ export default function Footer() {
                     </div>
 
                 </div>
-            </div>
+            </Container>
 
             {/* Bottom Bar (Solid Black/Dark Blue) */}
             <div className="bg-[#051426] py-5 w-full">

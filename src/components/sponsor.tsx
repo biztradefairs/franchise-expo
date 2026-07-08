@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
+import Container from '@/components/ui/Container';
 
 const SponsorsSection = () => {
     const goldSponsors = [
@@ -103,7 +104,7 @@ const SponsorsSection = () => {
 
     return (
         <section className="bg-[#f5f5f5] pt-[60px] pb-[80px] max-sm:pt-10 max-sm:pb-[50px]">
-            <div className="max-w-[1400px] mx-auto px-10 max-lg:px-5 max-sm:px-[20px]">
+            <Container>
                 <h2 className="font-display text-[2.8rem] leading-[1.2] font-bold uppercase text-left text-[#111111] mb-[50px] max-md:text-[2.2rem] max-md:mb-[35px] max-sm:text-[1.8rem] max-sm:mb-[25px]">IFE SPONSORS</h2>
 
                 {/* Platinum Sponsors */}
@@ -252,7 +253,7 @@ const SponsorsSection = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };
