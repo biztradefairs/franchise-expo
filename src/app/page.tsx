@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/UTMLink';
 
 import Hero from '@/components/Hero';
 import IntroSlider from '@/components/IntroSlider';

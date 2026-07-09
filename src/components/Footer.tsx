@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/UTMLink";
 import Container from "@/components/ui/Container";
 
 export default function Footer() {

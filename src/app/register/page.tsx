@@ -2,8 +2,11 @@
 
 import { useState } from "react"
 import PageBanner from "@/components/PageBanner"
+import { useUTMData } from "@/hooks/useUTMTracker"
+import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client"
 
 export default function SpeakerApplication() {
+    const { utmData, campaign } = useUTMData();
     const [formData, setFormData] = useState({
         fullName: "",
         company: "",
@@ -79,9 +82,50 @@ export default function SpeakerApplication() {
 
         setIsSubmitting(true)
 
+        const payload = {
+            email: formData.email,
+            formType: "speaker-application",
+            name: formData.fullName,
+            company: formData.company,
+            phone: formData.phone,
+            message: `Events interested: ${formData.events.join(", ")}. Target Audience: ${formData.targetAudience}`,
+            
+            utmSource: utmData?.utm_source || "",
+            utmMedium: utmData?.utm_medium || "",
+            utmCampaign: utmData?.utm_campaign || "",
+            utmTerm: utmData?.utm_term || "",
+            utmContent: utmData?.utm_content || "",
+            utmId: utmData?.utm_id || "",
+            referrer: utmData?.referrer || "",
+            landingPage: utmData?.landingPage || "",
+            utmTimestamp: utmData?.timestamp || "",
+            
+            cmsCampaignId: campaign?.id || "",
+            cmsCampaignName: campaign?.name || "",
+            cmsCampaignSource: campaign?.utm_source || "",
+            cmsCampaignMedium: campaign?.utm_medium || "",
+        };
+
         try {
-            await new Promise(resolve => setTimeout(resolve, 1500))
-            console.log("Form submitted:", formData)
+            if (!PROJECT_ID_VAR.projectId) {
+                throw new Error("CMS Project ID is missing.");
+            }
+
+            // 1. Submit to CMS GraphQL API
+            const result = await submitContactForm(PROJECT_ID_VAR.projectId, payload);
+            if (result.errors) {
+                throw new Error(result.errors[0]?.message || "Failed to submit lead to CMS.");
+            }
+
+            // 2. Submit to parallel REST API (fallback notification)
+            const restUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+            await fetch(`${restUrl}/contact`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            }).catch((err) => console.warn("Parallel REST submit failed:", err));
+
+            console.log("Form submitted successfully:", payload)
             setIsSubmitted(true)
 
             setTimeout(() => {
@@ -95,9 +139,9 @@ export default function SpeakerApplication() {
                 })
                 setIsSubmitted(false)
             }, 5000)
-        } catch (error) {
+        } catch (error: any) {
             console.error("Error submitting form:", error)
-            setErrors({ submit: "Failed to submit form. Please try again." })
+            setErrors({ submit: error.message || "Failed to submit form. Please try again." })
         } finally {
             setIsSubmitting(false)
         }

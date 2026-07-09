@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
+import { useUTMData } from "@/hooks/useUTMTracker";
+import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 
 const contactCards = [
     {
@@ -42,6 +44,7 @@ const events = [
 ];
 
 export default function ContactUs() {
+    const { utmData, campaign } = useUTMData();
     const [formData, setFormData] = useState({
         fullName: "",
         company: "",
@@ -50,6 +53,10 @@ export default function ContactUs() {
         interests: [] as string[],
         comments: "",
     });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const handleCheckboxChange = (event: string) => {
         setFormData((prev) => {
@@ -60,9 +67,74 @@ export default function ContactUs() {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
+        setIsSubmitting(true);
+        setSubmitError(null);
+
+        const payload = {
+            email: formData.email,
+            formType: "visitor-registration",
+            name: formData.fullName,
+            company: formData.company,
+            phone: formData.phone,
+            message: `Interests: ${formData.interests.join(", ")}. Comments: ${formData.comments}`,
+            
+            utmSource: utmData?.utm_source || "",
+            utmMedium: utmData?.utm_medium || "",
+            utmCampaign: utmData?.utm_campaign || "",
+            utmTerm: utmData?.utm_term || "",
+            utmContent: utmData?.utm_content || "",
+            utmId: utmData?.utm_id || "",
+            referrer: utmData?.referrer || "",
+            landingPage: utmData?.landingPage || "",
+            utmTimestamp: utmData?.timestamp || "",
+            
+            cmsCampaignId: campaign?.id || "",
+            cmsCampaignName: campaign?.name || "",
+            cmsCampaignSource: campaign?.utm_source || "",
+            cmsCampaignMedium: campaign?.utm_medium || "",
+        };
+
+        try {
+            if (!PROJECT_ID_VAR.projectId) {
+                throw new Error("CMS Project ID is missing.");
+            }
+
+            // 1. Submit to CMS GraphQL API
+            const result = await submitContactForm(PROJECT_ID_VAR.projectId, payload);
+            if (result.errors) {
+                throw new Error(result.errors[0]?.message || "Failed to submit lead to CMS.");
+            }
+
+            // 2. Submit to parallel REST API (fallback notification)
+            const restUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+            await fetch(`${restUrl}/contact`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            }).catch((err) => console.warn("Parallel REST submit failed:", err));
+
+            console.log("Form submitted successfully:", payload);
+            setIsSubmitted(true);
+            setFormData({
+                fullName: "",
+                company: "",
+                phone: "",
+                email: "",
+                interests: [],
+                comments: "",
+            });
+
+            setTimeout(() => {
+                setIsSubmitted(false);
+            }, 5000);
+        } catch (error: any) {
+            console.error("Error submitting form:", error);
+            setSubmitError(error.message || "Failed to submit form. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -217,16 +289,31 @@ export default function ContactUs() {
                         </div>
 
                         {/* Submit Button */}
-                        <div className="flex items-start">
+                        <div className="flex flex-col gap-4 items-start">
                             <button
                                 type="submit"
-                                className="inline-flex items-center gap-5 h-[48px] pl-6 pr-1.5 bg-[#0067b2] rounded-full text-white border-none font-display text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#004a8f] cursor-pointer"
+                                disabled={isSubmitting}
+                                className="inline-flex items-center gap-5 h-[48px] pl-6 pr-1.5 bg-[#0067b2] rounded-full text-white border-none font-display text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#004a8f] cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
                             >
-                                <span>SUBMIT</span>
+                                <span>{isSubmitting ? "SUBMITTING..." : "SUBMIT"}</span>
                                 <span className="w-9 h-9 bg-white rounded-full flex items-center justify-center shrink-0">
                                     <ChevronRight size={16} className="text-[#0067b2] stroke-[3]" />
                                 </span>
                             </button>
+
+                            {/* Success Message */}
+                            {isSubmitted && (
+                                <div className="p-4 bg-green-50 border border-green-300 text-green-800 font-medium font-body w-full">
+                                    <p className="m-0 text-sm">Thank you! Your enquiry has been submitted successfully.</p>
+                                </div>
+                            )}
+
+                            {/* Error Message */}
+                            {submitError && (
+                                <div className="p-4 bg-red-50 border border-red-300 text-red-800 font-medium font-body w-full">
+                                    <p className="m-0 text-sm">{submitError}</p>
+                                </div>
+                            )}
                         </div>
                     </form>
                 </div>

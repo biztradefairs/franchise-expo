@@ -3,6 +3,8 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SocialFixed from '@/components/SocialFixed/SocialFixed';
+import Script from 'next/script';
+import { ClientProviders } from '@/components/ClientProviders';
 
 export const metadata: Metadata = {
   title: {
@@ -20,12 +22,72 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics - First script loads the library */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CGKLPLYCF9"
+          strategy="afterInteractive"
+        />
+
+        {/* Google Analytics - Second script initializes it */}
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-CGKLPLYCF9', {
+                send_page_view: true,
+                page_title: document.title,
+                page_location: window.location.href
+              });
+
+              // Function to track UTM parameters as user properties
+              function trackUTMParameters() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id'];
+                const utmData = {};
+                
+                utmParams.forEach(param => {
+                  const value = urlParams.get(param);
+                  if (value) {
+                    utmData[param] = value;
+                  }
+                });
+
+                if (Object.keys(utmData).length > 0) {
+                  // Set user properties for UTM data
+                  gtag('set', 'user_properties', utmData);
+                  
+                  // Also send as an event for better tracking
+                  gtag('event', 'utm_parameters_detected', {
+                    ...utmData,
+                    page_path: window.location.pathname
+                  });
+                }
+              }
+
+              // Track UTM parameters on page load
+              if (document.readyState === 'complete') {
+                trackUTMParameters();
+              } else {
+                window.addEventListener('load', trackUTMParameters);
+              }
+            `,
+          }}
+        />
+      </head>
       <body>
-        <SocialFixed />
-        <Header />
-        <main> {children}</main>
-        <Footer />
+        <ClientProviders>
+          <SocialFixed />
+          <Header />
+          <main> {children}</main>
+          <Footer />
+        </ClientProviders>
       </body>
     </html>
   );
 }
+

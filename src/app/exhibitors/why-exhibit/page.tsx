@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import PageBanner from "@/components/PageBanner";
 import {
     Search,
@@ -6,6 +9,8 @@ import {
     Plus,
 } from "lucide-react";
 import { ChevronRight } from "lucide-react";
+import { useUTMData } from "@/hooks/useUTMTracker";
+import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 
 const benefits = [
     {
@@ -46,6 +51,114 @@ const events = [
 ];
 
 export default function WhyExhibit() {
+    const { utmData, campaign } = useUTMData();
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        phone: "",
+        fdd: "",
+        interests: [] as string[],
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
+
+    const handleCheckboxChange = (event: string) => {
+        setFormData((prev) => {
+            const newInterests = prev.interests.includes(event)
+                ? prev.interests.filter((item) => item !== event)
+                : [...prev.interests, event];
+            return { ...prev, interests: newInterests };
+        });
+    };
+
+    const handleFddChange = (option: string) => {
+        setFormData(prev => ({
+            ...prev,
+            fdd: prev.fdd === option ? "" : option
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        
+        if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.email.trim() || !formData.company.trim()) {
+            setSubmitError("Please fill out all required fields marked with *");
+            return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitError(null);
+
+        const payload = {
+            email: formData.email,
+            formType: "exhibitor-enquiry",
+            name: `${formData.firstName} ${formData.lastName}`.trim(),
+            company: formData.company,
+            phone: formData.phone,
+            message: `FDD Check: ${formData.fdd || "None"}. Interests: ${formData.interests.join(", ")}`,
+            
+            utmSource: utmData?.utm_source || "",
+            utmMedium: utmData?.utm_medium || "",
+            utmCampaign: utmData?.utm_campaign || "",
+            utmTerm: utmData?.utm_term || "",
+            utmContent: utmData?.utm_content || "",
+            utmId: utmData?.utm_id || "",
+            referrer: utmData?.referrer || "",
+            landingPage: utmData?.landingPage || "",
+            utmTimestamp: utmData?.timestamp || "",
+            
+            cmsCampaignId: campaign?.id || "",
+            cmsCampaignName: campaign?.name || "",
+            cmsCampaignSource: campaign?.utm_source || "",
+            cmsCampaignMedium: campaign?.utm_medium || "",
+        };
+
+        try {
+            if (!PROJECT_ID_VAR.projectId) {
+                throw new Error("CMS Project ID is missing.");
+            }
+
+            // 1. Submit to CMS GraphQL API
+            const result = await submitContactForm(PROJECT_ID_VAR.projectId, payload);
+            if (result.errors) {
+                throw new Error(result.errors[0]?.message || "Failed to submit lead to CMS.");
+            }
+
+            // 2. Submit to parallel REST API (fallback notification)
+            const restUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+            await fetch(`${restUrl}/contact`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            }).catch((err) => console.warn("Parallel REST submit failed:", err));
+
+            console.log("Form submitted successfully:", payload);
+            setIsSubmitted(true);
+            setFormData({
+                firstName: "",
+                lastName: "",
+                email: "",
+                company: "",
+                phone: "",
+                fdd: "",
+                interests: [],
+            });
+
+            setTimeout(() => {
+                setIsSubmitted(false);
+            }, 5000);
+        } catch (error: any) {
+            console.error("Error submitting form:", error);
+            setSubmitError(error.message || "Failed to submit form. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <main className="w-full overflow-hidden bg-[#f5f7fb]">
 
@@ -108,13 +221,13 @@ export default function WhyExhibit() {
                         LEARN MORE ABOUT EXHIBITOR AND SPONSORSHIP OPPORTUNITIES
                     </h2>
 
-                    <form className="w-full">
+                    <form className="w-full" onSubmit={handleSubmit}>
 
-                        <input type="text" placeholder="First Name *" className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" />
-                        <input type="text" placeholder="Last Name *" className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" />
-                        <input type="email" placeholder="Email *" className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" />
-                        <input type="text" placeholder="Company *" className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" />
-                        <input type="text" placeholder="Phone" className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" />
+                        <input type="text" placeholder="First Name *" value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" required />
+                        <input type="text" placeholder="Last Name *" value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" required />
+                        <input type="email" placeholder="Email *" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" required />
+                        <input type="text" placeholder="Company *" value={formData.company} onChange={(e) => setFormData({...formData, company: e.target.value})} className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" required />
+                        <input type="text" placeholder="Phone" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full h-[54px] px-4 bg-[#ececec] border-none rounded-none mb-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#0067b2]" />
 
                         <div className="mt-6">
                             <label className="block text-xl font-bold text-[#0d2340] mb-3.5">
@@ -124,7 +237,7 @@ export default function WhyExhibit() {
                             <div className="flex flex-col gap-3">
                                 {["YES", "NO", "Not Sure"].map((item) => (
                                     <label key={item} className="flex items-center gap-3 text-[#111] text-sm cursor-pointer">
-                                        <input type="checkbox" className="w-5 h-5 m-0" />
+                                        <input type="checkbox" checked={formData.fdd === item} onChange={() => handleFddChange(item)} className="w-5 h-5 m-0" />
                                         <span>{item}</span>
                                     </label>
                                 ))}
@@ -139,23 +252,41 @@ export default function WhyExhibit() {
                             <div className="flex flex-col gap-3">
                                 {events.map((event) => (
                                     <label key={event} className="flex items-center gap-3 text-[#111] text-sm cursor-pointer">
-                                        <input type="checkbox" className="w-5 h-5 m-0" />
+                                        <input type="checkbox" checked={formData.interests.includes(event)} onChange={() => handleCheckboxChange(event)} className="w-5 h-5 m-0" />
                                         <span>{event}</span>
                                     </label>
                                 ))}
                             </div>
                         </div>
                         <br />
-                        <button
-                            type="submit"
-                            className="group relative inline-flex items-center pl-[18px] pr-[52px] h-[48px] border-none rounded-full bg-[#0067b2] text-white font-display text-sm font-medium uppercase cursor-pointer hover:bg-[#00528c] transition-colors duration-200"
-                        >
-                            <span>SUBMIT</span>
+                        
+                        <div className="flex flex-col gap-4 items-start">
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="group relative inline-flex items-center pl-[18px] pr-[52px] h-[48px] border-none rounded-full bg-[#0067b2] text-white font-display text-sm font-medium uppercase cursor-pointer hover:bg-[#00528c] transition-colors duration-200 disabled:opacity-75 disabled:cursor-not-allowed"
+                            >
+                                <span>{isSubmitting ? "SUBMITTING..." : "SUBMIT"}</span>
 
-                            <span className="absolute right-1 top-1/2 -translate-y-1/2 w-[38px] h-[38px] rounded-full bg-[#d9d9d9] border border-[#1d2357] flex items-center justify-center text-[#1d2357] text-[22px] leading-none group-hover:bg-white group-hover:scale-105 transition-all duration-200">
-                                <ChevronRight size={18} />
-                            </span>
-                        </button>
+                                <span className="absolute right-1 top-1/2 -translate-y-1/2 w-[38px] h-[38px] rounded-full bg-[#d9d9d9] border border-[#1d2357] flex items-center justify-center text-[#1d2357] text-[22px] leading-none group-hover:bg-white group-hover:scale-105 transition-all duration-200">
+                                    <ChevronRight size={18} />
+                                </span>
+                            </button>
+
+                            {/* Success Message */}
+                            {isSubmitted && (
+                                <div className="p-4 bg-green-50 border border-green-300 text-green-800 font-medium font-body w-full max-w-[600px]">
+                                    <p className="m-0 text-sm">Thank you! Your inquiry has been submitted successfully.</p>
+                                </div>
+                            )}
+
+                            {/* Error Message */}
+                            {submitError && (
+                                <div className="p-4 bg-red-50 border border-red-300 text-red-800 font-medium font-body w-full max-w-[600px]">
+                                    <p className="m-0 text-sm">{submitError}</p>
+                                </div>
+                            )}
+                        </div>
 
                     </form>
 
@@ -196,4 +327,4 @@ export default function WhyExhibit() {
 
         </main>
     );
-}
+}
