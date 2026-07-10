@@ -25,16 +25,16 @@ export default function Hero() {
             */}
             <div className="relative z-40 w-[52%] max-[1100px]:w-[58%] max-[900px]:w-full h-full flex items-center max-[900px]:items-start max-[900px]:pt-12 max-[900px]:pb-12 max-[600px]:pt-14 max-[600px]:pb-14">
                 {/* Inner wrapper: aligns with the Container default (1450px) used throughout the project */}
-                <Container className="flex flex-col justify-center">
-                    <p className="font-display text-[1.125rem] max-[900px]:text-[1rem] max-[600px]:text-[0.95rem] font-normal text-white uppercase tracking-[0.16em] max-[600px]:tracking-[0.1em] m-0 mb-4">
+                <Container className="flex flex-col justify-center max-[900px]:pl-8 max-[600px]:pl-6 max-[375px]:pl-5 max-[900px]:pr-4">
+                    <p className="font-display text-[1.4rem] max-[900px]:text-[1.25rem] max-[600px]:text-[1.2rem] max-[375px]:text-[1.05rem] font-normal text-white uppercase tracking-[0.16em] max-[600px]:tracking-[0.1em] m-0 mb-4">
                         June 4th – 5th 2027 &nbsp;|&nbsp; New York City, New York
                     </p>
-                    <h1 className="font-display text-[clamp(2.8rem,5vw,5.2rem)] font-bold text-[#ffffff] uppercase leading-[0.95] -tracking-[0.01em] m-0 mb-6 max-[900px]:text-[3.2rem] max-[600px]:text-[2.75rem] max-[375px]:text-[2.2rem]">
+                    <h1 className="font-display text-[clamp(2.8rem,5vw,5.2rem)] font-bold text-[#ffffff] uppercase leading-[0.95] -tracking-[0.01em] m-0 mb-6 max-[900px]:text-[3.8rem] max-[600px]:text-[3.6rem] max-[375px]:text-[2.6rem]">
                         Your Franchise <br className="max-[900px]:hidden" /> Future Starts Here
                     </h1>
                     <div className="flex flex-col gap-3 mb-4 max-w-full">
-                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.05rem] max-[600px]:text-[0.98rem] font-medium text-white leading-[1.6] m-0">Step into a world of franchise possibilities waiting to be explored.</p>
-                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.05rem] max-[600px]:text-[0.98rem] font-medium text-white leading-[1.6] m-0">Hear from experts who&apos;ll equip you with the tools to make your business ownership dreams a reality.</p>
+                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Step into a world of franchise possibilities waiting to be explored.</p>
+                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Hear from experts who&apos;ll equip you with the tools to make your business ownership dreams a reality.</p>
                     </div>
                 </Container>
             </div>
