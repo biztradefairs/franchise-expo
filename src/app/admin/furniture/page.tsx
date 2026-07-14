@@ -39,10 +39,7 @@ interface ApiResponse {
   message?: string;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://diemex-backend.onrender.com/api';
-
-export default function AdminFurniturePage() {
-  const router = useRouter();
+const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const [furnitureItems, setFurnitureItems] = useState<FurnitureItem[]>([]);
   const [filteredItems, setFilteredItems] = useState<FurnitureItem[]>([]);
   const [loading, setLoading] = useState(true);

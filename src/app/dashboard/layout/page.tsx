@@ -86,9 +86,9 @@ const fetchMasterFloorPlan = async (silent = false) => {
     const token = localStorage.getItem('exhibitor_token');
     console.log("TOKEN:", token);
     
-    // Use the correct public endpoint
+    const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
     const response = await fetch(
-      "https://diemex-backend.onrender.com/api/floor-plan", // Changed from /api/booths/floor-plan
+      `${apiBaseUrl}/floor-plan`,
       {
         method: "GET",
         headers: {

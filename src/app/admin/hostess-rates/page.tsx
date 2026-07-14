@@ -34,7 +34,7 @@ interface FormData {
   isActive: boolean;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://diemex-backend.onrender.com/api';
+const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export default function AdminHostessRatesPage() {
   const [categories, setCategories] = useState<HostessCategory[]>([]);

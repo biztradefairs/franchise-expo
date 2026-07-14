@@ -119,7 +119,7 @@ export default function LoginPage() {
               <br />
               API URL:{" "}
               {process.env.NEXT_PUBLIC_API_URL ||
-                "https://diemex-backend.onrender.com/api"}
+                "http://localhost:5000/api"}
             </div>
           )}
         </div>
