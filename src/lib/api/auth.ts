@@ -1,4 +1,4 @@
-// lib/api/auth.ts
+import axios from 'axios';
 import { ApiResponse } from '@/lib/types';
 
 export interface LoginCredentials {
@@ -22,68 +22,92 @@ export interface AuthData {
   user: User;
 }
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+
+// Helper to get auth header
+const getAuthHeader = () => {
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('admin_token');
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  }
+  return {};
+};
+
 export const authAPI = {
-  // Admin login with mock credentials
+  // Admin login connected to backend
   login: async (email: string, password: string): Promise<ApiResponse<AuthData>> => {
-    // TODO: Connect to backend authentication API: POST /api/auth/login
-    console.log('🔐 [Mock Login] Attempting login with:', { email });
-    
-    if (email === 'admin@example.com' && password === 'admin123') {
-      const mockData: AuthData = {
-        token: 'mock_admin_token_' + Date.now(),
-        user: {
-          id: 'admin-1',
-          email: 'admin@example.com',
-          name: 'Expo Administrator',
-          role: 'admin',
-          status: 'active',
-          phone: '+91 99999 88888',
-          createdAt: new Date().toISOString(),
-          lastLogin: new Date().toISOString()
-        }
+    try {
+      console.log('🔐 [API] Attempting login for:', email);
+      const response = await axios.post(`${API_URL}/auth/login`, {
+        email: email.toLowerCase().trim(),
+        password
+      });
+      return response.data;
+    } catch (error: any) {
+      console.error('❌ [API] Login failed:', error);
+      return {
+        success: false,
+        error: error.response?.data?.error || error.response?.data?.message || error.message || 'Invalid email or password'
       };
-      return { success: true, data: mockData };
     }
-    
-    return {
-      success: false,
-      error: 'Invalid email or password. Use demo credentials: admin@example.com / admin123'
-    };
   },
 
   // Admin logout
   logout: async (): Promise<ApiResponse> => {
-    // TODO: Connect to backend logout API: POST /api/auth/logout
-    return { success: true, message: 'Logged out successfully' };
+    try {
+      const response = await axios.post(`${API_URL}/auth/logout`, {}, {
+        headers: getAuthHeader()
+      });
+      return response.data;
+    } catch (error: any) {
+      console.error('❌ [API] Logout failed:', error);
+      return {
+        success: false,
+        error: error.response?.data?.error || error.message || 'Logout failed'
+      };
+    }
   },
 
   // Refresh token
   refreshToken: async (): Promise<ApiResponse<{ token: string }>> => {
-    // TODO: Connect to backend refresh token API: POST /api/auth/refresh-token
-    return { success: true, data: { token: 'mock_admin_token_refreshed' } };
+    try {
+      const response = await axios.post(`${API_URL}/auth/refresh-token`, {}, {
+        headers: getAuthHeader()
+      });
+      return response.data;
+    } catch (error: any) {
+      console.error('❌ [API] Refresh token failed:', error);
+      return {
+        success: false,
+        error: error.response?.data?.error || error.message || 'Refresh token failed'
+      };
+    }
   },
 
   // Get current user profile
   getProfile: async (): Promise<ApiResponse<User>> => {
-    // TODO: Connect to backend profile API: GET /api/auth/profile
-    const mockUser: User = {
-      id: 'admin-1',
-      email: 'admin@example.com',
-      name: 'Expo Administrator',
-      role: 'admin',
-      status: 'active',
-    };
-    return { success: true, data: mockUser };
+    try {
+      const response = await axios.get(`${API_URL}/auth/profile`, {
+        headers: getAuthHeader()
+      });
+      return response.data;
+    } catch (error: any) {
+      console.error('❌ [API] Get profile failed:', error);
+      return {
+        success: false,
+        error: error.response?.data?.error || error.message || 'Failed to fetch profile'
+      };
+    }
   },
 
-  // Debug: Check admin user
+  // Debug: Check admin user (mocked or debug endpoints if any)
   checkAdmin: async (): Promise<ApiResponse> => {
-    return { success: true, message: 'Admin verified (Mock)' };
+    return { success: true, message: 'Admin verified' };
   },
 
   // Debug: Reset admin password
   resetAdmin: async (): Promise<ApiResponse> => {
-    return { success: true, message: 'Admin password reset to admin123 (Mock)' };
+    return { success: true, message: 'Admin password reset is handled via createAdmin script' };
   },
 
   // Debug: Get all routes

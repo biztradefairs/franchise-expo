@@ -152,6 +152,28 @@ const saveMockDatabase = (db: Exhibitor[]) => {
   }
 };
 
+import axios from 'axios';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+
+// Helper to get Admin headers
+const getAdminHeaders = () => {
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('admin_token');
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  }
+  return {};
+};
+
+// Helper to get Exhibitor headers
+const getExhibitorHeaders = () => {
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('exhibitor_token');
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  }
+  return {};
+};
+
 export const exhibitorsAPI = {
   // Get all exhibitors with filters and search
   getAll: async (params?: {
@@ -161,237 +183,148 @@ export const exhibitorsAPI = {
     sector?: string;
     status?: string;
   }): Promise<PaginatedResponse<Exhibitor>> => {
-    // TODO: Connect to backend API: GET /exhibitors
-    console.log('📡 [Mock API] Fetching exhibitors with params:', params);
-    
-    let db = getMockDatabase();
-    
-    if (params?.search) {
-      const q = params.search.toLowerCase();
-      db = db.filter(item => 
-        item.name.toLowerCase().includes(q) ||
-        item.email.toLowerCase().includes(q) ||
-        item.company.toLowerCase().includes(q)
-      );
+    try {
+      const response = await axios.get(`${API_URL}/exhibitors`, {
+        params,
+        headers: getAdminHeaders()
+      });
+      return response.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.response?.data?.message || error.message || 'Failed to fetch exhibitors');
     }
-    
-    if (params?.sector) {
-      db = db.filter(item => item.sector === params.sector);
-    }
-    
-    if (params?.status) {
-      db = db.filter(item => item.status === params.status);
-    }
-    
-    const page = params?.page || 1;
-    const limit = params?.limit || 10;
-    const total = db.length;
-    const totalPages = Math.ceil(total / limit);
-    const startIdx = (page - 1) * limit;
-    const paginatedData = db.slice(startIdx, startIdx + limit);
-    
-    return {
-      success: true,
-      data: paginatedData,
-      pagination: {
-        total,
-        page,
-        limit,
-        totalPages
-      }
-    };
   },
 
   // Get single exhibitor by ID
   getById: async (id: string): Promise<{ success: boolean; data: Exhibitor }> => {
-    // TODO: Connect to backend API: GET /exhibitors/:id
-    const db = getMockDatabase();
-    const found = db.find(item => item.id === id);
-    if (!found) {
-      throw new Error('Exhibitor not found');
+    try {
+      const response = await axios.get(`${API_URL}/exhibitors/${id}`, {
+        headers: getAdminHeaders()
+      });
+      return response.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Exhibitor not found');
     }
-    return { success: true, data: found };
   },
 
   // Get stats
   getStats: async (): Promise<ExhibitorStats> => {
-    // TODO: Connect to backend API: GET /exhibitors/stats
-    const db = getMockDatabase();
-    
-    const statusCounts: Record<string, number> = { active: 0, pending: 0, inactive: 0 };
-    const sectorCounts: Record<string, number> = {};
-    
-    db.forEach(item => {
-      statusCounts[item.status] = (statusCounts[item.status] || 0) + 1;
-      sectorCounts[item.sector] = (sectorCounts[item.sector] || 0) + 1;
-    });
-    
-    return {
-      total: db.length,
-      byStatus: Object.entries(statusCounts).map(([_id, count]) => ({ _id, count })),
-      bySector: Object.entries(sectorCounts).map(([_id, count]) => ({ _id, count }))
-    };
+    try {
+      const response = await axios.get(`${API_URL}/exhibitors/stats/general`, {
+        headers: getAdminHeaders()
+      });
+      return response.data.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to fetch stats');
+    }
   },
 
   // Create exhibitor
   create: async (data: CreateExhibitorData): Promise<Exhibitor & { originalPassword: string }> => {
-    // TODO: Connect to backend API: POST /exhibitors
-    const db = getMockDatabase();
-    
-    const newExhibitor: Exhibitor = {
-      id: 'ex-' + Math.random().toString(36).substring(2, 9),
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      company: data.company,
-      sector: data.sector,
-      booth: data.boothNumber || 'Not assigned',
-      boothNumber: data.boothNumber,
-      boothSize: data.boothSize || '',
-      boothType: data.boothType || 'standard',
-      boothDimensions: data.boothDimensions || '',
-      boothNotes: data.boothNotes || '',
-      status: data.status || 'pending',
-      createdAt: new Date().toISOString(),
-      originalPassword: data.password
-    };
-    
-    db.push(newExhibitor);
-    saveMockDatabase(db);
-    
-    return {
-      ...newExhibitor,
-      originalPassword: data.password
-    };
+    try {
+      const response = await axios.post(`${API_URL}/exhibitors`, data, {
+        headers: getAdminHeaders()
+      });
+      return response.data.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to create exhibitor');
+    }
   },
 
   // Update exhibitor
   update: async (id: string, data: Partial<CreateExhibitorData>): Promise<Exhibitor> => {
-    // TODO: Connect to backend API: PUT /exhibitors/:id
-    const db = getMockDatabase();
-    const idx = db.findIndex(item => item.id === id);
-    if (idx === -1) {
-      throw new Error('Exhibitor not found');
+    try {
+      const response = await axios.put(`${API_URL}/exhibitors/${id}`, data, {
+        headers: getAdminHeaders()
+      });
+      return response.data.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to update exhibitor');
     }
-    
-    const updated: Exhibitor = {
-      ...db[idx],
-      ...data,
-      booth: data.boothNumber || db[idx].booth,
-      boothNumber: data.boothNumber || db[idx].boothNumber,
-      boothSize: data.boothSize || db[idx].boothSize,
-      boothType: data.boothType || db[idx].boothType,
-      boothDimensions: data.boothDimensions || db[idx].boothDimensions,
-      boothNotes: data.boothNotes || db[idx].boothNotes,
-    };
-    
-    db[idx] = updated;
-    saveMockDatabase(db);
-    return updated;
   },
 
   // Bulk update exhibitor status
   bulkUpdateStatus: async (ids: string[], status: string): Promise<{ affectedCount: number }> => {
-    // TODO: Connect to backend API: POST /exhibitors/bulk/update-status
-    const db = getMockDatabase();
-    let count = 0;
-    
-    const updated = db.map(item => {
-      if (ids.includes(item.id)) {
-        count++;
-        return { ...item, status };
-      }
-      return item;
-    });
-    
-    saveMockDatabase(updated);
-    return { affectedCount: count };
+    try {
+      const response = await axios.post(`${API_URL}/exhibitors/bulk/update-status`, { ids, status }, {
+        headers: getAdminHeaders()
+      });
+      return response.data.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to update status');
+    }
   },
 
   // Delete exhibitor
   delete: async (id: string): Promise<void> => {
-    // TODO: Connect to backend API: DELETE /exhibitors/:id
-    const db = getMockDatabase();
-    const filtered = db.filter(item => item.id !== id);
-    saveMockDatabase(filtered);
+    try {
+      await axios.delete(`${API_URL}/exhibitors/${id}`, {
+        headers: getAdminHeaders()
+      });
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to delete exhibitor');
+    }
   },
 
   // Resend credentials email
   resendCredentials: async (id: string): Promise<{ success: boolean; message: string; recipient: string }> => {
-    const db = getMockDatabase();
-    const found = db.find(item => item.id === id);
-    if (!found) throw new Error('Exhibitor not found');
-    return {
-      success: true,
-      message: `Credentials resent to ${found.email}`,
-      recipient: found.email
-    };
+    try {
+      const response = await axios.post(`${API_URL}/exhibitors/${id}/resend-credentials`, {}, {
+        headers: getAdminHeaders()
+      });
+      return {
+        success: response.data.success,
+        message: response.data.message,
+        recipient: response.data.data?.email || ''
+      };
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to resend credentials');
+    }
   },
 
   // Test email config
   testEmailService: async (): Promise<any> => {
-    return { success: true, message: 'Email service configured properly (Mock)' };
+    try {
+      const response = await axios.post(`${API_URL}/exhibitors/test-email`, {}, {
+        headers: getAdminHeaders()
+      });
+      return response.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Email test failed');
+    }
   }
 };
 
 /* =========================================================
    EXHIBITOR PORTAL AUTH API
-========================================================= */
+ ========================================================= */
 
 export const authAPI = {
   // Login exhibitor
   login: async (email: string, password: string): Promise<{ token: string; exhibitor: Exhibitor }> => {
-    // TODO: Connect to backend API: POST /auth/exhibitor/login
-    console.log('🔐 [Mock Exhibitor Login] Attempting login:', email);
-    
-    const db = getMockDatabase();
-    const found = db.find(item => item.email.toLowerCase() === email.toLowerCase());
-    
-    // Allow any demo exhibitor or exhibitor in local db
-    if (found) {
-      const token = 'mock_exhibitor_token_' + Date.now();
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('exhibitor_token', token);
-        localStorage.setItem('exhibitor_data', JSON.stringify(found));
+    try {
+      const response = await axios.post(`${API_URL}/auth/exhibitor/login`, {
+        email: email.toLowerCase().trim(),
+        password
+      });
+      if (response.data.success && response.data.data) {
+        return response.data.data;
       }
-      return { token, exhibitor: found };
+      throw new Error(response.data.error || 'Login failed');
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Invalid email or password');
     }
-    
-    // Provide a default fallback login
-    if (email === 'exhibitor@example.com' && password === 'password123') {
-      const defaultExhibitor: Exhibitor = {
-        id: 'ex-1',
-        name: 'John Doe',
-        email: 'exhibitor@example.com',
-        phone: '+91 98765 43210',
-        company: 'ALFERT, LLP',
-        sector: 'Automobile',
-        booth: 'B8103',
-        boothNumber: 'B8103',
-        boothSize: '36 sq mtr',
-        boothType: 'premium',
-        status: 'active',
-        createdAt: new Date().toISOString()
-      };
-      
-      const token = 'mock_exhibitor_token_' + Date.now();
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('exhibitor_token', token);
-        localStorage.setItem('exhibitor_data', JSON.stringify(defaultExhibitor));
-      }
-      return { token, exhibitor: defaultExhibitor };
-    }
-
-    throw new Error('Invalid email or password. Use demo credentials: exhibitor@example.com / password123');
   },
 
-  // Get profiles
+  // Get profile
   getProfile: async (): Promise<Exhibitor> => {
-    if (typeof window !== 'undefined') {
-      const data = localStorage.getItem('exhibitor_data');
-      if (data) return JSON.parse(data);
+    try {
+      const response = await axios.get(`${API_URL}/auth/exhibitor/profile`, {
+        headers: getExhibitorHeaders()
+      });
+      return response.data.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Unauthorized');
     }
-    throw new Error('Unauthorized');
   },
 
   logout: (): void => {
@@ -404,9 +337,9 @@ export const authAPI = {
 
 /* =========================================================
    EXHIBITOR PORTAL DASHBOARD API
-========================================================= */
+ ========================================================= */
 
-interface DashboardData {
+export interface DashboardData {
   exhibitor: {
     id: string;
     name: string;
@@ -442,76 +375,39 @@ interface DashboardData {
 }
 
 export const dashboardAPI = {
-  // Get exhibitor portal dashboard layout details - MOCKED
+  // Get exhibitor portal dashboard layout details
   getLayout: async (): Promise<DashboardData> => {
-    // TODO: Connect to backend API: GET /exhibitorDashboard/layout
-    console.log('📡 [Mock API] Fetching exhibitor dashboard layout');
-    
-    let exhibitorData: any = null;
-    if (typeof window !== 'undefined') {
-      const data = localStorage.getItem('exhibitor_data');
-      if (data) {
-        exhibitorData = JSON.parse(data);
-      }
+    try {
+      const response = await axios.get(`${API_URL}/exhibitorDashboard/layout`, {
+        headers: getExhibitorHeaders()
+      });
+      return response.data.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to fetch dashboard data');
     }
-    
-    if (!exhibitorData) {
-      exhibitorData = {
-        id: 'ex-1',
-        name: 'John Doe',
-        company: 'ALFERT, LLP',
-        email: 'exhibitor@example.com',
-        phone: '+91 98765 43210',
-        boothNumber: 'B8103',
-        status: 'active'
-      };
-    }
-    
-    return {
-      exhibitor: {
-        id: exhibitorData.id,
-        name: exhibitorData.name,
-        company: exhibitorData.company,
-        email: exhibitorData.email,
-        phone: exhibitorData.phone,
-        boothNumber: exhibitorData.boothNumber || 'B8103',
-        status: exhibitorData.status || 'active'
-      },
-      invoices: [
-        { id: 'inv-1', invoiceNumber: 'INV-2026-001', amount: 45000, status: 'paid', dueDate: '2026-08-15' },
-        { id: 'inv-2', invoiceNumber: 'INV-2026-002', amount: 12000, status: 'pending', dueDate: '2026-09-01' }
-      ],
-      requirements: [
-        { id: 'req-1', type: 'furniture', description: '3 Chairs, 1 Round Table', status: 'approved' },
-        { id: 'req-2', type: 'electrical', description: '5KW power supply socket', status: 'pending' },
-        { id: 'req-3', type: 'water', description: 'Direct inlet water feed', status: 'pending' }
-      ],
-      floorPlan: {
-        name: 'Hall 3 Logistics Segment',
-        floor: 'Ground Floor'
-      },
-      event: {
-        name: 'DIEMEX 2026',
-        venue: 'Pune Auto Cluster Exhibition Center',
-        exhibitionDay: '8th October, 2026',
-        dismantleDay: '10th October, 2026'
-      }
-    };
   }
 };
 
 /* =========================================================
    PASSWORD RESET API
-========================================================= */
+ ========================================================= */
 
 export const passwordResetAPI = {
   requestReset: async (email: string): Promise<{ message: string }> => {
-    // TODO: Connect to backend API: POST /auth/exhibitor/forgot-password
-    return { message: `Reset link successfully sent to ${email}` };
+    try {
+      const response = await axios.post(`${API_URL}/auth/exhibitor/forgot-password`, { email });
+      return response.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to request reset');
+    }
   },
   resetPassword: async (token: string, newPassword: string): Promise<{ message: string }> => {
-    // TODO: Connect to backend API: POST /auth/exhibitor/reset-password
-    return { message: 'Password reset successfully' };
+    try {
+      const response = await axios.post(`${API_URL}/auth/exhibitor/reset-password-with-token`, { token, password: newPassword });
+      return response.data;
+    } catch (error: any) {
+      throw new Error(error.response?.data?.error || error.message || 'Failed to reset password');
+    }
   }
 };
 
