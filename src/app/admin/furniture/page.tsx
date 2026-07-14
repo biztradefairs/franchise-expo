@@ -40,6 +40,9 @@ interface ApiResponse {
 }
 
 const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+export default function FurniturePage() {
+  const router = useRouter();
   const [furnitureItems, setFurnitureItems] = useState<FurnitureItem[]>([]);
   const [filteredItems, setFilteredItems] = useState<FurnitureItem[]>([]);
   const [loading, setLoading] = useState(true);
