@@ -10,7 +10,7 @@ import SupportedBy from '@/components/SupportedBy';
 import Container from '@/components/ui/Container';
 
 export const metadata: Metadata = {
-  title: 'Metrology Expo – India 2027',
+  title: 'Metrology Expo – India 20276',
   description:
     "Find the right franchise for you at the world's leading franchise event. May 29–30, 2026 at the Javits Center, New York City.",
 };
@@ -176,7 +176,7 @@ export default function HomePage() {
             
             <p className="font-body text-[15px] max-lg:text-[12px] leading-relaxed text-[#111111] mb-8 font-medium flex-1">{card.description}</p> 
             
-            <Link href={card.href} className="inline-flex items-center justify-between h-[56px] pl-6 pr-1.5 rounded-full bg-[#05264A text-white no-underline font-display text-[20px] uppercase tracking-wider self-start gap-6 transition-all duration-300 ease-in-out min-w-[240px]" > 
+            <Link href={card.href} className="inline-flex items-center justify-between h-[56px] pl-6 pr-1.5 rounded-full bg-[#005eb8] text-white no-underline font-display text-[20px] uppercase tracking-wider self-start gap-6 transition-all duration-300 ease-in-out min-w-[240px]" > 
               <span className="whitespace-nowrap"> {card.cta} </span> 
               <div className="w-[44px] h-[44px] rounded-full bg-[#ebebeb] flex items-center justify-center transition-colors duration-300 group-hover:bg-white shrink-0"> 
                 <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[3.5] fill-none" viewBox="0 0 24 24"> 
@@ -204,7 +204,7 @@ export default function HomePage() {
 
           <div className="flex items-center justify-between mb-10 max-lg:flex-col max-lg:items-start max-lg:gap-[18px] max-lg:mb-[28px]">
             <h2 className="font-display text-[clamp(2rem,3vw,3rem)] max-lg:text-[2.2rem] max-sm:text-[1.8rem] leading-none font-bold uppercase text-[#111111] m-0">NEWS &amp; BLOG</h2>
-            <Link href="/resources/blog" className="group relative inline-flex items-center bg-[#05264A] text-white no-underline font-display text-[0.95rem] max-sm:text-[0.85rem] font-medium uppercase tracking-wider transition-colors duration-200 shrink-0 rounded-[999px] h-[50px] pl-[26px] pr-[62px] max-sm:h-[44px] max-sm:pl-5 max-sm:pr-[54px] hover:bg-[#05264A]">
+            <Link href="/resources/blog" className="group relative inline-flex items-center bg-[#005eb8] text-white no-underline font-display text-[0.95rem] max-sm:text-[0.85rem] font-medium uppercase tracking-wider transition-colors duration-200 shrink-0 rounded-[999px] h-[50px] pl-[26px] pr-[62px] max-sm:h-[44px] max-sm:pl-5 max-sm:pr-[54px] hover:bg-[#004f99]">
               ALL NEWS
               <span className="absolute right-[5px] top-1/2 -translate-y-1/2 rounded-full bg-[#d9d9d9] flex items-center justify-center text-[#1d2357] font-semibold border-2 border-[#1d2357] leading-none transition-all duration-200 group-hover:bg-white group-hover:scale-[1.04] w-10 h-10 text-[1.5rem] max-sm:w-[34px] max-sm:h-[34px] max-sm:text-[1.3rem]">›</span>
             </Link>
@@ -222,10 +222,10 @@ export default function HomePage() {
                   style={{ backgroundImage: `url(${item.image})` }}
                 />
                 <div className="p-[18px] px-[22px] pb-[22px] max-sm:py-3.5 max-sm:px-4 max-sm:pb-[18px] flex-1">
-                  <p className="font-display text-[0.85rem] max-sm:text-[0.75rem] uppercase text-[#05264A] mb-2.5">{item.date}</p>
+                  <p className="font-display text-[0.85rem] max-sm:text-[0.75rem] uppercase text-[#005eb8] mb-2.5">{item.date}</p>
                   <h3 className="font-display text-[1.4rem] max-sm:text-[1.15rem] leading-[1.2] font-bold uppercase text-[#111111] m-0">{item.title}</h3>
                 </div>
-                <div className="h-10 max-sm:h-9 bg-[#005eb8] flex items-center justify-center font-display text-[0.85rem] max-sm:text-[0.75rem] font-medium uppercase text-white tracking-widest transition-colors duration-200 shrink-0 group-hover:bg-[#05264A]">READ MORE</div>
+                <div className="h-10 max-sm:h-9 bg-[#005eb8] flex items-center justify-center font-display text-[0.85rem] max-sm:text-[0.75rem] font-medium uppercase text-white tracking-widest transition-colors duration-200 shrink-0 group-hover:bg-[#004f99]">READ MORE</div>
               </Link>
             ))}
           </div>
