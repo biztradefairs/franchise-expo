@@ -27,7 +27,7 @@ export default function Hero() {
                 {/* Inner wrapper: aligns with the Container default (1450px) used throughout the project */}
                 <Container className="flex flex-col justify-center max-[900px]:pl-8 max-[600px]:pl-6 max-[375px]:pl-5 max-[900px]:pr-4">
                     <p className="font-display text-[1.4rem] max-[900px]:text-[1.25rem] max-[600px]:text-[1.2rem] max-[375px]:text-[1.05rem] font-normal text-white uppercase tracking-[0.16em] max-[600px]:tracking-[0.1em] m-0 mb-4">
-                        June 4th – 5th 2027 &nbsp;|&nbsp; New York City, New York
+                        April 22nd – 24th 2027 &nbsp;|&nbsp; Pune City, India
                     </p>
                     <h1 className="font-display text-[clamp(2.8rem,5vw,5.2rem)] font-bold text-[#ffffff] uppercase leading-[0.95] -tracking-[0.01em] m-0 mb-6 max-[900px]:text-[3.8rem] max-[600px]:text-[3.6rem] max-[375px]:text-[2.6rem]">
                         Your Franchise <br className="max-[900px]:hidden" /> Future Starts Here
