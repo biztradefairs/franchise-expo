@@ -51,7 +51,7 @@ export default function TestimonialSlider() {
   const current = testimonials[active];
 
   return (
-    <section className="bg-[#222b60] py-[30px] px-5 pb-[36px] text-center overflow-hidden max-lg:py-9 max-lg:px-6 max-lg:pb-7 max-sm:py-7 max-sm:px-[18px] max-sm:pb-6">
+    <section className="bg-[#FE6B0B] py-[30px] px-5 pb-[36px] text-center overflow-hidden max-lg:py-9 max-lg:px-6 max-lg:pb-7 max-sm:py-7 max-sm:px-[18px] max-sm:pb-6">
       <div className="max-w-[1100px] mx-auto">
         <div className="font-[Georgia] text-[110px] max-lg:text-[80px] max-sm:text-[60px] leading-[0.7] text-white/90 mb-4 max-sm:mb-2.5">&ldquo;</div>
 
