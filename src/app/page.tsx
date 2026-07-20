@@ -76,7 +76,7 @@ export default function HomePage() {
 
     {/* Exhibitors */}
     <div className="flex items-center justify-center max-lg:justify-start gap-6">
-      <div className="w-16 h-16 rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] shrink-0">
+      <div className="w-16 h-16 rounded-full bg-[#FFA86E] flex items-center justify-center text-[#25b8d3] shrink-0">
         <Users size={30} />
       </div>
 
@@ -93,7 +93,7 @@ export default function HomePage() {
 
     {/* Workshops */}
     <div className="flex items-center justify-center max-lg:justify-start gap-6">
-      <div className="w-16 h-16 rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] shrink-0">
+      <div className="w-16 h-16 rounded-full bg-[#FFA86E] flex items-center justify-center text-[#25b8d3] shrink-0">
         <Mic size={30} />
       </div>
 
@@ -112,7 +112,7 @@ export default function HomePage() {
 
     {/* Days */}
     <div className="flex items-center justify-center max-lg:justify-start gap-6">
-      <div className="w-16 h-16 rounded-full bg-[#9fe7f2] flex items-center justify-center text-[#25b8d3] shrink-0">
+      <div className="w-16 h-16 rounded-full bg-[#FFA86E] flex items-center justify-center text-[#25b8d3] shrink-0">
         <Clock3 size={30} />
       </div>
 
