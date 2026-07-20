@@ -204,7 +204,7 @@ export default function HomePage() {
 
           <div className="flex items-center justify-between mb-10 max-lg:flex-col max-lg:items-start max-lg:gap-[18px] max-lg:mb-[28px]">
             <h2 className="font-display text-[clamp(2rem,3vw,3rem)] max-lg:text-[2.2rem] max-sm:text-[1.8rem] leading-none font-bold uppercase text-[#111111] m-0">NEWS &amp; BLOG</h2>
-            <Link href="/resources/blog" className="group relative inline-flex items-center bg-[#05264A] text-white no-underline font-display text-[0.95rem] max-sm:text-[0.85rem] font-medium uppercase tracking-wider transition-colors duration-200 shrink-0 rounded-[999px] h-[50px] pl-[26px] pr-[62px] max-sm:h-[44px] max-sm:pl-5 max-sm:pr-[54px] hover:bg-[#004f99]">
+            <Link href="/resources/blog" className="group relative inline-flex items-center bg-[#05264A] text-white no-underline font-display text-[0.95rem] max-sm:text-[0.85rem] font-medium uppercase tracking-wider transition-colors duration-200 shrink-0 rounded-[999px] h-[50px] pl-[26px] pr-[62px] max-sm:h-[44px] max-sm:pl-5 max-sm:pr-[54px] hover:bg-[#05264A]">
               ALL NEWS
               <span className="absolute right-[5px] top-1/2 -translate-y-1/2 rounded-full bg-[#d9d9d9] flex items-center justify-center text-[#1d2357] font-semibold border-2 border-[#1d2357] leading-none transition-all duration-200 group-hover:bg-white group-hover:scale-[1.04] w-10 h-10 text-[1.5rem] max-sm:w-[34px] max-sm:h-[34px] max-sm:text-[1.3rem]">›</span>
             </Link>
@@ -225,7 +225,7 @@ export default function HomePage() {
                   <p className="font-display text-[0.85rem] max-sm:text-[0.75rem] uppercase text-[#05264A] mb-2.5">{item.date}</p>
                   <h3 className="font-display text-[1.4rem] max-sm:text-[1.15rem] leading-[1.2] font-bold uppercase text-[#111111] m-0">{item.title}</h3>
                 </div>
-                <div className="h-10 max-sm:h-9 bg-[#005eb8] flex items-center justify-center font-display text-[0.85rem] max-sm:text-[0.75rem] font-medium uppercase text-white tracking-widest transition-colors duration-200 shrink-0 group-hover:bg-[#004f99]">READ MORE</div>
+                <div className="h-10 max-sm:h-9 bg-[#005eb8] flex items-center justify-center font-display text-[0.85rem] max-sm:text-[0.75rem] font-medium uppercase text-white tracking-widest transition-colors duration-200 shrink-0 group-hover:bg-[#05264A]">READ MORE</div>
               </Link>
             ))}
           </div>
