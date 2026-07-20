@@ -142,6 +142,8 @@ export default function HomePage() {
               QUALITY & INSPECTION
             </h2>
 
+ <p=<BOLD>India's Premier Exhibition for Precision Measurement & Quality Engineering</BOLD> className="font-body text-[14.5px] max-sm:text-sm leading-[1.75] text-[#222222] mb-5 font-semibold">
+             </p>
             <p className="font-body text-[14.5px] max-sm:text-sm leading-[1.75] text-[#222222] mb-5 font-semibold">
               INDIAMET is India's dedicated B2B exhibition for metrology, quality control, inspection, calibration, testing, machine vision, and precision engineering technologies. Bringing together leading manufacturers, technology providers, solution experts, and industrial professionals, the expo serves as the ideal platform to discover innovations, build strategic partnerships, and explore the latest advancements driving smart manufacturing.
             </p>
