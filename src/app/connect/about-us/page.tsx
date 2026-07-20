@@ -39,12 +39,7 @@ export default function AboutUsPage() {
               alt="MFV Expo"
               className="h-[70px] max-sm:h-[50px] w-auto object-contain block"
             />
-            <img
-              src={IMAGES.comexpo}
-              alt="Comexposium"
-              className="h-[25px] max-sm:h-[18px] w-auto object-contain block"
-            />
-            
+                       
             <h2 className="font-display text-[32px] max-md:text-[26px] font-bold text-center uppercase text-[#111] leading-tight mt-6 max-w-[800px]">
               Bringing The Franchise World Together Since 1991
             </h2>
