@@ -230,8 +230,8 @@ export default function Header() {
                 />
               </div>
               <div className="flex flex-col shrink-0 gap-0.5 max-[1024px]:gap-0 min-w-[200px] max-[1024px]:min-w-[150px] max-[600px]:min-w-[110px]">
-                <span className="font-display font-normal text-[#000000] uppercase leading-[1.1] text-[1.05rem] max-[1024px]:text-[0.85rem] max-[600px]:text-[0.8rem]">New York City, New York</span>
-                <span className="font-display font-semibold text-[#000000] uppercase leading-[1.1] text-[1.12rem] max-[1024px]:text-[0.95rem] max-[600px]:text-[0.85rem]">June 4th – 5th 2027</span>
+                <span className="font-display font-normal text-[#000000] uppercase leading-[1.1] text-[1.05rem] max-[1024px]:text-[0.85rem] max-[600px]:text-[0.8rem]">Pune City, India</span>
+                <span className="font-display font-semibold text-[#000000] uppercase leading-[1.1] text-[1.12rem] max-[1024px]:text-[0.95rem] max-[600px]:text-[0.85rem]">April 22nd – 24th 2027</span>
               </div>
             </div>
           </div>
