@@ -103,7 +103,7 @@ export default function HomePage() {
         </h3>
 
         <span className="font-display text-[30px] max-sm:text-[22px] max-[375px]:text-[18px] leading-[0.9] font-light uppercase text-[#222]">
-          WORKSHOPS AND
+          TECHNICAL
           <br />
           SESSIONS
         </span>
