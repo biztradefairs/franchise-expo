@@ -34,7 +34,7 @@ export default function Hero() {
                     </h1>
                     <div className="flex flex-col gap-3 mb-4 max-w-full">
                         <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Step into India's dedicated platform for metrology, measurement, quality control, inspection, calibration, testing, and precision engineering technologies.</p>
-                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Connect with industry leaders, explore cutting-edge innovations, and gain insights from technical experts who will help you enhance manufacturing quality, productivity, and precision.</p>
+                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Connect with industry leaders, discover cutting-edge technologies, and unlock smarter solutions for precision manufacturing.</p>
                     </div>
                 </Container>
             </div>
