@@ -4,9 +4,11 @@ import Container from "@/components/ui/Container";
 export default function Footer() {
     return (
         <footer
-            className="w-full text-white pt-20 pb-0 font-sans border-t border-white/10"
-            style={{ background: 'linear-gradient(135deg, #144280 0%, #193973 33%, #1d3068 66%, #232559 100%)' }}
-        >
+  className="w-full text-white pt-20 pb-0 font-sans border-t border-white/10"
+  style={{
+    background: "linear-gradient(135deg, #05264A 0%, #06345F 25%, #07406F 50%, #0A4C81 75%, #0D5A96 100%)",
+  }}
+>
             <Container>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-[1fr_1fr_1fr_1.4fr] gap-12 sm:gap-10 xl:gap-x-[70px] pb-16">
 
