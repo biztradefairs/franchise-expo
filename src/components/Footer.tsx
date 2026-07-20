@@ -36,11 +36,11 @@ export default function Footer() {
                       </h2> 
                       
                       <address className="not-italic text-[#ffffff] m-0 p-0 text-[16px]  gap-0.5 leading-[1.8] font-body flex flex-col "> 
-                        <span className="font-bold block">New York City, New York</span> 
-                        <span className="block">Javits Center, Hall 1C</span> 
-                        <span className="block">429 11th Ave</span> 
-                        <span className="block">New York,</span> 
-                        <span className="block">NY 10001</span> 
+                        <span className="font-bold block">Pune City, India</span> 
+                        <span className="block">Auto Cluster Exhibitionn Center</span> 
+                        <span className="block">Plot No. C-181,Chinchwad East,</span> 
+                        <span className="block">Mumbai Pune Road,</span> 
+                        <span className="block">Pune City, Maharashtra - 411 019, India</span> 
                       </address> 
                     </div>
 
