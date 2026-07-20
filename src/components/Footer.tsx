@@ -22,12 +22,7 @@ export default function Footer() {
                                 alt="Franchise Expo Powered by MFV"
                                 className="h-[50px] w-auto object-contain block brightness-0 invert"
                             />
-                            <img
-                                src="https://www.franchiseexpo.com/images/comoexposium.webp"
-                                alt="Comexposium"
-                                className="h-[22px] w-auto object-contain block brightness-0 invert"
-                            />
-                        </div>
+                             </div>
 
                         <p className="font-body text-[17px] font-medium leading-relaxed text-white/85 m-0 max-w-[280px]">
                             Leading you on the path to successful franchising

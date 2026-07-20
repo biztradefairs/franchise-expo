@@ -10,7 +10,6 @@ export const metadata = {
 
 const IMAGES = {
   logo: 'https://www.franchiseexpo.com/images/franchise-expo.svg',
-  comexpo: 'https://www.franchiseexpo.com/images/comoexposium.webp',
   crowd: 'https://www.franchiseexpo.com/images/austin/E-zone-page/crowd-2.webp',
   betheboss: 'https://www.franchiseexpo.com/images/be-the-boss.webp',
   ifa: 'https://www.franchiseexpo.com/images/IFA_member.webp',
