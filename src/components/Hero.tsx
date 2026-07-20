@@ -5,7 +5,7 @@ import Container from '@/components/ui/Container';
 
 export default function Hero() {
     return (
-        <section className="relative w-full h-[520px] overflow-hidden bg-[#15417e] flex items-stretch max-[900px]:h-auto max-[900px]:min-h-[580px] max-[600px]:min-h-[600px]">
+        <section className="relative w-full h-[520px] overflow-hidden bg-[#05264A] flex items-stretch max-[900px]:h-auto max-[900px]:min-h-[580px] max-[600px]:min-h-[600px]">
             {/* ── RIGHT: video — circle-clipped on left edge ── */}
             <div className="absolute top-0 right-0 w-[70%] max-[1100px]:w-[56%] h-full z-10 bg-[#15417e] max-[900px]:w-full max-[900px]:h-full">
                 <div className="absolute inset-0 overflow-hidden [clip-path:ellipse(78%_140%_at_100%_120%)] max-[900px]:[clip-path:ellipse(72%_60%_at_100%_100%)]">
