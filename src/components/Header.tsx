@@ -204,7 +204,7 @@ export default function Header() {
               className={`flex items-center shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'gap-3' : 'gap-4'}`}
             >
               <Image
-                src="/images/franchise-expo-international-new-york.svg"
+                src="/images/indiamet_logo.png"
                 alt="Logo"
                 width={280}
                 height={90}
