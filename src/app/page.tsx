@@ -137,27 +137,21 @@ export default function HomePage() {
           {/* LEFT */}
           <div className="w-full">
             <h2 className="font-display text-[clamp(36px,4vw,60px)] max-lg:text-[44px] max-sm:text-[34px] leading-[0.95] font-bold uppercase text-[#111111] m-0 mb-7 -tracking-[1px]">
-              FIND THE RIGHT FRANCHISE<br />
-              FOR YOU AT THE WORLD&apos;S<br />
-              LEADING FRANCHISE EVENT
+              DISCOVER THE FUTURE<br />
+              OF METROLOGY,<br />
+              QUALITY & INSPECTION
             </h2>
 
             <p className="font-body text-[14.5px] max-sm:text-sm leading-[1.75] text-[#222222] mb-5 font-semibold">
-              The IFE is the premier franchise show in the U.S with a powerful
-              international impact. Entrepreneurs and prospective business owners
-              from all 43 states and 64 countries travel to the IFE to meet
-              face-to-face with over 200+ exhibiting franchise brands and industry
-              experts.
+              INDIAMET is India's dedicated B2B exhibition for metrology, quality control, inspection, calibration, testing, machine vision, and precision engineering technologies. Bringing together leading manufacturers, technology providers, solution experts, and industrial professionals, the expo serves as the ideal platform to discover innovations, build strategic partnerships, and explore the latest advancements driving smart manufacturing.
             </p>
 
             <p className="font-body text-[14.5px] max-sm:text-sm leading-[1.75] text-[#222222] mb-5 font-semibold">
-              The International Franchise Expo produced in exclusive sponsorship
-              with the Department of Commerce, sets global standards in
-              franchising excellence.
+              Meet leading brands, experience live product demonstrations, attend expert-led technical sessions, and connect with decision-makers from automotive, aerospace, electronics, medical devices, machine tools, defence, energy, and advanced manufacturing industries.
             </p>
 
             <p className="font-body text-[14.5px] max-sm:text-sm leading-[1.75] text-[#222222] mb-5 font-semibold">
-              Register today, and let&apos;s find your perfect match.
+              Register today to connect with the future of precision manufacturing at INDIAMET 2027.
             </p>
           </div>
 
