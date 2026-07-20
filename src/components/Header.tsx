@@ -291,7 +291,7 @@ export default function Header() {
             <div className="flex gap-4 shrink-0 ml-6 max-[1525px]:ml-3">
               <Link
                 href="/register?tab=visitor"
-                className={`group inline-flex items-center justify-between rounded-full bg-[#005eb8] text-[#ffffff] no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] gap-4 max-[1525px]:gap-2 ${isScrolled
+                className={`group inline-flex items-center justify-between rounded-full bg-[#05264A] text-[#ffffff] no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] gap-4 max-[1525px]:gap-2 ${isScrolled
                     ? 'h-[47px] min-w-[200px] min-[1825px]:min-w-[280px] max-[1525px]:min-w-[170px] text-[15px] max-[1525px]:text-[13px] leading-[1.3] pl-6 max-[1525px]:pl-4 pr-2'
                     : 'h-[57px] min-w-[220px] min-[1825px]:min-w-[300px] max-[1525px]:min-w-[175px] text-[15px] max-[1525px]:text-[13px] leading-[1.4] pl-6 max-[1525px]:pl-4 pr-2'
                   }`}
