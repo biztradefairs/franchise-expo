@@ -118,7 +118,7 @@ export default function HomePage() {
 
       <div className="flex items-center gap-4">
         <h3 className="font-display text-[72px] max-sm:text-[52px] max-[375px]:text-[44px] leading-none font-bold text-[#111] whitespace-nowrap">
-          2
+          3
         </h3>
 
         <span className="font-display text-[30px] max-sm:text-[22px] max-[375px]:text-[18px] leading-[0.9] font-light uppercase text-[#222]">
