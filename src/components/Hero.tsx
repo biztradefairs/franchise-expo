@@ -33,8 +33,8 @@ export default function Hero() {
                         Experience the <br className="max-[900px]:hidden" /> Future of Precision
                     </h1>
                     <div className="flex flex-col gap-3 mb-4 max-w-full">
-                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Step into a world of franchise possibilities waiting to be explored.</p>
-                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Hear from experts who&apos;ll equip you with the tools to make your business ownership dreams a reality.</p>
+                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Step into India's dedicated platform for metrology, measurement, quality control, inspection, calibration, testing, and precision engineering technologies.</p>
+                        <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Connect with industry leaders, explore cutting-edge innovations, and gain insights from technical experts who will help you enhance manufacturing quality, productivity, and precision.</p>
                     </div>
                 </Container>
             </div>
