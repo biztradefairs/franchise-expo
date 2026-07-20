@@ -20,7 +20,7 @@ const cards = [
   {
     title: 'Register to Attend',
     description:
-      'Register now to attend the India International Metrology Expo and receive updated show information.',
+      'Register now to attend the International Franchise Expo and receive updated show information.',
     cta: 'Register to Attend',
     href: '/register',
     image: 'https://www.franchiseexpo.com/images/west/Home/REGISTER-TO-ATTEND.webp',
@@ -28,7 +28,7 @@ const cards = [
   {
     title: 'Exhibiting & Sponsoring',
     description:
-      'Looking to sponsor or exhibit at the IndiaMet Expo? Click below to get more information on both opportunities.',
+      'Looking to sponsor or exhibit at the Franchise Expo? Click below to get more information on both opportunities.',
     cta: 'Learn More',
     href: '/exhibitors/why-exhibit',
     image: 'https://www.franchiseexpo.com/images/west/Home/EXHIBITING-SPONSORING.webp',
@@ -36,7 +36,7 @@ const cards = [
   {
     title: 'Speaking Opportunities',
     description:
-      "Looking to speak at the IndiaMet Expo? We'd love to have you! Find out more below.",
+      "Looking to speak at the Franchise Expo? We'd love to have you! Find out more below.",
     cta: 'Learn More',
     href: '/attendees/speaker-application-form',
     image: 'https://www.franchiseexpo.com/images/west/Home/SPEAKING-OPPORTUNITIES.webp',
@@ -142,7 +142,7 @@ export default function HomePage() {
               QUALITY & INSPECTION
             </h2>
 
- <p=<BOLD></BOLD> className="font-body text-[14.5px] max-sm:text-sm leading-[1.75] text-[#222222] mb-5 font-semibold">
+ <p className="font-body text-[14.5px] max-sm:text-sm leading-[1.75] text-[#222222] mb-5 font-semibold">
               INDIAMET is India's dedicated B2B exhibition for metrology, quality control, inspection, calibration, testing, machine vision, and precision engineering technologies. Bringing together leading manufacturers, technology providers, solution experts, and industrial professionals, the expo serves as the ideal platform to discover innovations, build strategic partnerships, and explore the latest advancements driving smart manufacturing.
             </p>
             <p className="font-body text-[14.5px] max-sm:text-sm leading-[1.75] text-[#222222] mb-5 font-semibold">
