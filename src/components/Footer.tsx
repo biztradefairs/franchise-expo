@@ -131,7 +131,7 @@ export default function Footer() {
             </Container>
 
             {/* Bottom Bar (Solid Black/Dark Blue) */}
-            <div className="bg-[#051426] py-5 w-full">
+            <div className="bg-[#FE6B0B] py-5 w-full">
                 <div className="max-w-[1200px] mx-auto px-5 max-sm:px-4 flex justify-between items-center max-sm:flex-col max-sm:gap-3 text-white text-[13px] font-body">
                     <Link
                         href="/privacy-policy"
