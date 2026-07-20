@@ -465,8 +465,8 @@ export default function Header() {
                 />
               </div>
               <div className="flex flex-col items-center shrink-0 gap-1 text-center font-display">
-                <span className="font-display font-normal text-white/80 uppercase leading-[1.1] text-[1.12rem]">New York City, New York</span>
-                <span className="font-display font-semibold text-white uppercase leading-[1.1] text-[1.20rem]">June 4th – 5th 2027</span>
+                <span className="font-display font-normal text-white/80 uppercase leading-[1.1] text-[1.12rem]">Pune, India</span>
+                <span className="font-display font-semibold text-white uppercase leading-[1.1] text-[1.20rem]">April 22nd – 24th 2027</span>
               </div>
             </div>
 
