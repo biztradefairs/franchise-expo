@@ -18,7 +18,7 @@ module.exports = {
         },
         navy: {
           DEFAULT: '#011b2e',
-          mid: '#222b60',
+          mid: '#17cc30',
           dark: '#003b95', // From hero section background (#003b95)
           brand: '#005eb8', // From newsBtn background (#005eb8)
           brandDark: '#004f99', // From newsBtn hover background (#004f99)
