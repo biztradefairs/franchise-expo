@@ -428,7 +428,7 @@ export default function Header() {
               {/* Request Attendee Information */}
               <Link
                 href="/register?tab=visitor"
-                className="group w-full max-w-[420px] inline-flex items-center justify-between h-[56px] pl-7 pr-[6px] rounded-full bg-[#005eb8] text-white no-underline font-display text-[13px] uppercase tracking-wider transition-all duration-300 hover:bg-[#004f99] hover:-translate-y-[1px]"
+                className="group w-full max-w-[420px] inline-flex items-center justify-between h-[56px] pl-7 pr-[6px] rounded-full bg-[#05264A] text-white no-underline font-display text-[13px] uppercase tracking-wider transition-all duration-300 hover:bg-[#004f99] hover:-translate-y-[1px]"
                 onClick={() => setMobileOpen(false)}
               >
                 <span className="whitespace-nowrap">REQUEST ATTENDEE INFORMATION</span>
@@ -442,7 +442,7 @@ export default function Header() {
               {/* Exhibit / Sponsor */}
               <Link
                 href="/register?tab=exhibitor"
-                className="group w-full max-w-[420px] inline-flex items-center justify-between h-[56px] pl-7 pr-[6px] rounded-full bg-[#034694] text-white no-underline font-display text-[13px] uppercase tracking-wider transition-all duration-300 hover:bg-[#02366e] hover:-translate-y-[1px]"
+                className="group w-full max-w-[420px] inline-flex items-center justify-between h-[56px] pl-7 pr-[6px] rounded-full bg-[#05264A] text-white no-underline font-display text-[13px] uppercase tracking-wider transition-all duration-300 hover:bg-[#02366e] hover:-translate-y-[1px]"
                 onClick={() => setMobileOpen(false)}
               >
                 <span className="whitespace-nowrap">EXHIBIT / SPONSOR</span>
