@@ -30,7 +30,7 @@ export default function Hero() {
                         April 22nd – 24th 2027 &nbsp;|&nbsp; Pune City, India
                     </p>
                     <h1 className="font-display text-[clamp(2.8rem,5vw,5.2rem)] font-bold text-[#ffffff] uppercase leading-[0.95] -tracking-[0.01em] m-0 mb-6 max-[900px]:text-[3.8rem] max-[600px]:text-[3.6rem] max-[375px]:text-[2.6rem]">
-                        Your Franchise <br className="max-[900px]:hidden" /> Future Starts Here
+                        Your Precision Journey  <br className="max-[900px]:hidden" /> Starts Here
                     </h1>
                     <div className="flex flex-col gap-3 mb-4 max-w-full">
                         <p className="font-body text-[1.125rem] max-[900px]:text-[1.1rem] max-[600px]:text-[1.05rem] max-[375px]:text-[0.95rem] font-medium text-white/95 leading-[1.6] m-0">Step into a world of franchise possibilities waiting to be explored.</p>
