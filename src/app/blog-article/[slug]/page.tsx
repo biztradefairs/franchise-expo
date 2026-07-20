@@ -153,7 +153,7 @@ export default function BlogArticlePage() {
                     <aside className="sticky top-6 flex flex-col gap-7 max-md:static max-md:mt-10 w-full">
 
                         {/* Recent Posts */}
-                        <div className="bg-[#f8f9fc] border border-[#e0e4ed]">
+                        <div className="bg-[#05264A] border border-[#e0e4ed]">
                             <h3 className="font-display text-[0.9rem] font-bold text-white uppercase tracking-wider bg-[#003b95] m-0 py-3 px-4.5">Recent Posts</h3>
                             <ul className="list-none m-0 p-0">
                                 {recentPosts.map((p) => (
@@ -178,7 +178,7 @@ export default function BlogArticlePage() {
                         </div>
 
                         {/* CTA Widget */}
-                        <div className="bg-[#003b95] p-[26px_20px]">
+                        <div className="bg-[#05264A] p-[26px_20px]">
                             <h3 className="font-display text-[1.05rem] font-bold text-white uppercase mb-3 leading-snug">
                                 Find Your Franchise at Our Expos
                             </h3>
