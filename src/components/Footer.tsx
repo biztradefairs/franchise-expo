@@ -26,10 +26,7 @@ export default function Footer() {
                             />
                              </div>
 
-                        <p className="font-body text-[17px] font-medium leading-relaxed text-white/85 m-0 max-w-[280px]">
-                            India's Dedicated Expo for Metrology, Quality & Inspection
-                        </p>
-                    </div>
+                        
 
                     {/* Column 2: Venue (Left aligned) */} 
                     <div className="flex flex-col items-start gap-5 py-1"> 
