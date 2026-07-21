@@ -38,7 +38,7 @@ export default function BusinessResourceCenter() {
 
                     <div className="grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-2 max-sm:grid-cols-2 gap-[20px] max-lg:gap-4 max-md:gap-3 max-sm:gap-2.5">
 
-                        <div className="bg-[#27b8cf] h-[160px] max-lg:h-[140px] max-md:h-[120px] max-sm:h-[100px] p-[24px_20px] max-lg:p-[20px_16px] max-md:p-[16px_14px] max-sm:p-[12px_10px] flex flex-col justify-center rounded-sm transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(39,184,207,0.3)]">
+                        <div className="bg-[#FE6B0B] h-[160px] max-lg:h-[140px] max-md:h-[120px] max-sm:h-[100px] p-[24px_20px] max-lg:p-[20px_16px] max-md:p-[16px_14px] max-sm:p-[12px_10px] flex flex-col justify-center rounded-sm transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(39,184,207,0.3)]">
                             <span className="font-display text-[2.2rem] max-lg:text-[2rem] max-md:text-[1.6rem] max-sm:text-[1.3rem] font-bold text-white mb-2.5 max-md:mb-1.5 max-sm:mb-1">1</span>
                             <p className="text-[0.82rem] max-lg:text-[0.8rem] max-md:text-[0.72rem] max-sm:text-[0.65rem] leading-[1.4] max-md:leading-[1.3] max-sm:leading-[1.2] text-white font-medium m-0">
                                 Explore the latest innovations in metrology, testing, calibration, 
@@ -46,7 +46,7 @@ export default function BusinessResourceCenter() {
                             </p>
                         </div>
 
-                        <div className="bg-[#27b8cf] h-[160px] max-lg:h-[140px] max-md:h-[120px] max-sm:h-[100px] p-[24px_20px] max-lg:p-[20px_16px] max-md:p-[16px_14px] max-sm:p-[12px_10px] flex flex-col justify-center rounded-sm transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(39,184,207,0.3)]">
+                        <div className="bg-[#FE6B0B] h-[160px] max-lg:h-[140px] max-md:h-[120px] max-sm:h-[100px] p-[24px_20px] max-lg:p-[20px_16px] max-md:p-[16px_14px] max-sm:p-[12px_10px] flex flex-col justify-center rounded-sm transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(39,184,207,0.3)]">
                             <span className="font-display text-[2.2rem] max-lg:text-[2rem] max-md:text-[1.6rem] max-sm:text-[1.3rem] font-bold text-white mb-2.5 max-md:mb-1.5 max-sm:mb-1">2</span>
                             <p className="text-[0.82rem] max-lg:text-[0.8rem] max-md:text-[0.72rem] max-sm:text-[0.65rem] leading-[1.4] max-md:leading-[1.3] max-sm:leading-[1.2] text-white font-medium m-0">
                                 Meet leading manufacturers, technology providers, and solution experts to 
@@ -54,7 +54,7 @@ export default function BusinessResourceCenter() {
                             </p>
                         </div>
 
-                        <div className="bg-[#27b8cf] h-[160px] max-lg:h-[140px] max-md:h-[120px] max-sm:h-[100px] p-[24px_20px] max-lg:p-[20px_16px] max-md:p-[16px_14px] max-sm:p-[12px_10px] flex flex-col justify-center rounded-sm transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(39,184,207,0.3)]">
+                        <div className="bg-[#FE6B0B] h-[160px] max-lg:h-[140px] max-md:h-[120px] max-sm:h-[100px] p-[24px_20px] max-lg:p-[20px_16px] max-md:p-[16px_14px] max-sm:p-[12px_10px] flex flex-col justify-center rounded-sm transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(39,184,207,0.3)]">
                             <span className="font-display text-[2.2rem] max-lg:text-[2rem] max-md:text-[1.6rem] max-sm:text-[1.3rem] font-bold text-white mb-2.5 max-md:mb-1.5 max-sm:mb-1">3</span>
                             <p className="text-[0.82rem] max-lg:text-[0.8rem] max-md:text-[0.72rem] max-sm:text-[0.65rem] leading-[1.4] max-md:leading-[1.3] max-sm:leading-[1.2] text-white font-medium m-0">
                                 Evaluate products, witness live demonstrations, and identify the 
@@ -62,7 +62,7 @@ export default function BusinessResourceCenter() {
                             </p>
                         </div>
 
-                        <div className="bg-[#27b8cf] h-[160px] max-lg:h-[140px] max-md:h-[120px] max-sm:h-[100px] p-[24px_20px] max-lg:p-[20px_16px] max-md:p-[16px_14px] max-sm:p-[12px_10px] flex flex-col justify-center rounded-sm transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(39,184,207,0.3)]">
+                        <div className="bg-[#FE6B0B] h-[160px] max-lg:h-[140px] max-md:h-[120px] max-sm:h-[100px] p-[24px_20px] max-lg:p-[20px_16px] max-md:p-[16px_14px] max-sm:p-[12px_10px] flex flex-col justify-center rounded-sm transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(39,184,207,0.3)]">
                             <span className="font-display text-[2.2rem] max-lg:text-[2rem] max-md:text-[1.6rem] max-sm:text-[1.3rem] font-bold text-white mb-2.5 max-md:mb-1.5 max-sm:mb-1">4</span>
                             <p className="text-[0.82rem] max-lg:text-[0.8rem] max-md:text-[0.72rem] max-sm:text-[0.65rem] leading-[1.4] max-md:leading-[1.3] max-sm:leading-[1.2] text-white font-medium m-0">
                                 Have one-on-one discussions with technical specialists and discover 
