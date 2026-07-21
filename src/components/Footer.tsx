@@ -69,7 +69,11 @@ export default function Footer() {
                     </div>
 
                     {/* Column 4: Contact (Left aligned) */}
-                  
+                    <div className="flex flex-col items-start gap-6">
+                        <p className="text-[18px] font-bold text-white m-0 font-body">
+                            Tel: +91 91483 19993
+                        </p>
+
                         <div className="flex flex-col gap-6">
                             {/* Request Info */}
                             <div className="flex flex-col gap-2">
@@ -78,13 +82,13 @@ export default function Footer() {
                                 </p>
                                 <div className="flex flex-col gap-0.5">
                                     <p className="text-[17px] text-white/85 m-0 font-body">
-                                        Padmanabham +91 9148319993
+                                        Padmanabham +91 9742711211
                                     </p>
                                     <a
-                                        href="mailto:pad@maxxmedia.in"
+                                        href="mailto:Justin.Wood@comexposium.com"
                                         className="text-[17px] text-white no-underline hover:underline transition-colors duration-200 font-body w-fit break-all"
                                     >
-                                        pad@maxxmedia.in
+                                        Justin.Wood@comexposium.com
                                     </a>
                                 </div>
                             </div>
@@ -117,7 +121,7 @@ export default function Footer() {
                                         Murphy Connolly (631) 335-5696
                                     </p>
                                     <a
-                                        href="mailto:bhoomika@maxxmedia.in"
+                                        href="mailto:Murphy.Connolly@comexposium.com"
                                         className="text-[17px] text-white no-underline hover:underline transition-colors duration-200 font-body w-fit break-all"
                                     >
                                         Murphy.Connolly@comexposium.com
