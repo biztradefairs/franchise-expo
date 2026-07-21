@@ -6,27 +6,27 @@ import PageBanner from '@/components/PageBanner';
 const attendeeCards = [
   {
     image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/Emerging_Pavilion.webp',
-    title: 'Emerging Brand Pavilion',
+    title: 'Emerging Technology Pavilion',
     description:
-      "Looking for the next big franchise opportunity? The Emerging Brand Pavilion is where you'll find the newest franchise concepts. Meet visionary founders, explore fresh business models, and get in on the ground floor of exciting new brands.",
+      "Explore the latest innovations in metrology, quality control, testing, calibration, and inspection technologies at the Emerging Technology Pavilion. Discover next-generation measurement solutions, smart manufacturing technologies, and breakthrough products from innovative companies shaping the future of precision engineering.",
   },
   {
     image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/Conference_Agenda.webp',
     title: 'Conference Agenda',
     description:
-      'We offer a highly diverse conference agenda that covers a variety of fundamental topics around franchising.',
+      'Gain valuable insights from industry experts through a comprehensive conference program covering the latest trends, innovations, best practices, quality standards, precision measurement, calibration, testing, inspection, Industry 4.0, and smart manufacturing technologies.',
   },
   {
     image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/Exhibitors.webp',
     title: 'Exhibitors',
     description:
-      'At the International Franchise Expo, you have the power to meet and engage with a variety of franchise brands from every industry.',
+      'Meet leading manufacturers, technology providers, and solution experts showcasing the latest innovations in metrology, quality control, testing, calibration, inspection, machine vision, and precision measurement. Discover cutting-edge technologies, compare solutions, and connect directly with industry leaders driving the future of manufacturing.',
   },
   {
     image: 'https://www.franchiseexpo.com/images/west/Attendees/Attendee_Info/The_Business_Resource_Center.webp',
-    title: 'Business Resource Center',
+    title: 'Technology & Solutions Hub',
     description:
-      'Explore a variety of suppliers that are critical in developing your franchise, and form valuable business connections.',
+      'Explore a comprehensive range of metrology, quality control, testing, calibration, inspection, automation, and machine vision solutions. Connect with leading technology providers, discover innovative products, and build valuable business partnerships to enhance your manufacturing capabilities.',
   },
 ];
 
