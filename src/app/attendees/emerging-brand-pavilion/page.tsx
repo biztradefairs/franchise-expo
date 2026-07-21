@@ -9,19 +9,19 @@ export const metadata: Metadata = {
 
 const features = [
   {
-    heading: "Discover Next-Generation Technologies:",
+    heading: "Discover Next-Generation Technologies",
     body: "Be among the first to explore innovative measurement, inspection, calibration, machine vision, and automation solutions from emerging technology providers.",
   },
   {
-    heading: "Meet Industry Innovators:",
+    heading: "Meet Industry Innovators",
     body: "Connect directly with founders, engineers, product specialists, and technology experts to gain insights into the latest developments and future trends.",
   },
   {
-    heading: "Experience Live Demonstrations:",
+    heading: "Experience Live Demonstrations",
     body: "See cutting-edge equipment and software in action through live product demonstrations and hands-on technology showcases.",
   },
   {
-    heading: "Stay Ahead of Industry Trends:",
+    heading: "Stay Ahead of Industry Trends",
     body: "Explore smart manufacturing, Industry 4.0, AI-powered inspection, digital metrology, and advanced quality solutions that can improve productivity, accuracy, and operational excellence.",
   },
 ];
