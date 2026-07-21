@@ -43,11 +43,10 @@ const benefits = [
 ];
 
 const events = [
-    "International Franchise Expo",
-    "Franchise Expo South",
-    "Franchise Expo Cincinnati",
-    "Franchise Expo West",
-    "Franchise Expo Dallas",
+    "Exhibit at INDIAMET",
+    "Sponsorship Opportunities",
+    "Technical Conference",
+     
 ];
 
 export default function WhyExhibit() {
