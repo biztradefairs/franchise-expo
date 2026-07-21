@@ -96,13 +96,13 @@ export default function Footer() {
                                 </p>
                                 <div className="flex flex-col gap-0.5">
                                     <p className="text-[17px] text-white/85 m-0 font-body">
-                                        Suresh +91 9148319993
+                                        Linda Thompson (201) 881-1646
                                     </p>
                                     <a
-                                        href="mailto:suresh@maxxmedia.in"
+                                        href="mailto:Linda.Thompson@comexposium.com"
                                         className="text-[17px] text-white no-underline hover:underline transition-colors duration-200 font-body w-fit break-all"
                                     >
-                                        suresh@maxxmedia.in
+                                        Linda.Thompson@comexposium.com
                                     </a>
                                 </div>
                             </div>
@@ -114,13 +114,13 @@ export default function Footer() {
                                 </p>
                                 <div className="flex flex-col gap-0.5">
                                     <p className="text-[17px] text-white/85 m-0 font-body">
-                                        Bhoomika Shetty +91 9148319993
+                                        Murphy Connolly (631) 335-5696
                                     </p>
                                     <a
                                         href="mailto:bhoomika@maxxmedia.in"
                                         className="text-[17px] text-white no-underline hover:underline transition-colors duration-200 font-body w-fit break-all"
                                     >
-                                        bhoomika@maxxmedia.in
+                                        Murphy.Connolly@comexposium.com
                                     </a>
                                 </div>
                             </div>
