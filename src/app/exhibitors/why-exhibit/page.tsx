@@ -228,11 +228,11 @@ export default function WhyExhibit() {
 
                         <div className="mt-6">
                             <label className="block text-xl font-bold text-[#0d2340] mb-3.5">
-                                Does your company have a FDD? *
+                                Company Category* (Select One)*
                             </label>
 
                             <div className="flex flex-col gap-3">
-                                {["YES", "NO", "Not Sure"].map((item) => (
+                                {["Metrology Equipment Manufacturer", "Quality & Inspection Solutions Provider", "Calibration & Testing Services" ,"Machine Vision & Automation","Software / Industry 4.0 Solutions","Other"].map((item) => (
                                     <label key={item} className="flex items-center gap-3 text-[#111] text-sm cursor-pointer">
                                         <input type="checkbox" checked={formData.fdd === item} onChange={() => handleFddChange(item)} className="w-5 h-5 m-0" />
                                         <span>{item}</span>
@@ -243,7 +243,7 @@ export default function WhyExhibit() {
 
                         <div className="mt-6">
                             <label className="block text-xl font-bold text-[#0d2340] mb-3.5">
-                                Which event(s) are you interested in participating in? *
+                                Which area are you interested in?* (Select all that apply)*
                             </label>
 
                             <div className="flex flex-col gap-3">
