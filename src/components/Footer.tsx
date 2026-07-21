@@ -42,7 +42,7 @@ export default function Footer() {
                         <span className="block">Auto Cluster Exhibition Center</span> 
                         <span className="block">Plot No. C-181,Chinchwad East,</span> 
                         <span className="block">Mumbai Pune Road,</span> 
-                        <span className="block">Pune,Maharashtra - 411 019, India</span> 
+                        <span className="block">Pune, Maharashtra - 411 019, India</span> 
                       </address> 
                     </div>
 
@@ -54,17 +54,12 @@ export default function Footer() {
                         </p>
                         <div className="flex flex-col gap-4 text-[16px] leading-relaxed text-white/80 font-body">
                             <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Thursday April 22nd 2027</strong>
-                                <span>10AM - 6PM</span>
-                            </div>
-                              <div className="flex flex-col gap-4 text-[16px] leading-relaxed text-white/80 font-body">
-                            <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Friday April 23rd 2027</strong>
-                                <span>10AM - 6PM</span>
-                            </div>
-                            <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Saturday April 24th 2027</strong>
+                                <strong className="text-white font-bold">Friday June 4th 2027</strong>
                                 <span>10AM - 5PM</span>
+                            </div>
+                            <div className="flex flex-col gap-0.5">
+                                <strong className="text-white font-bold">Saturday June 5th 2027</strong>
+                                <span>10AM - 4PM</span>
                             </div>
                         </div>
                     </div>
