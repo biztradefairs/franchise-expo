@@ -42,7 +42,7 @@ export default function Footer() {
                         <span className="block">Auto Cluster Exhibition Center</span> 
                         <span className="block">Plot No. C-181,Chinchwad East,</span> 
                         <span className="block">Mumbai Pune Road,</span> 
-                        <span className="block">Pune, Maharashtra - 411 019, India</span> 
+                        <span className="block">Pune,Maharashtra - 411 019, India</span> 
                       </address> 
                     </div>
 
