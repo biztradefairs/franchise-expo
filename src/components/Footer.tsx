@@ -83,10 +83,10 @@ export default function Footer() {
                                         Padmanabham +91 9742711211
                                     </p>
                                     <a
-                                        href="mailto:Justin.Wood@comexposium.com"
+                                        href="mailto:pad@maxxmedia.in"
                                         className="text-[17px] text-white no-underline hover:underline transition-colors duration-200 font-body w-fit break-all"
                                     >
-                                        Justin.Wood@comexposium.com
+                                        pad@maxxmedia.in
                                     </a>
                                 </div>
                             </div>
@@ -98,13 +98,13 @@ export default function Footer() {
                                 </p>
                                 <div className="flex flex-col gap-0.5">
                                     <p className="text-[17px] text-white/85 m-0 font-body">
-                                        Linda Thompson (201) 881-1646
+                                        Suresh Kumar +91 9148319993
                                     </p>
                                     <a
-                                        href="mailto:Linda.Thompson@comexposium.com"
+                                        href="mailto:suresh@maxxmedia.in"
                                         className="text-[17px] text-white no-underline hover:underline transition-colors duration-200 font-body w-fit break-all"
                                     >
-                                        Linda.Thompson@comexposium.com
+                                        suresh@maxxmedia.in
                                     </a>
                                 </div>
                             </div>
@@ -116,13 +116,13 @@ export default function Footer() {
                                 </p>
                                 <div className="flex flex-col gap-0.5">
                                     <p className="text-[17px] text-white/85 m-0 font-body">
-                                        Murphy Connolly (631) 335-5696
+                                        Bhoomika Shetty +91 91483 19993
                                     </p>
                                     <a
                                         href="mailto:Murphy.Connolly@comexposium.com"
                                         className="text-[17px] text-white no-underline hover:underline transition-colors duration-200 font-body w-fit break-all"
                                     >
-                                        Murphy.Connolly@comexposium.com
+                                        bhoomika@maxxmedia.in
                                     </a>
                                 </div>
                             </div>
