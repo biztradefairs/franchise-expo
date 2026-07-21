@@ -5,7 +5,7 @@ export default function BusinessResourceCenter() {
         <main className="w-full">
 
             <PageBanner
-                title="Business Resource"
+                title="Technology & Solutions Hub"
             />
 
             <section className="py-[90px] max-md:py-[60px] max-sm:py-[40px]">
@@ -15,18 +15,11 @@ export default function BusinessResourceCenter() {
 
                         <div className="flex flex-col gap-[20px]">
                             <p className="text-[0.88rem] max-md:text-[0.85rem] max-sm:text-[0.8rem] leading-[1.6] max-md:leading-[1.5] text-[#111] font-normal">
-                                International Franchise Expo welcomes you to check out the
-                                Business Resource Center! This area is dedicated to present
-                                innovative services that will bring your business to the next level!
+                                INDIAMET welcomes you to explore the Technology & Solutions Hub! This dedicated zone brings together leading providers of metrology, quality control, testing, calibration, inspection, automation, software, and smart manufacturing solutions designed to enhance your production capabilities.
                             </p>
 
                             <p className="text-[0.88rem] max-md:text-[0.85rem] max-sm:text-[0.8rem] leading-[1.6] max-md:leading-[1.5] text-[#111] font-normal">
-                                Walk the show floor and explore a range of business suppliers who
-                                want to talk with YOU! Have strong conversations that will further
-                                develop and fine tune your business. Whether you're looking to learn
-                                more about strategy, network and form connections, or how to expand
-                                your business, the business resource center will provide you with the
-                                skills and knowledge needed to advance in the industry.
+                                Explore the exhibition floor, connect with technology experts, compare the latest equipment and solutions, and discover innovative technologies that improve precision, productivity, and quality. Whether you're looking to upgrade your manufacturing processes, find new technology partners, or stay ahead of Industry 4.0 trends, the Technology & Solutions Hub provides the knowledge, connections, and solutions to drive your business forward.
                             </p>
                         </div>
 
