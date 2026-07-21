@@ -74,17 +74,15 @@ export default function EmergingBrandPavilionPage() {
       <section className="pb-20">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="bg-[#00539f] p-[40px_32px_50px] max-md:p-[40px_25px]">
-            <h2 className="font-display text-[3rem] leading-none uppercase text-white mb-[25px]">GET IN TOUCH</h2>
+            <h2 className="font-display text-[3rem] leading-none uppercase text-white mb-[25px]"></h2>
 
             <p className="text-white text-[1.15rem] font-semibold leading-[1.7] mb-[30px] max-w-[1200px]">
-              If you are an up and coming franchise brand with 10 units or less and
-              are interested in learning more on how you can showcase your brand in
-              the Emerging Pavilion contact:
+              If you are an emerging technology company, startup, or solution provider specializing in metrology, quality control, testing, calibration, inspection, machine vision, or precision engineering, and would like to showcase your innovations in the Emerging Technology Pavilion, we'd love to hear from you.
             </p>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-[#ff6b00] text-[1.8rem] font-bold font-display">Justin Wood</span>
-              <span className="text-white text-[1.8rem] font-bold font-display">(240) 398-1385</span>
+              <span className="text-[#ff6b00] text-[1.8rem] font-bold font-display">Padmanabham R</span>
+              <span className="text-white text-[1.8rem] font-bold font-display">+91 91483 19993</span>
             </div>
           </div>
         </div>
