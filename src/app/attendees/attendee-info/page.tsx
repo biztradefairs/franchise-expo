@@ -51,13 +51,8 @@ export default function AttendeeInfoPage() {
           {/* Intro paragraph */}
           <div className="max-w-full mx-auto mb-[70px] text-start">
             <p className="text-base font-semibold leading-[1.9] text-[#444]">
-              Whether you're a manufacturer, quality professional, metrology engineer, production manager, calibration expert, R&D specialist, or industry decision-maker, INDIAMET – India International Metrology, Quality & Inspection Expo is your gateway to the latest innovations in precision measurement and quality assurance.
+              Whether you're a manufacturer, quality professional, metrology engineer, production manager, R&D specialist, or industry decision-maker, INDIAMET – India International Metrology, Quality & Inspection Expo is your gateway to the latest advancements in precision measurement, quality assurance, testing, calibration, and inspection technologies. Discover innovative solutions from leading exhibitors, connect with industry experts, attend technical seminars and live demonstrations, and gain valuable insights to improve manufacturing quality, productivity, and operational excellence.
             </p>
-
- <p className="text-base font-semibold leading-[1.9] text-[#444]">
-               Discover cutting-edge metrology equipment, inspection systems, calibration solutions, testing technologies, machine vision, CMMs, sensors, software, and automation solutions from leading national and international exhibitors. Connect with technology providers, industry experts, researchers, and fellow professionals while exploring the latest advancements shaping modern manufacturing.
-            </p>
-
 
           </div>
 
