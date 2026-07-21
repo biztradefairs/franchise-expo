@@ -11,7 +11,7 @@ export default function PageBanner({ title, subtitle, ctaText, ctaHref }: Props)
   const isExternal = ctaHref?.startsWith('http');
 
   return (
-    <section className="bg-[linear-gradient(135deg,#003366_0%,#00509e_100%)] w-full h-auto relative overflow-hidden min-h-[250px] flex items-center max-md:py-10 max-md:min-h-[140px] max-sm:py-[30px] max-sm:min-h-[120px]">
+    <section className="bg-[linear-gradient(135deg,#003366_0%,#05264A_100%)] w-full h-auto relative overflow-hidden min-h-[250px] flex items-center max-md:py-10 max-md:min-h-[140px] max-sm:py-[30px] max-sm:min-h-[120px]">
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-5 text-center">
         <h1 className="text-[3.7rem] font-bold !text-white m-0 [text-shadow:0_2px_4px_rgba(0,0,0,0.2)] leading-[1.3] max-md:text-[1.6rem] max-sm:text-[1.3rem]">{title}</h1>
 
