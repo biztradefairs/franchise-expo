@@ -175,17 +175,16 @@ export default function WhyExhibit() {
                             <h2 className="font-display text-[42px] text-white mb-6 leading-none">Exhibitor Opportunities</h2>
 
                             <p className="text-white text-base leading-[1.9] mb-4.5">
-                                <strong className="text-white">FRANCHISE BRANDS</strong> —
-                                Showcase your concept on a global stage.
-                                Connect with entrepreneurs and investors
-                                exploring franchise ownership opportunities.
+                                <strong className="text-white">METROLOGY & MEASUREMENT COMPANIES</strong> —
+                               Showcase your latest metrology equipment, CMMs, calibration systems, sensors, 
+                               machine vision, testing, and inspection technologies to a highly targeted audience 
+                               of manufacturers, quality professionals, and industrial buyers.
                             </p>
 
                             <p className="text-white text-base leading-[1.9] mb-4.5">
-                                <strong className="text-white">INDUSTRY SUPPLIERS</strong> —
-                                Position your brand as a trusted partner
-                                in the franchise ecosystem and generate
-                                valuable leads through targeted exposure.
+                                <strong className="text-white">TECHNOLOGY & SOLUTION PROVIDERS</strong> —
+                                Present your automation, software, Industry 4.0, AI-driven inspection, quality management, 
+                                and smart manufacturing solutions while generating high-value business leads and strategic partnerships.
                             </p>
                         </div>
 
@@ -193,17 +192,15 @@ export default function WhyExhibit() {
                             <h2 className="font-display text-[42px] text-white mb-6 leading-none">Sponsorship Opportunities</h2>
 
                             <p className="text-white text-base leading-[1.9] mb-4.5">
-                                Non-exhibiting sponsorship opportunities
-                                allow suppliers to strategically connect
-                                with franchisors and key decision-makers
-                                using branding, messaging, and on-site
-                                visibility.
+                               Maximize your brand visibility through exclusive sponsorship packages designed to connect your 
+                               company with key decision-makers, industry leaders, OEMs, and manufacturing professionals. 
+                               Benefit from premium branding, speaking opportunities, networking sessions, digital promotions, and extensive on-site exposure before, during, and after the exhibition.
                             </p>
 
                             <p className="text-white text-base leading-[1.9] mb-4.5">
                                 Sponsors also gain access to exclusive
                                 exhibitor networking events and private
-                                receptions to expand their franchise
+                                receptions to expand their business
                                 network.
                             </p>
                         </div>
@@ -327,4 +324,4 @@ export default function WhyExhibit() {
 
         </main>
     );
-}
+}
