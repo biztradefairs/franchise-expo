@@ -51,12 +51,19 @@ export default function AttendeeInfoPage() {
           {/* Intro paragraph */}
           <div className="max-w-full mx-auto mb-[70px] text-start">
             <p className="text-base font-semibold leading-[1.9] text-[#444]">
-              Whether you&apos;re an aspiring entrepreneur ready to take control of your future or a current
-              business owner exploring expansion through franchising, the Franchise Expo is your gateway
-              to success. This premier event provides the tools, resources, and connections needed to
-              navigate the world of franchising confidently. Discover a wide range of franchise
-              opportunities, attend expert-led seminars, and learn from industry leaders.
+              Whether you're a manufacturer, quality professional, metrology engineer, production manager, calibration expert, R&D specialist, or industry decision-maker, INDIAMET – India International Metrology, Quality & Inspection Expo is your gateway to the latest innovations in precision measurement and quality assurance.
             </p>
+
+ <p className="text-base font-semibold leading-[1.9] text-[#444]">
+               Discover cutting-edge metrology equipment, inspection systems, calibration solutions, testing technologies, machine vision, CMMs, sensors, software, and automation solutions from leading national and international exhibitors. Connect with technology providers, industry experts, researchers, and fellow professionals while exploring the latest advancements shaping modern manufacturing.
+            </p>
+ <p className="text-base font-semibold leading-[1.9] text-[#444]">
+              Attend technical seminars, live product demonstrations, and knowledge sessions led by industry leaders to gain practical insights into precision engineering, quality control, Industry 4.0, smart manufacturing, and emerging measurement technologies. Whether you're looking to upgrade your manufacturing processes, improve product quality, or identify new technology partners, INDIAMET offers the ideal platform to learn, network, and source innovative solutions—all under one roof.
+            </p>
+
+
+
+
           </div>
 
           {/* 4-up flip cards */}
