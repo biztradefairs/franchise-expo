@@ -25,7 +25,9 @@ export default function Footer() {
                                 className="h-[50px] w-auto object-contain block brightness-0 invert"
                             />
                              </div>
-                   
+
+                        
+                    </div>
 
                     {/* Column 2: Venue (Left aligned) */} 
                     <div className="flex flex-col items-start gap-5 py-1"> 
