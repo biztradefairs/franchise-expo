@@ -27,7 +27,7 @@ export default function Footer() {
                              </div>
 
                         <p className="font-body text-[17px] font-medium leading-relaxed text-white/85 m-0 max-w-[280px]">
-                            Leading you on the path to successful franchising
+                            India's Dedicated Expo for Metrology, Quality & Inspection
                         </p>
                     </div>
 
@@ -39,10 +39,10 @@ export default function Footer() {
                       
                       <address className="not-italic text-[#ffffff] m-0 p-0 text-[16px]  gap-0.5 leading-[1.8] font-body flex flex-col "> 
                         <span className="font-bold block">Pune City, India</span> 
-                        <span className="block">Auto Cluster Exhibitionn Center</span> 
+                        <span className="block">Auto Cluster Exhibition Center</span> 
                         <span className="block">Plot No. C-181,Chinchwad East,</span> 
                         <span className="block">Mumbai Pune Road,</span> 
-                        <span className="block">Pune City, Maharashtra - 411 019, India</span> 
+                        <span className="block">Pune,Maharashtra - 411 019, India</span> 
                       </address> 
                     </div>
 
@@ -54,12 +54,17 @@ export default function Footer() {
                         </p>
                         <div className="flex flex-col gap-4 text-[16px] leading-relaxed text-white/80 font-body">
                             <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Friday June 4th 2027</strong>
-                                <span>10AM - 5PM</span>
+                                <strong className="text-white font-bold">Thursday April 22nd 2027</strong>
+                                <span>10AM - 6PM</span>
+                            </div>
+                              <div className="flex flex-col gap-4 text-[16px] leading-relaxed text-white/80 font-body">
+                            <div className="flex flex-col gap-0.5">
+                                <strong className="text-white font-bold">Friday April 23rd 2027</strong>
+                                <span>10AM - 6PM</span>
                             </div>
                             <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Saturday June 5th 2027</strong>
-                                <span>10AM - 4PM</span>
+                                <strong className="text-white font-bold">Saturday April 24th 2027</strong>
+                                <span>10AM - 5PM</span>
                             </div>
                         </div>
                     </div>
