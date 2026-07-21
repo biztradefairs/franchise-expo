@@ -81,7 +81,7 @@ export default function BusinessResourceCenter() {
 
                         <h2 className="font-display text-[2.4rem] max-sm:text-[1.8rem] leading-none uppercase text-[#111827] mb-[22px]">GET IN TOUCH</h2>
                         <p className="text-base max-sm:text-[0.95rem] leading-[1.8] text-[#222] max-w-[720px] mb-3.5 font-medium">
-                            To find out more about exhibiting at the Business Resource Center,
+                            To find out more about exhibiting at IndiaMet 2027,
                         </p>
 
                         <p className="text-base max-sm:text-[0.95rem] leading-[1.8] text-[#222] max-w-[720px] mb-3.5 font-medium">
