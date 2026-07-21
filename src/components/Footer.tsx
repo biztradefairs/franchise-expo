@@ -54,12 +54,16 @@ export default function Footer() {
                         </p>
                         <div className="flex flex-col gap-4 text-[16px] leading-relaxed text-white/80 font-body">
                             <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Friday June 4th 2027</strong>
-                                <span>10AM - 5PM</span>
+                                <strong className="text-white font-bold">Thursday April 22nd 2027</strong>
+                                <span>10AM - 6PM</span>
+                            </div>
+                              <div className="flex flex-col gap-0.5">
+                                <strong className="text-white font-bold">Friday April 22nd 2027</strong>
+                                <span>10AM - 6PM</span>
                             </div>
                             <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Saturday June 5th 2027</strong>
-                                <span>10AM - 4PM</span>
+                                <strong className="text-white font-bold">Saturday April 22nd 2027</strong>
+                                <span>10AM - 5PM</span>
                             </div>
                         </div>
                     </div>
