@@ -58,11 +58,11 @@ export default function Footer() {
                                 <span>10AM - 6PM</span>
                             </div>
                               <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Friday April 22nd 2027</strong>
+                                <strong className="text-white font-bold">Friday April 23rd 2027</strong>
                                 <span>10AM - 6PM</span>
                             </div>
                             <div className="flex flex-col gap-0.5">
-                                <strong className="text-white font-bold">Saturday April 22nd 2027</strong>
+                                <strong className="text-white font-bold">Saturday April 24th 2027</strong>
                                 <span>10AM - 5PM</span>
                             </div>
                         </div>
@@ -70,9 +70,7 @@ export default function Footer() {
 
                     {/* Column 4: Contact (Left aligned) */}
                     <div className="flex flex-col items-start gap-6">
-                        <p className="text-[18px] font-bold text-white m-0 font-body">
-                            Tel: +91 91483 19993
-                        </p>
+                        
 
                         <div className="flex flex-col gap-6">
                             {/* Request Info */}
