@@ -137,13 +137,13 @@ export default function Footer() {
                 <div className="max-w-[1200px] mx-auto px-5 max-sm:px-4 flex justify-between items-center max-sm:flex-col max-sm:gap-3 text-white text-[13px] font-body">
                     <Link
                         href="/privacy-policy"
-                        className="text-white/90 no-underline hover:text-white transition-colors duration-200 uppercase font-bold tracking-wider"
+                        className="text-white/100 no-underline hover:text-white transition-colors duration-200 uppercase font-bold tracking-wider"
                     >
                         Privacy Policy
                     </Link>
 
                     {/* LiveBuzz Eventim Branding matching reference */}
-                    <div className="flex items-center gap-2 text-white/80">
+                    <div className="flex items-center gap-2 text-white/100">
                         <span>© Maxx Business Media Pvt.Ltd., All Rights Reserved</span>
                       </div>
                 </div>
