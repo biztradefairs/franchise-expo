@@ -15,30 +15,30 @@ import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client";
 const benefits = [
     {
         icon: <Search size={28} />,
-        title: "Exposure",
+        title: "Brand Exposure",
         description:
-            "Engage with visitors pre-show, onsite and post-show through our marketing vehicles, including exhibiting, digital and print marketing, enhanced sponsorships, and appointment setting opportunities.",
+            "Increase your brand visibility before, during, and after the exhibition through targeted marketing campaigns, digital promotions, event branding, sponsorship opportunities, and extensive industry outreach.",
     },
 
     {
         icon: <TrendingUp size={28} />,
         title: "Generate New Leads",
         description:
-            "Thousands of qualified candidates attend seeking franchise ownership opportunities including multi-unit ownership, area development, and master franchising.",
+            "Connect with qualified buyers, manufacturers, OEMs, quality professionals, production managers, and decision-makers actively seeking advanced metrology, testing, calibration, and inspection solutions.",
     },
 
     {
         icon: <Users size={28} />,
-        title: "Connect With Candidates",
+        title: "Connect With Industry Professionals",
         description:
-            "Showcase your franchise and actively engage with prospective candidates throughout your sales funnel using our complimentary guest program.",
+            "Build valuable relationships with customers, distributors, technology partners, research organizations, and industry experts through face-to-face meetings and networking opportunities.",
     },
 
     {
         icon: <Plus size={28} />,
         title: "New Product Launches",
         description:
-            "Gain exposure for company launches, new initiatives, and press releases through the Expo's targeted network of attendees, sponsors, partners, and associations.",
+            "Showcase your latest products, innovations, and breakthrough technologies through live demonstrations, product launches, technical presentations, and media exposure to a highly targeted manufacturing audience.",
     },
 ];
 
