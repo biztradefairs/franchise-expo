@@ -194,7 +194,7 @@ export default function ExhibitorList() {
                                 <button
                                     className={`h-full px-4 text-[13px] font-bold border-none cursor-pointer transition-all duration-200 ${
                                         filterLogic === "OR"
-                                            ? "bg-[#18b7d0] text-white"
+                                            ? "bg-[#FE6B0B] text-white"
                                             : "bg-white text-[#6c757d] hover:bg-[#f0f0f0]"
                                     }`}
                                     onClick={() => setFilterLogic("OR")}
