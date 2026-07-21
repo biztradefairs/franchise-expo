@@ -144,10 +144,8 @@ export default function Footer() {
 
                     {/* LiveBuzz Eventim Branding matching reference */}
                     <div className="flex items-center gap-2 text-white/80">
-                        <span>EVENT WEBSITE BY</span>
-                        <span className="font-bold text-white">LIVEBUZZ</span>
-                        <span className="text-white/50">by eventim+</span>
-                    </div>
+                        <span>© Maxx Business Media Pvt.Ltd., All Rights Reserved</span>
+                      </div>
                 </div>
             </div>
         </footer>
