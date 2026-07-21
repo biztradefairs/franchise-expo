@@ -42,6 +42,7 @@ export default function BusinessResourceCenter() {
                             <span className="font-display text-[2.2rem] max-lg:text-[2rem] max-md:text-[1.6rem] max-sm:text-[1.3rem] font-bold text-white mb-2.5 max-md:mb-1.5 max-sm:mb-1">1</span>
                             <p className="text-[0.82rem] max-lg:text-[0.8rem] max-md:text-[0.72rem] max-sm:text-[0.65rem] leading-[1.4] max-md:leading-[1.3] max-sm:leading-[1.2] text-white font-medium m-0">
                                 <b>Discover Cutting-Edge Technologies</b>
+                                </p>
                                 Explore the latest innovations in metrology, testing, calibration, 
                                 inspection, machine vision, and quality control.
                             </p>
