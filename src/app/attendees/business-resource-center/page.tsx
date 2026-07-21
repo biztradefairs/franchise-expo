@@ -87,18 +87,18 @@ export default function BusinessResourceCenter() {
                         <p className="text-base max-sm:text-[0.95rem] leading-[1.8] text-[#222] max-w-[720px] mb-3.5 font-medium">
                             please contact{' '}
                             <a
-                                href="mailto:Justin.Wood@Comexposium.com"
+                                href="mailto:pad@maxxmedia.in"
                                 className="text-[#144380] font-semibold no-underline hover:text-[#27b8cf]"
                             >
-                                Justin.Wood@Comexposium.com
+                                pad@maxxmedia.in
                             </a>
                         </p>
 
                         <div className="mt-4">
-                            <h3 className="font-display font-semibold text-lg text-[#111827] uppercase">Justin Wood</h3>
+                            <h3 className="font-display font-semibold text-lg text-[#111827] uppercase">Padmanabham R</h3>
 
                             <a href="tel:+12403981385" className="text-[#144380] font-semibold hover:underline mt-1 inline-block">
-                                (240) 398-1385
+                                +91 91483 19993
                             </a>
                         </div>
 
