@@ -2,27 +2,27 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Emerging Brand Pavilion",
+  title: "Emerging Technology Pavilion",
   description:
-    "The Emerging Brands Pavilion is one of the busiest aisles of the show floor and dedicated to up-and-coming franchises.",
+    "One of the most dynamic zones of the exhibition, showcasing next-generation metrology, quality control, testing, calibration, inspection, and precision measurement technologies from emerging innovators and technology providers.",
 };
 
 const features = [
   {
-    heading: "Discover The Next Big Thing",
-    body: "Be among the first to discover fresh concepts before they become household names. Gain access to early-stage investment opportunities and lock in favorable territories while they're still available.",
+    heading: "Discover Next-Generation Technologies:",
+    body: "Be among the first to explore innovative measurement, inspection, calibration, machine vision, and automation solutions from emerging technology providers.",
   },
   {
-    heading: "Direct Access To Founders",
-    body: "In the Emerging Brands Pavilion, you'll often meet with founders or top executives of these new brands. This gives you the chance to hear firsthand the passion, vision, and growth potential behind the businesses.",
+    heading: "Meet Industry Innovators:",
+    body: "Connect directly with founders, engineers, product specialists, and technology experts to gain insights into the latest developments and future trends.",
   },
   {
-    heading: "Be A Trendsetter",
-    body: "You have the opportunity to join these brands early, positioning yourself as a trendsetter in your market. Stay ahead of industry trends and set yourself apart with a fresh, exciting concept.",
+    heading: "Experience Live Demonstrations:",
+    body: "See cutting-edge equipment and software in action through live product demonstrations and hands-on technology showcases.",
   },
   {
-    heading: "Growth Potential",
-    body: "These are the brands poised for rapid expansion. By visiting the Emerging Brands Pavilion, you'll be exploring high-growth opportunities that can lead to significant returns as these franchises scale.",
+    heading: "Stay Ahead of Industry Trends:",
+    body: "Explore smart manufacturing, Industry 4.0, AI-powered inspection, digital metrology, and advanced quality solutions that can improve productivity, accuracy, and operational excellence.",
   },
 ];
 
@@ -41,13 +41,11 @@ export default function EmergingBrandPavilionPage() {
             {/* LEFT CONTENT */}
             <div className="bg-[#00539f] p-[30px] text-white flex flex-col justify-center min-h-[670px] max-lg:min-h-0">
               <h2 className="font-display text-2xl leading-[1.05] uppercase text-white mb-[30px] max-lg:text-base">
-                THE EMERGING BRANDS PAVILION IS ONE OF THE BUSIEST AISLES OF THE SHOW FLOOR AND DEDICATED TO UP-AND-COMING FRANCHISES.
+                THE EMERGING TECHNOLOGY PAVILION.
               </h2>
 
               <p className="text-white text-base leading-relaxed mb-10 max-lg:text-base">
-                Discover the future of franchising by visiting the Emerging
-                Brands Pavilion — where tomorrow's leading brands are waiting
-                for you today.
+                One of the most dynamic zones of the exhibition, the Emerging Technology Pavilion showcases the latest innovations in metrology, quality control, testing, calibration, inspection, and precision engineering. Discover breakthrough technologies that are shaping the future of manufacturing.
               </p>
 
               <ul className="list-none m-0 p-0">
