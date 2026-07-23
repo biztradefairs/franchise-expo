@@ -21,15 +21,15 @@ const navItems = [
     label: 'Exhibitors',
     href: '/exhibitors/exhibitor-list',
     children: [
-      { label: 'Exhibitor List', href: '/exhibitors/exhibitor-list' },
-      { label: 'Floorplan', href: '/exhibitors/floorplan' },
       { label: 'Why Exhibit', href: '/exhibitors/why-exhibit' },
-      { label: 'Show Sponsors', href: '/exhibitors/show-sponsors' },
-      { label: 'Exhibitor Testimonials', href: '/exhibitors/testimonials' },
-      { label: 'IFE Unplugged', href: '/exhibitors/ife-unplugged' },
-      { label: 'Promotional Opportunities', href: '/exhibitors/promotional-opportunities' },
-      { label: 'Travel Information', href: '/exhibitors/travel-information' },
-      { label: 'NY Registration and Domestic Trade Show Exemption', href: '/exhibitors/ny-registration-and-domestic-trade-show-exemption' },
+      { label: 'Became an Exhibitor', href: '/exhibitors/why-exhibit' },
+      { label: 'Event Sectors', href: '/exhibitors/why-exhibit' },
+      { label: 'Exhibitor List', href: '/exhibitors/exhibitor-list' },
+      { label: 'Exhibitor Resources', href: '/exhibitors/why-exhibit' },
+      { label: 'Exhibitor Promotions', href: '/exhibitors/why-exhibit' },
+      { label: 'Floorplan', href: '/exhibitors/floorplan' },
+      { label: 'Event Brochure', href: '/attendees/business-resource-center' },
+     
     ],
   },
   {
