@@ -12,7 +12,6 @@ const navItems = [
       { label: 'Why Visit', href: '/attendees/attendee-info' },
       { label: 'Event Sectors', href: '/attendees/attendee-info' },
       { label: 'Exhibitor List', href: '/exhibitors/exhibitor-list' },
-      { label: 'Emerging Brand Pavilion', href: '/attendees/emerging-brand-pavilion' },
       { label: 'Event Brochure', href: '/attendees/business-resource-center' },
       { label: 'Travel Information', href: '/attendees/travel-information' },
     ],
