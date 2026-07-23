@@ -7,7 +7,7 @@ import Image from 'next/image';
 const navItems = [
   {
     label: 'Attendees',
-    href: '/attendees/attendee-info',
+    href: '/attendees/why visit',
     children: [
       { label: 'Attendee Info', href: '/attendees/attendee-info' },
       { label: 'Exhibitor List', href: '/exhibitors/exhibitor-list' },
