@@ -40,16 +40,17 @@ const navItems = [
     ],
   },
   {
-    label: 'Resources',
+    label: 'About',
     href: '/resources/blog',
     children: [
-      { label: 'Blog', href: '/resources/blog' },
-      { label: 'Podcasts', href: '/resources/podcasts' },
-      { label: 'Show Gallery', href: '/resources/show-gallery' },
+      { label: 'IndiaMet 2027', href: '/resources/blog' },
+      { label: 'Organizer', href: '/connect/about-us' },
+    { label: 'Venue', href: '/resources/podcasts' },
+    { label: 'Partners & Sponosrs', href: '/resources/podcasts' },
     ],
   },
   {
-    label: 'Connect',
+    label: 'Contact Us',
     href: '/connect/about-us',
     children: [
       { label: 'About Us', href: '/connect/about-us' },
