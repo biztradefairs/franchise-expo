@@ -53,7 +53,6 @@ const navItems = [
     label: 'Contact Us',
     href: '/connect/about-us',
     children: [
-      { label: 'About Us', href: '/connect/about-us' },
       { label: 'Our Team', href: '/connect/our-team' },
       { label: 'Contact Us', href: '/connect/contact-us' },
     ],
