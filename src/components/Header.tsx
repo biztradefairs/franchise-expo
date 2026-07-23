@@ -33,7 +33,7 @@ const navItems = [
     ],
   },
   {
-    label: 'Conference Agenda',
+    label: 'India Metrology Summit',
     href: '/conference',
     children: [
       { label: 'Conference Agenda', href: '/conference' },
