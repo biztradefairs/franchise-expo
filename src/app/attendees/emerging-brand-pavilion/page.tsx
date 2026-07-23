@@ -31,7 +31,7 @@ export default function EmergingBrandPavilionPage() {
     <>
       <PageBanner
         title="Emerging Technology Pavilion"
-        subtitle="One of the busiest aisles of the show floor — dedicated to up-and-coming franchises."
+        subtitle="Discover the latest innovations in precision measurement, calibration, and industrial metrology."
       />
 
       <section className="py-10 pb-20 bg-[#f2f2f2]">
