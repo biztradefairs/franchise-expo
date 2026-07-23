@@ -42,7 +42,7 @@ export default function AttendeeInfoPage() {
   return (
     <>
       <PageBanner
-        title="Attendee Info"
+        title="Why Visit"
         ctaText="Register to Attend"
       />
 
