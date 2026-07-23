@@ -30,7 +30,7 @@ export default function EmergingBrandPavilionPage() {
   return (
     <>
       <PageBanner
-        title="Emerging Brand Pavilion"
+        title="Emerging Technology Pavilion"
         subtitle="One of the busiest aisles of the show floor — dedicated to up-and-coming franchises."
       />
 
