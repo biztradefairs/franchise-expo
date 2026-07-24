@@ -131,7 +131,7 @@ export default function OurTeam() {
                     {teamSections.map((section, index) => (
                         <div key={index} className="flex flex-col gap-6">
                             {/* Section Title */}
-                            <h2 className="font-display text-[32px] max-sm:text-[26px] font-bold text-[#111] uppercase tracking-wide m-0 border-b border-[#dee2e6] pb-3">
+                            <h2 className="font-display text-[32px] max-sm:text-[26px] font-bold text-[#05264A] uppercase tracking-wide m-0 border-b border-[#dee2e6] pb-3">
                                 {section.title}
                             </h2>
 
@@ -159,7 +159,7 @@ export default function OurTeam() {
                                         {/* Details Container */}
                                         <div className="p-6 max-sm:p-5 flex flex-col flex-1 items-start gap-4">
                                             <div className="flex flex-col gap-[3px] w-full">
-                                                <h3 className="font-display text-[22px] max-sm:text-[20px] font-bold text-[#111] uppercase m-0 leading-[1.2]">
+                                                <h3 className="font-display text-[22px] max-sm:text-[20px] font-bold text-[#05264A] uppercase m-0 leading-[1.2]">
                                                     {member.name}
                                                 </h3>
                                                 <p className="font-body text-[13px] font-bold text-[#222] m-0">
@@ -175,10 +175,10 @@ export default function OurTeam() {
                                             {/* Stacked contact information */}
                                             <div className="flex flex-col gap-1 w-full text-[13px] text-[#444] font-body">
                                                 <span className="truncate">
-                                                    <strong className="text-[#111]">E:</strong> {member.email}
+                                                    <strong className="text-[#05264A]">E:</strong> {member.email}
                                                 </span>
                                                 <span>
-                                                    <strong className="text-[#111]">T:</strong> {member.phone}
+                                                    <strong className="text-[#05264A]">T:</strong> {member.phone}
                                                 </span>
                                             </div>
 

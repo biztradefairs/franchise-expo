@@ -40,7 +40,7 @@ export default function AboutUsPage() {
               className="h-[70px] max-sm:h-[50px] w-auto object-contain block"
             />
                        
-            <h2 className="font-display text-[32px] max-md:text-[26px] font-bold text-center uppercase text-[#111] leading-tight mt-6 max-w-[800px]">
+            <h2 className="font-display text-[32px] max-md:text-[26px] font-bold text-center uppercase text-[#05264A] leading-tight mt-6 max-w-[800px]">
               Bringing The Franchise World Together Since 1991
             </h2>
           </div>
@@ -48,7 +48,7 @@ export default function AboutUsPage() {
           {/* Section 1: About MFV — content left, image right */}
           <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-0 mb-10 overflow-hidden border border-[#dee2e6] bg-[#f4f5f7]">
             <div className="p-12 max-md:p-8 max-sm:p-6 flex flex-col justify-center">
-              <p className="font-body text-[16px] max-sm:text-sm leading-relaxed font-bold text-[#111] mb-5">
+              <p className="font-body text-[16px] max-sm:text-sm leading-relaxed font-bold text-[#05264A] mb-5">
                 MFV Expositions global brands have been generating qualified leads for
                 franchisors, face-to-face at our premier franchise events, virtually with
                 our online component and through our comprehensive franchise directories.
@@ -88,7 +88,7 @@ export default function AboutUsPage() {
               style={{ backgroundImage: `url(${IMAGES.betheboss})` }}
             />
             <div className="p-12 max-md:p-8 max-sm:p-6 flex flex-col justify-center items-start">
-              <p className="font-body text-[16px] max-sm:text-sm leading-relaxed font-bold text-[#111] mb-5">
+              <p className="font-body text-[16px] max-sm:text-sm leading-relaxed font-bold text-[#05264A] mb-5">
                 MFV's global online franchise directory{" "}
                 <a
                   href="http://www.betheboss.com/"
@@ -130,7 +130,7 @@ export default function AboutUsPage() {
 
           {/* Proud Member */}
           <div className="mb-16 text-center">
-            <h2 className="font-display text-[32px] max-sm:text-[26px] font-bold uppercase text-[#111] mb-8">
+            <h2 className="font-display text-[32px] max-sm:text-[26px] font-bold uppercase text-[#05264A] mb-8">
               PROUD MEMBER
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-16 max-sm:gap-8">

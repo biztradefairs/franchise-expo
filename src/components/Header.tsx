@@ -248,7 +248,7 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-1 text-[16px] font-display font-medium uppercase tracking-wider text-[#111111] no-underline whitespace-nowrap leading-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-[#063970] ${isScrolled
+                      className={`flex items-center gap-1 text-[16px] font-display font-medium uppercase tracking-wider text-[#05264A111] no-underline whitespace-nowrap leading-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-[#063970] ${isScrolled
                           ? 'py-1.5 px-1.5 text-[13px]'
                           : 'py-2 px-2 text-[13px] max-[1525px]:px-1.5 max-[1525px]:text-[12.5px]'
                         }`}

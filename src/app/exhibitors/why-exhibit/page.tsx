@@ -232,7 +232,7 @@ export default function WhyExhibit() {
 
                             <div className="flex flex-col gap-3">
                                 {["Metrology Equipment Manufacturer", "Quality & Inspection Solutions Provider", "Calibration & Testing Services" ,"Machine Vision & Automation","Software / Industry 4.0 Solutions","Other"].map((item) => (
-                                    <label key={item} className="flex items-center gap-3 text-[#111] text-sm cursor-pointer">
+                                    <label key={item} className="flex items-center gap-3 text-[#05264A] text-sm cursor-pointer">
                                         <input type="checkbox" checked={formData.fdd === item} onChange={() => handleFddChange(item)} className="w-5 h-5 m-0" />
                                         <span>{item}</span>
                                     </label>
@@ -247,7 +247,7 @@ export default function WhyExhibit() {
 
                             <div className="flex flex-col gap-3">
                                 {events.map((event) => (
-                                    <label key={event} className="flex items-center gap-3 text-[#111] text-sm cursor-pointer">
+                                    <label key={event} className="flex items-center gap-3 text-[#05264A] text-sm cursor-pointer">
                                         <input type="checkbox" checked={formData.interests.includes(event)} onChange={() => handleCheckboxChange(event)} className="w-5 h-5 m-0" />
                                         <span>{event}</span>
                                     </label>

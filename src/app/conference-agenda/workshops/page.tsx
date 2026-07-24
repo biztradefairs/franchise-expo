@@ -88,12 +88,12 @@ export default function Workshops() {
                     <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-[60px] max-lg:gap-10 items-center">
 
                         <div className="flex flex-col gap-8 max-sm:gap-6">
-                            <h2 className="font-display text-[40px] max-md:text-[32px] leading-tight text-[#111] mb-2 uppercase font-bold">
+                            <h2 className="font-display text-[40px] max-md:text-[32px] leading-tight text-[#05264A] mb-2 uppercase font-bold">
                                 Join Us For Our Workshops!
                             </h2>
 
                             <div className="flex flex-col gap-2">
-                                <h3 className="text-[17px] text-[#111] font-bold m-0 font-body">
+                                <h3 className="text-[17px] text-[#05264A] font-bold m-0 font-body">
                                     A To Z's Of Buying A Franchise
                                 </h3>
                                 <p className="text-[15px] leading-relaxed text-[#555] m-0 font-body">
@@ -105,7 +105,7 @@ export default function Workshops() {
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <h3 className="text-[17px] text-[#111] font-bold m-0 font-body">
+                                <h3 className="text-[17px] text-[#05264A] font-bold m-0 font-body">
                                     Franchise Your Business
                                 </h3>
                                 <p className="text-[15px] leading-relaxed text-[#555] m-0 font-body">
@@ -137,10 +137,10 @@ export default function Workshops() {
                 <div className="w-full max-w-[1440px] mx-auto px-10 max-lg:px-6 max-sm:px-4">
 
                     <div className="mb-12">
-                        <span className="font-display text-[22px] font-bold text-[#111] block tracking-wide">
+                        <span className="font-display text-[22px] font-bold text-[#05264A] block tracking-wide">
                             THE TOPICS FOR
                         </span>
-                        <h2 className="font-display text-[34px] max-sm:text-[28px] leading-tight text-[#111] font-bold uppercase m-0 mt-1">
+                        <h2 className="font-display text-[34px] max-sm:text-[28px] leading-tight text-[#05264A] font-bold uppercase m-0 mt-1">
                             A TO Z'S OF BUYING A FRANCHISE WILL BE:
                         </h2>
                     </div>
@@ -176,10 +176,10 @@ export default function Workshops() {
                 <div className="w-full max-w-[1440px] mx-auto px-10 max-lg:px-6 max-sm:px-4">
 
                     <div className="mb-12">
-                        <span className="font-display text-[22px] font-bold text-[#111] block tracking-wide">
+                        <span className="font-display text-[22px] font-bold text-[#05264A] block tracking-wide">
                             THE TOPICS FOR
                         </span>
-                        <h2 className="font-display text-[34px] max-sm:text-[28px] leading-tight text-[#111] font-bold uppercase m-0 mt-1">
+                        <h2 className="font-display text-[34px] max-sm:text-[28px] leading-tight text-[#05264A] font-bold uppercase m-0 mt-1">
                             FRANCHISE YOUR BUSINESS WILL BE:
                         </h2>
                     </div>

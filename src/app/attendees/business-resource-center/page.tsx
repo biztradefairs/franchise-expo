@@ -14,11 +14,11 @@ export default function BusinessResourceCenter() {
                     <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-[50px] max-lg:gap-[30px] items-start mb-[70px]">
 
                         <div className="flex flex-col gap-[20px]">
-                            <p className="text-[0.88rem] max-md:text-[0.85rem] max-sm:text-[0.8rem] leading-[1.6] max-md:leading-[1.5] text-[#111] font-normal">
+                            <p className="text-[0.88rem] max-md:text-[0.85rem] max-sm:text-[0.8rem] leading-[1.6] max-md:leading-[1.5] text-[#05264A] font-normal">
                                 INDIAMET welcomes you to explore the Technology & Solutions Hub! This dedicated zone brings together leading providers of metrology, quality control, testing, calibration, inspection, automation, software, and smart manufacturing solutions designed to enhance your production capabilities.
                             </p>
 
-                            <p className="text-[0.88rem] max-md:text-[0.85rem] max-sm:text-[0.8rem] leading-[1.6] max-md:leading-[1.5] text-[#111] font-normal">
+                            <p className="text-[0.88rem] max-md:text-[0.85rem] max-sm:text-[0.8rem] leading-[1.6] max-md:leading-[1.5] text-[#05264A] font-normal">
                                 Explore the exhibition floor, connect with technology experts, compare the latest equipment and solutions, and discover innovative technologies that improve precision, productivity, and quality. Whether you're looking to upgrade your manufacturing processes, find new technology partners, or stay ahead of Industry 4.0 trends, the Technology & Solutions Hub provides the knowledge, connections, and solutions to drive your business forward.
                             </p>
                         </div>
@@ -32,7 +32,7 @@ export default function BusinessResourceCenter() {
                         />
                     </div>
 
-                    <h2 className="font-display text-[2rem] max-lg:text-[2.2rem] max-md:text-[1.8rem] max-sm:text-[1.3rem] leading-none uppercase text-[#111] mb-[40px] max-md:mb-[30px] max-sm:mb-[25px]">
+                    <h2 className="font-display text-[2rem] max-lg:text-[2.2rem] max-md:text-[1.8rem] max-sm:text-[1.3rem] leading-none uppercase text-[#05264A] mb-[40px] max-md:mb-[30px] max-sm:mb-[25px]">
                         WHY VISIT THE TECHNOLOGY & SOLUTIONS HUB?
                     </h2>
 
@@ -79,7 +79,7 @@ export default function BusinessResourceCenter() {
                 <div className="max-w-[1280px] mx-auto px-6">
                     <div className="bg-white py-[42px] px-[48px] max-sm:py-[30px] max-sm:px-[22px] rounded-[2px] shadow-[0_2px_14px_rgba(0,0,0,0.04)]">
 
-                        <h2 className="font-display text-[2.4rem] max-sm:text-[1.8rem] leading-none uppercase text-[#111827] mb-[22px]">GET IN TOUCH</h2>
+                        <h2 className="font-display text-[2.4rem] max-sm:text-[1.8rem] leading-none uppercase text-[#05264A827] mb-[22px]">GET IN TOUCH</h2>
                         <p className="text-base max-sm:text-[0.95rem] leading-[1.8] text-[#222] max-w-[720px] mb-3.5 font-medium">
                             To find out more about exhibiting at IndiaMet 2027,
                         </p>
@@ -95,7 +95,7 @@ export default function BusinessResourceCenter() {
                         </p>
 
                         <div className="mt-4">
-                            <h3 className="font-display font-semibold text-lg text-[#111827] uppercase">Padmanabham R</h3>
+                            <h3 className="font-display font-semibold text-lg text-[#05264A827] uppercase">Padmanabham R</h3>
 
                             <a href="tel:+12403981385" className="text-[#144380] font-semibold hover:underline mt-1 inline-block">
                                 +91 91483 19993

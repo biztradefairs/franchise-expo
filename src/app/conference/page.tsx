@@ -551,8 +551,8 @@ export default function ConferenceAgenda() {
                                         aria-selected={activeDay === "friday"}
                                         className={`flex-1 py-[15px] px-6 font-display text-[14px] font-bold tracking-wider uppercase border-none cursor-pointer transition-all duration-200 ${
                                             activeDay === "friday" && dayFilter === "Please select"
-                                                ? "bg-[#b0b7bd] text-[#111]"
-                                                : "bg-transparent text-[#5f6b76] hover:bg-[#d1d5db] hover:text-[#111]"
+                                                ? "bg-[#b0b7bd] text-[#05264A]"
+                                                : "bg-transparent text-[#5f6b76] hover:bg-[#d1d5db] hover:text-[#05264A]"
                                         }`}
                                         onClick={() => { setActiveDay("friday"); setDayFilter("Please select"); }}
                                     >
@@ -563,8 +563,8 @@ export default function ConferenceAgenda() {
                                         aria-selected={activeDay === "saturday"}
                                         className={`flex-1 py-[15px] px-6 font-display text-[14px] font-bold tracking-wider uppercase border-none cursor-pointer transition-all duration-200 ${
                                             activeDay === "saturday" && dayFilter === "Please select"
-                                                ? "bg-[#b0b7bd] text-[#111]"
-                                                : "bg-transparent text-[#5f6b76] hover:bg-[#d1d5db] hover:text-[#111]"
+                                                ? "bg-[#b0b7bd] text-[#05264A]"
+                                                : "bg-transparent text-[#5f6b76] hover:bg-[#d1d5db] hover:text-[#05264A]"
                                         }`}
                                         onClick={() => { setActiveDay("saturday"); setDayFilter("Please select"); }}
                                     >
@@ -646,8 +646,8 @@ export default function ConferenceAgenda() {
                                         aria-selected={activeDay === "friday"}
                                         className={`flex-1 py-[15px] px-6 font-display text-[14px] font-bold tracking-wider uppercase border-none cursor-pointer transition-all duration-200 ${
                                             activeDay === "friday" && dayFilter === "Please select"
-                                                ? "bg-[#b0b7bd] text-[#111]"
-                                                : "bg-transparent text-[#5f6b76] hover:bg-[#d1d5db] hover:text-[#111]"
+                                                ? "bg-[#b0b7bd] text-[#05264A]"
+                                                : "bg-transparent text-[#5f6b76] hover:bg-[#d1d5db] hover:text-[#05264A]"
                                         }`}
                                         onClick={() => { setActiveDay("friday"); setDayFilter("Please select"); }}
                                     >
@@ -658,8 +658,8 @@ export default function ConferenceAgenda() {
                                         aria-selected={activeDay === "saturday"}
                                         className={`flex-1 py-[15px] px-6 font-display text-[14px] font-bold tracking-wider uppercase border-none cursor-pointer transition-all duration-200 ${
                                             activeDay === "saturday" && dayFilter === "Please select"
-                                                ? "bg-[#b0b7bd] text-[#111]"
-                                                : "bg-transparent text-[#5f6b76] hover:bg-[#d1d5db] hover:text-[#111]"
+                                                ? "bg-[#b0b7bd] text-[#05264A]"
+                                                : "bg-transparent text-[#5f6b76] hover:bg-[#d1d5db] hover:text-[#05264A]"
                                         }`}
                                         onClick={() => { setActiveDay("saturday"); setDayFilter("Please select"); }}
                                     >

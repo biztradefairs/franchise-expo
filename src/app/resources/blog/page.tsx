@@ -42,7 +42,7 @@ export default function BlogPage() {
                   </p>
                   
                   {/* Headline: Clean, condensed, bold uppercase typography */}
-                  <h2 className="font-sans text-[1.25em] font-extrabold text-[#111111] uppercase tracking-normal leading-[1.2] mb-4 flex-1">
+                  <h2 className="font-sans text-[1.25em] font-extrabold text-[#05264A111] uppercase tracking-normal leading-[1.2] mb-4 flex-1">
                     {post.title}
                   </h2>
                 </div>

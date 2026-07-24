@@ -167,7 +167,7 @@ export default function ContactUs() {
                                         <p className="font-body text-[13px] font-bold text-[#0067b2] m-0">
                                             {item.title}
                                         </p>
-                                        <h3 className="font-display text-[22px] max-sm:text-[20px] font-bold text-[#111] uppercase m-0 leading-[1.2] mt-1">
+                                        <h3 className="font-display text-[22px] max-sm:text-[20px] font-bold text-[#05264A] uppercase m-0 leading-[1.2] mt-1">
                                             {item.name}
                                         </h3>
                                         <p className="font-body text-[13px] font-bold text-[#555] m-0">
@@ -178,10 +178,10 @@ export default function ContactUs() {
                                     {/* Stacked contact details */}
                                     <div className="flex flex-col gap-1 w-full text-[13px] text-[#444] font-body">
                                         <span className="truncate">
-                                            <strong className="text-[#111]">E:</strong> {item.email}
+                                            <strong className="text-[#05264A]">E:</strong> {item.email}
                                         </span>
                                         <span>
-                                            <strong className="text-[#111]">T:</strong> {item.phone}
+                                            <strong className="text-[#05264A]">T:</strong> {item.phone}
                                         </span>
                                     </div>
 

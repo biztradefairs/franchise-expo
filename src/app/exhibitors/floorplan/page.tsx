@@ -222,7 +222,7 @@ export default function FloorPlan() {
 
                         <div className="bg-white h-[120px] max-md:h-auto max-md:min-h-[100px] px-[30px] max-md:p-10 flex items-center max-md:flex-col max-md:items-start justify-between max-md:gap-[15px] border border-[#ececec] shadow-[0_2px_10px_rgba(0,0,0,0.04)] transition-transform duration-300 hover:-translate-y-0.5">
 
-                            <h3 className="font-display text-2xl max-md:text-[30px] font-medium leading-[1.1] uppercase text-[#111111] m-0">
+                            <h3 className="font-display text-2xl max-md:text-[30px] font-medium leading-[1.1] uppercase text-[#05264A111] m-0">
                                 INTERESTED IN ATTENDING?
                             </h3>
 
@@ -238,7 +238,7 @@ export default function FloorPlan() {
 
                         <div className="bg-white h-[120px] max-md:h-auto max-md:min-h-[100px] px-[30px] max-md:p-10 flex items-center max-md:flex-col max-md:items-start justify-between max-md:gap-[15px] border border-[#ececec] shadow-[0_2px_10px_rgba(0,0,0,0.04)] transition-transform duration-300 hover:-translate-y-0.5">
 
-                            <h3 className="font-display text-2xl max-md:text-[30px] font-medium leading-[1.1] uppercase text-[#111111] m-0">
+                            <h3 className="font-display text-2xl max-md:text-[30px] font-medium leading-[1.1] uppercase text-[#05264A111] m-0">
                                 INTERESTED IN EXHIBITING?
                             </h3>
 

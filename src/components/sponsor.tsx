@@ -105,11 +105,11 @@ const SponsorsSection = () => {
     return (
         <section className="bg-[#f5f5f5] pt-[60px] pb-[80px] max-sm:pt-10 max-sm:pb-[50px]">
             <Container>
-                <h2 className="font-display text-[2.8rem] leading-[1.2] font-bold uppercase text-left text-[#111111] mb-[50px] max-md:text-[2.2rem] max-md:mb-[35px] max-sm:text-[1.8rem] max-sm:mb-[25px]">SPONSORS</h2>
+                <h2 className="font-display text-[2.8rem] leading-[1.2] font-bold uppercase text-left text-[#05264A111] mb-[50px] max-md:text-[2.2rem] max-md:mb-[35px] max-sm:text-[1.8rem] max-sm:mb-[25px]">SPONSORS</h2>
 
                 {/* Platinum Sponsors */}
                 <div className="mb-[60px]">
-                    <h3 className="font-display text-[1.4rem] font-semibold uppercase text-left text-[#111111] mb-[30px] max-md:text-[1.2rem] max-md:mb-5 max-sm:text-[1rem] max-sm:mb-[15px]">Platinum Sponsors</h3>
+                    <h3 className="font-display text-[1.4rem] font-semibold uppercase text-left text-[#05264A111] mb-[30px] max-md:text-[1.2rem] max-md:mb-5 max-sm:text-[1rem] max-sm:mb-[15px]">Platinum Sponsors</h3>
                     <div className="flex justify-center items-center w-full">
                         <div className="flex items-center justify-center gap-[60px] max-sm:gap-5">
                             {platinumSponsors.map((sponsor, index) => (
@@ -144,7 +144,7 @@ const SponsorsSection = () => {
                         setShowGoldDots(false);
                     }}
                 >
-                    <h3 className="font-display text-[1.4rem] font-semibold uppercase text-left text-[#111111] mb-[30px] max-md:text-[1.2rem] max-md:mb-5 max-sm:text-[1rem] max-sm:mb-[15px]">Gold Sponsors</h3>
+                    <h3 className="font-display text-[1.4rem] font-semibold uppercase text-left text-[#05264A111] mb-[30px] max-md:text-[1.2rem] max-md:mb-5 max-sm:text-[1rem] max-sm:mb-[15px]">Gold Sponsors</h3>
                     <div className="relative flex items-center gap-2.5">
                         <button
                             className={`w-11 h-11 bg-white border-2 border-[#005eb8] text-[#005eb8] text-[28px] font-bold cursor-pointer flex items-center justify-center shrink-0 rounded-none relative z-[2] outline-none transition-all duration-[350ms] ease-out hover:bg-[#005eb8] hover:text-white max-md:w-[38px] max-md:h-[38px] max-md:text-[24px] max-sm:w-8 max-sm:h-8 max-sm:text-[20px] order-[-1] ${
@@ -206,7 +206,7 @@ const SponsorsSection = () => {
                         setShowSilverDots(false);
                     }}
                 >
-                    <h3 className="font-display text-[1.4rem] font-semibold uppercase text-left text-[#111111] mb-[30px] max-md:text-[1.2rem] max-md:mb-5 max-sm:text-[1rem] max-sm:mb-[15px]">Silver Sponsors</h3>
+                    <h3 className="font-display text-[1.4rem] font-semibold uppercase text-left text-[#05264A111] mb-[30px] max-md:text-[1.2rem] max-md:mb-5 max-sm:text-[1rem] max-sm:mb-[15px]">Silver Sponsors</h3>
                     <div className="relative flex items-center gap-2.5">
                         <button
                             className={`w-11 h-11 bg-white border-2 border-[#005eb8] text-[#005eb8] text-[28px] font-bold cursor-pointer flex items-center justify-center shrink-0 rounded-none relative z-[2] outline-none transition-all duration-[350ms] ease-out hover:bg-[#005eb8] hover:text-white max-md:w-[38px] max-md:h-[38px] max-md:text-[24px] max-sm:w-8 max-sm:h-8 max-sm:text-[20px] order-[-1] ${
