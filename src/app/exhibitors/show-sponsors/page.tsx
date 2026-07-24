@@ -113,9 +113,7 @@ export default function ShowSponsors() {
 
                                       {/* SILVER */}
                     <div className="mb-16 max-sm:mb-10">
-                        <h2 className="font-display text-[28px] max-sm:text-[22px] leading-tight font-bold uppercase text-[#004a8f] mb-8 max-sm:mb-5 m-0">
-                            Silver Sponsors
-                        </h2>
+                        
 
                         <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6 max-sm:gap-5">
                             {silverSponsors.map((sponsor, index) => (
