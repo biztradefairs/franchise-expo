@@ -81,7 +81,7 @@ export default function HomePage() {
       </div>
 
       <div className="flex items-center gap-4">
-        <h3 className="font-display text-[72px] max-sm:text-[52px] max-[375px]:text-[44px] leading-none font-bold text-[#111] whitespace-nowrap">
+        <h3 className="font-display text-[72px] max-sm:text-[52px] max-[375px]:text-[44px] leading-none font-bold text-[#05264A] whitespace-nowrap">
           150+
         </h3>
 
