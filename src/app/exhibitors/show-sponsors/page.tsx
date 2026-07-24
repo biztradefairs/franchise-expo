@@ -111,33 +111,7 @@ export default function ShowSponsors() {
             <section className="py-16 max-sm:py-10">
                 <div className="w-full max-w-[1440px] mx-auto px-10 max-lg:px-6 max-sm:px-5">
 
-                    {/* PLATINUM */}
-                    <div className="mb-16 max-sm:mb-10">
-                        <h2 className="font-display text-[28px] max-sm:text-[22px] leading-tight font-bold uppercase text-[#004a8f] mb-8 max-sm:mb-5 m-0">
-                            Platinum Sponsors
-                        </h2>
-
-                        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6 max-sm:gap-5">
-                            {platinumSponsors.map((sponsor, index) => (
-                                <SponsorCard key={index} sponsor={sponsor} />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* GOLD */}
-                    <div className="mb-16 max-sm:mb-10">
-                        <h2 className="font-display text-[28px] max-sm:text-[22px] leading-tight font-bold uppercase text-[#004a8f] mb-8 max-sm:mb-5 m-0">
-                            Gold Sponsors
-                        </h2>
-
-                        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6 max-sm:gap-5">
-                            {goldSponsors.map((sponsor, index) => (
-                                <SponsorCard key={index} sponsor={sponsor} />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* SILVER */}
+                                      {/* SILVER */}
                     <div className="mb-16 max-sm:mb-10">
                         <h2 className="font-display text-[28px] max-sm:text-[22px] leading-tight font-bold uppercase text-[#004a8f] mb-8 max-sm:mb-5 m-0">
                             Silver Sponsors
